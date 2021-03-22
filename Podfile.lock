@@ -1,0 +1,76 @@
+PODS:
+  - Alamofire (4.9.1)
+  - CHIPageControl/Aleppo (0.2)
+  - DropDown (2.3.13)
+  - Google-Maps-iOS-Utils (3.4.2):
+    - Google-Maps-iOS-Utils/Clustering (= 3.4.2)
+    - Google-Maps-iOS-Utils/Geometry (= 3.4.2)
+    - Google-Maps-iOS-Utils/Heatmap (= 3.4.2)
+    - Google-Maps-iOS-Utils/QuadTree (= 3.4.2)
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Clustering (3.4.2):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Geometry (3.4.2):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Heatmap (3.4.2):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/QuadTree (3.4.2):
+    - GoogleMaps
+  - GoogleMaps (4.1.0):
+    - GoogleMaps/Maps (= 4.1.0)
+  - GoogleMaps/Base (4.1.0)
+  - GoogleMaps/Maps (4.1.0):
+    - GoogleMaps/Base
+  - GooglePlaces (4.1.0):
+    - GoogleMaps/Base (= 4.1.0)
+  - IQKeyboardManagerSwift (6.5.6)
+  - MarqueeLabel (4.0.5)
+  - MaterialPageControl (1.0.2)
+  - ReachabilitySwift (5.0.0)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire (= 4.9.1)
+  - CHIPageControl/Aleppo
+  - DropDown (= 2.3.13)
+  - Google-Maps-iOS-Utils
+  - GoogleMaps
+  - GooglePlaces
+  - IQKeyboardManagerSwift
+  - MarqueeLabel
+  - MaterialPageControl
+  - ReachabilitySwift
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CHIPageControl
+    - DropDown
+    - Google-Maps-iOS-Utils
+    - GoogleMaps
+    - GooglePlaces
+    - IQKeyboardManagerSwift
+    - MarqueeLabel
+    - MaterialPageControl
+    - ReachabilitySwift
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  CHIPageControl: a787bf7205c9b7e7fbfc412be36c5e8636b68f86
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Google-Maps-iOS-Utils: e8826ab68a4f81355a8e70678507a93cc6aab06b
+  GoogleMaps: 008e2c80e38605b56b560e8deb73d4194ff30bef
+  GooglePlaces: a058b776259c13e1323c9ff135549cb1b13ad8e7
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
+  MaterialPageControl: 4afe261037fdbc7e63a6ad90fdc408dbcfda7525
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: 63cb2bc7f94cd7037587e31792141f26de1ea99a
+
+COCOAPODS: 1.10.0
