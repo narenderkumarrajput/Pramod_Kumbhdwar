@@ -131,7 +131,7 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
                 default: break
                 }
             }
-            
+            print("added by sandeep")
             self.self.dropDown.hide()
         }
     }
