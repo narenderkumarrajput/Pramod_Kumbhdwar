@@ -7,16 +7,24 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
-class AkhadaVC: UIViewController {
+class AkhadaVC: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchTextFieldOuterView: UIView!
+    @IBOutlet weak var searchTextButton: UIButton!
+   
     var detailsArray = [Any]()
+    var locationManager = CLLocationManager()
+    var currentLocation: CLLocation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        getAllAkhadaInfo()
     }
     
     private func setupUI() {
@@ -24,8 +32,24 @@ class AkhadaVC: UIViewController {
         detailsArray = []
         tableView.estimatedRowHeight = 300.0
         tableView.rowHeight = UITableView.automaticDimension
-        
-//        self.searchOuterView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
+        searchTextFieldOuterView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
+        searchTextButton.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            guard let currentLocation = locationManager.location else {
+                return
+            }
+            self.currentLocation = currentLocation
+            getAllAkhadaInfo(lat: "\(currentLocation.coordinate.latitude)", long: "\(currentLocation.coordinate.longitude)", searchText: "")
+        }
+    }
+    @IBAction func searchTextButtonTapped(_ sender: UIButton) {
+        self.view.endEditing(true)
+        if let currentLocation = currentLocation {
+            getAllAkhadaInfo(lat: "\(currentLocation.coordinate.latitude)", long: "\(currentLocation.coordinate.longitude)", searchText: searchTextField.text ?? "")
+        }
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
@@ -33,17 +57,22 @@ class AkhadaVC: UIViewController {
     }
     
     @IBAction func locationButtonTapped(_ sender: UIButton) {
-        
+        guard let details = detailsArray[sender.tag] as? [String : Any] else {return}
+        print(sender.tag)
+        if let lat = details["Lat"] as? String, let long = details["Lng"] as? String, let name = details["Sector_Name"] as? String,let akhadaName = details["Akhada_Name"], lat.count > 0, long.count > 0 {
+            let cllocationcordinator = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(long)!)
+            print(lat,long,name,akhadaName,cllocationcordinator)
+        }
     }
     
-    func getAllAkhadaInfo() {
+    func getAllAkhadaInfo(lat: String, long: String, searchText: String) {
         self.detailsArray.removeAll()
         self.detailsArray = []
         let headers = ["Authorization":"Basic cGF0bmE6cGF0bmEjMjAyMA==","Content-Type":"application/json"] as [String:String]
         Utility.showLoaderWithTextMsg(text: "Loading...")
-        let parameters = ["SearchTxt":"",
-                          "Lat":"30.1135881988418",
-                          "Lng":"78.2953164893311"] as [String: AnyObject]
+        let parameters = ["SearchTxt":searchText,
+                          "Lat":lat,
+                          "Lng":long] as [String: AnyObject]
         let urlString = Constants.APIServices.getAllAkhada
         NetworkManager.requestPOSTURL(urlString, params: parameters, headers: headers) { (responseJson) in
             Utility.hideLoader()

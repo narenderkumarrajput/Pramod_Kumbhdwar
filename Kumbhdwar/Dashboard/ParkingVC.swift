@@ -6,9 +6,9 @@
 //  Copyright © 2021 Narender Kumar. All rights reserved.
 //
 
+
 import UIKit
 import DropDown
-import GoogleMaps
 import MapKit
 import CoreLocation
 
@@ -19,7 +19,6 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchTextFieldOuterView: UIView!
     @IBOutlet weak var searchTextButton: UIButton!
@@ -31,11 +30,12 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
     var currentLocation: CLLocation?
     var amenityTypeId = ""
     var dataSource:[String] = []
-
+    var index = 0
+    let amenityIds = ["2,4","6,8" ,"5,10,14,15,11", "6,11"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         Utilities.setStatusBar()
         setupUI()
         setupDropDown()
@@ -47,24 +47,24 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
     }
 
     func setupUI(){
-        if detailsArray.count > 0 {
-            detailsArray.removeAll()
-        }
         searchView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: #colorLiteral(red: 0.9215686275, green: 0.231372549, blue: 0, alpha: 1))
         tableView.estimatedRowHeight = 150.0
         tableView.rowHeight = UITableView.automaticDimension
         titleLabel.text = title?.uppercased()
+//        searchTextField.delegate = self
         switch title {
+        
         case KumbhdwarList.allCases[3].text:
-            self.searchView.isHidden = true
-            self.searchViewHeightConstraint.constant = 0
             dataSource = ["Search Ghat Type","HK Ghat","Kumbh Ghat"]
         case KumbhdwarList.allCases[8].text:
+            self.searchView.isHidden = true
+            self.searchViewHeightConstraint.constant = 0
             dataSource = ["Search Parking Type", "Kumbh ISBT Route", "Kumbh Parking"]
         case KumbhdwarList.allCases[9].text:
             dataSource = ["Search Facility Type", "Hospital", "Police Station", "Vending Zone","Toilet"]
         case KumbhdwarList.allCases[10].text:
             dataSource = ["Search Transport Type", "Isbt Parking", "Railway Station"]
+
         default: break
         }
         
@@ -80,7 +80,6 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
         DropDown.appearance().backgroundColor = UIColor.white
         searchTextFieldOuterView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
         searchTextButton.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
-
 
     }
     func setupLocationManager() {
@@ -114,6 +113,14 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         
     }
+    
+    @IBAction func searchTextButtonTapped(_ sender: UIButton) {
+        self.view.endEditing(true)
+        if let currentLocation = currentLocation {
+            getParkingDetails(location: currentLocation, amenityId: amenityTypeId, searchText: searchTextField.text ?? "")
+        }
+    }
+    
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -123,17 +130,18 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
           print("Selected item: \(item) at index: \(index)")
             self.searchLabel.text = item
-            if title == KumbhdwarList.allCases[6].text, let currentLocation = currentLocation {
+            guard let currentLocation = self.currentLocation else { self.dropDown.hide(); return }
+            if title == KumbhdwarList.allCases[9].text {
                 switch index {
                 case 0: getParkingDetails(location: currentLocation, amenityId: amenityTypeId);break
                 case 1: getParkingDetails(location: currentLocation, amenityId: "5");break
                 case 2: getParkingDetails(location: currentLocation, amenityId: "10");break
                 case 3: getParkingDetails(location: currentLocation, amenityId: "14");break
                 case 4: getParkingDetails(location: currentLocation, amenityId: "15");break
-                case 5: getParkingDetails(location: currentLocation, amenityId: "11");break
+//                case 5: getParkingDetails(location: currentLocation, amenityId: "11");break
                 default: break
                 }
-            } else if let currentLocation = self.currentLocation {
+            } else {
                 switch index {
                 case 0: getParkingDetails(location: currentLocation, amenityId: amenityTypeId);break
                 case 1: getParkingDetails(location: currentLocation, amenityId: String(amenityTypeId[0]));break
@@ -141,15 +149,8 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
                 default: break
                 }
             }
-            print("added by sandeep")
-            self.self.dropDown.hide()
-        }
-    }
-    
-    @IBAction func searchTextButtonTapped(_ sender: UIButton) {
-        self.view.endEditing(true)
-        if let currentLocation = currentLocation {
-            getParkingDetails(location: currentLocation, amenityId: amenityTypeId, searchText: searchTextField.text ?? "")
+            
+            self.dropDown.hide()
         }
     }
     

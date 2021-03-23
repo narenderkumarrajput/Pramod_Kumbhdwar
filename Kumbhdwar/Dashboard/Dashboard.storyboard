@@ -146,7 +146,7 @@
                                         <rect key="frame" x="0.0" y="180" width="414" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLv-Ua-7RH" customClass="MarqueeLabel" customModule="Kumbhdwar" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="0.0" width="398" height="40"/>
+                                                <rect key="frame" x="105" y="0.0" width="301" height="40"/>
                                                 <string key="text">हरिद्वार मेला प्रशासन कुंभ में आने वाले श्रद्धालुओं के पंजीकरण की  व्यवस्था लागू करने पर विचार कर रहा है। व्यवस्था के तहत पंजीकरण के बाद ही श्रद्धालु मेला क्षेत्र में प्रवेश कर पाएंगे। मेल प्रशासन मौजूदा समय में बाहर से आने श्रद्धालु के पंजीकरण की निगरानी कर रहा है। हालांकि मेल प्रशासन ने साफ किया कि कुंभ के दौरान ट्रेनों और बसों से आने वाले सभी यात्रियों के लिए थर्मल स्क्रीनिंग अनिवार्य होगी।</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -157,7 +157,7 @@
                                         <constraints>
                                             <constraint firstItem="YLv-Ua-7RH" firstAttribute="top" secondItem="kKY-4x-O08" secondAttribute="top" id="CQc-al-O4f"/>
                                             <constraint firstAttribute="trailing" secondItem="YLv-Ua-7RH" secondAttribute="trailing" constant="8" id="CxA-19-rRd"/>
-                                            <constraint firstItem="YLv-Ua-7RH" firstAttribute="leading" secondItem="kKY-4x-O08" secondAttribute="leading" constant="8" id="FxN-mh-VIH"/>
+                                            <constraint firstItem="YLv-Ua-7RH" firstAttribute="leading" secondItem="kKY-4x-O08" secondAttribute="leading" constant="105" id="FxN-mh-VIH"/>
                                             <constraint firstAttribute="height" constant="40" id="ZTe-Qg-EWy"/>
                                             <constraint firstAttribute="bottom" secondItem="YLv-Ua-7RH" secondAttribute="bottom" id="pvD-G1-1jD"/>
                                         </constraints>
@@ -2428,6 +2428,42 @@
                                     <constraint firstAttribute="height" constant="430" id="m8t-if-pC7"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ocj-Vy-zBC">
+                                <rect key="frame" x="10" y="114" width="394" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search by name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1GD-CP-nYA">
+                                        <rect key="frame" x="4" y="4" width="301" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwR-5e-pS1">
+                                        <rect key="frame" x="309" y="4" width="80" height="42"/>
+                                        <color key="backgroundColor" name="PrimaryColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="L5j-wv-wiw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Search">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchTextButtonTapped:" destination="gd7-0N-2z9" eventType="touchUpInside" id="ggF-4W-eqh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="fwR-5e-pS1" secondAttribute="bottom" constant="4" id="5gf-hf-rwq"/>
+                                    <constraint firstItem="fwR-5e-pS1" firstAttribute="top" secondItem="Ocj-Vy-zBC" secondAttribute="top" constant="4" id="5hg-bG-dCE"/>
+                                    <constraint firstAttribute="trailing" secondItem="fwR-5e-pS1" secondAttribute="trailing" constant="5" id="7Rj-aB-r23"/>
+                                    <constraint firstItem="1GD-CP-nYA" firstAttribute="top" secondItem="Ocj-Vy-zBC" secondAttribute="top" constant="4" id="9mr-hd-VWh"/>
+                                    <constraint firstAttribute="bottom" secondItem="1GD-CP-nYA" secondAttribute="bottom" constant="4" id="G7q-ud-fqh"/>
+                                    <constraint firstAttribute="height" constant="50" id="HF0-uv-ncd"/>
+                                    <constraint firstItem="fwR-5e-pS1" firstAttribute="leading" secondItem="1GD-CP-nYA" secondAttribute="trailing" constant="4" id="VRV-ki-BQa"/>
+                                    <constraint firstItem="1GD-CP-nYA" firstAttribute="leading" secondItem="Ocj-Vy-zBC" secondAttribute="leading" constant="4" id="rG4-xS-iMr"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p29-Zl-W5L">
                                 <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <subviews>
@@ -2459,7 +2495,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oPU-72-DVh">
-                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <rect key="frame" x="0.0" y="169" width="414" height="693"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AkhadaCell" rowHeight="288" id="ebO-9I-QBo" customClass="AkhadaCell" customModule="Kumbhdwar" customModuleProvider="target">
@@ -2670,19 +2706,25 @@
                             <constraint firstItem="zzG-Xx-d9H" firstAttribute="leading" secondItem="41k-8n-9q8" secondAttribute="leading" id="9be-hb-AZu"/>
                             <constraint firstItem="oPU-72-DVh" firstAttribute="leading" secondItem="41k-8n-9q8" secondAttribute="leading" id="DVg-rx-Nix"/>
                             <constraint firstItem="41k-8n-9q8" firstAttribute="trailing" secondItem="zzG-Xx-d9H" secondAttribute="trailing" id="LsX-hN-ptg"/>
-                            <constraint firstItem="oPU-72-DVh" firstAttribute="top" secondItem="p29-Zl-W5L" secondAttribute="bottom" id="OAr-R7-mpJ"/>
                             <constraint firstItem="p29-Zl-W5L" firstAttribute="top" secondItem="41k-8n-9q8" secondAttribute="top" id="ZU0-PZ-QUb"/>
+                            <constraint firstItem="Ocj-Vy-zBC" firstAttribute="leading" secondItem="41k-8n-9q8" secondAttribute="leading" constant="10" id="ZoC-AH-ax0"/>
+                            <constraint firstItem="Ocj-Vy-zBC" firstAttribute="top" secondItem="p29-Zl-W5L" secondAttribute="bottom" constant="10" id="fi6-LT-AxY"/>
+                            <constraint firstItem="41k-8n-9q8" firstAttribute="trailing" secondItem="Ocj-Vy-zBC" secondAttribute="trailing" constant="10" id="hr6-xo-phb"/>
                             <constraint firstAttribute="trailing" secondItem="p29-Zl-W5L" secondAttribute="trailing" id="iag-zx-ZF0"/>
                             <constraint firstItem="p29-Zl-W5L" firstAttribute="leading" secondItem="41k-8n-9q8" secondAttribute="leading" id="n2f-6W-lkx"/>
+                            <constraint firstItem="oPU-72-DVh" firstAttribute="top" secondItem="Ocj-Vy-zBC" secondAttribute="bottom" constant="5" id="nrm-Zm-Nyb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchTextButton" destination="fwR-5e-pS1" id="Wdq-XQ-fyP"/>
+                        <outlet property="searchTextField" destination="1GD-CP-nYA" id="zTh-gH-6gd"/>
+                        <outlet property="searchTextFieldOuterView" destination="Ocj-Vy-zBC" id="iFv-8r-K1A"/>
                         <outlet property="tableView" destination="oPU-72-DVh" id="AYR-vX-WjR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4C-8f-lwx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7320" y="117"/>
+            <point key="canvasLocation" x="7318.8405797101459" y="116.51785714285714"/>
         </scene>
         <!--AccommodationVC-->
         <scene sceneID="C5w-8f-11o">
