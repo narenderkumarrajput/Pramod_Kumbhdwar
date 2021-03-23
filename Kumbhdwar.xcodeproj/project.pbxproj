@@ -15,10 +15,14 @@
 		46564CDB260132350018254D /* SocialIntegraionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46564CD3260132350018254D /* SocialIntegraionCell.swift */; };
 		46564CDC260132350018254D /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46564CD4260132350018254D /* DashboardVC.swift */; };
 		46564CDD260132350018254D /* ParkingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46564CD5260132350018254D /* ParkingCell.swift */; };
+		4665D05C26091E8A00D4A959 /* AkhadaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665D05826091E8900D4A959 /* AkhadaCell.swift */; };
+		4665D05D26091E8A00D4A959 /* AccommodationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665D05926091E8900D4A959 /* AccommodationCell.swift */; };
+		4665D05E26091E8A00D4A959 /* TrackerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665D05A26091E8900D4A959 /* TrackerList.swift */; };
+		4665D05F26091E8A00D4A959 /* AkhadaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665D05B26091E8A00D4A959 /* AkhadaVC.swift */; };
 		466D12892607409700E2305F /* JourneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D12852607409700E2305F /* JourneyCell.swift */; };
 		466D128A2607409700E2305F /* JourneyPlannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D12862607409700E2305F /* JourneyPlannerVC.swift */; };
 		466D128B2607409700E2305F /* TrackerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D12872607409700E2305F /* TrackerCell.swift */; };
-		466D128C2607409700E2305F /* TrackerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D12882607409700E2305F /* TrackerList.swift */; };
+		46747ABC2609272800B3D1A8 /* AccommodationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46747ABB2609272800B3D1A8 /* AccommodationVC.swift */; };
 		4697EEC9260371D90097DC93 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4697EEC8260371D90097DC93 /* Dashboard.storyboard */; };
 		4697EECB260371E40097DC93 /* RaiseFeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697EECA260371E40097DC93 /* RaiseFeedbackVC.swift */; };
 		46EC04A82603F0EE009DE332 /* FeedbackStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EC04A62603F0EE009DE332 /* FeedbackStatusCell.swift */; };
@@ -140,10 +144,14 @@
 		46564CD3260132350018254D /* SocialIntegraionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialIntegraionCell.swift; sourceTree = "<group>"; };
 		46564CD4260132350018254D /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		46564CD5260132350018254D /* ParkingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingCell.swift; sourceTree = "<group>"; };
+		4665D05826091E8900D4A959 /* AkhadaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkhadaCell.swift; sourceTree = "<group>"; };
+		4665D05926091E8900D4A959 /* AccommodationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccommodationCell.swift; sourceTree = "<group>"; };
+		4665D05A26091E8900D4A959 /* TrackerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackerList.swift; path = ../../../../Sandeep/Kumbhdwar/Kumbhdwar/Dashboard/TrackerList.swift; sourceTree = "<group>"; };
+		4665D05B26091E8A00D4A959 /* AkhadaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkhadaVC.swift; sourceTree = "<group>"; };
 		466D12852607409700E2305F /* JourneyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyCell.swift; sourceTree = "<group>"; };
 		466D12862607409700E2305F /* JourneyPlannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyPlannerVC.swift; sourceTree = "<group>"; };
 		466D12872607409700E2305F /* TrackerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerCell.swift; sourceTree = "<group>"; };
-		466D12882607409700E2305F /* TrackerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerList.swift; sourceTree = "<group>"; };
+		46747ABB2609272800B3D1A8 /* AccommodationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccommodationVC.swift; sourceTree = "<group>"; };
 		4697EEC8260371D90097DC93 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		4697EECA260371E40097DC93 /* RaiseFeedbackVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaiseFeedbackVC.swift; sourceTree = "<group>"; };
 		46EC04A62603F0EE009DE332 /* FeedbackStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackStatusCell.swift; sourceTree = "<group>"; };
@@ -320,7 +328,11 @@
 				466D12852607409700E2305F /* JourneyCell.swift */,
 				466D12862607409700E2305F /* JourneyPlannerVC.swift */,
 				466D12872607409700E2305F /* TrackerCell.swift */,
-				466D12882607409700E2305F /* TrackerList.swift */,
+				46747ABB2609272800B3D1A8 /* AccommodationVC.swift */,
+				4665D05926091E8900D4A959 /* AccommodationCell.swift */,
+				4665D05826091E8900D4A959 /* AkhadaCell.swift */,
+				4665D05B26091E8A00D4A959 /* AkhadaVC.swift */,
+				4665D05A26091E8900D4A959 /* TrackerList.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -899,6 +911,7 @@
 				BD5DB58825FBF11200A46CD8 /* NotificationBannerQueue.swift in Sources */,
 				BD42593725FFB7F2003EFDB7 /* String+Additions.swift in Sources */,
 				BD5DB51025FBED5700A46CD8 /* Constants.swift in Sources */,
+				4665D05D26091E8A00D4A959 /* AccommodationCell.swift in Sources */,
 				BD5DB58525FBF11200A46CD8 /* BannerHapticGenerator.swift in Sources */,
 				BD5DB51225FBEDE500A46CD8 /* ImagePicker.swift in Sources */,
 				BD5DB57425FBF11100A46CD8 /* ConstraintOffsetTarget.swift in Sources */,
@@ -918,9 +931,9 @@
 				BD5DB57525FBF11100A46CD8 /* ConstraintMakerEditable.swift in Sources */,
 				BD5DB52825FBEE9A00A46CD8 /* ApiMEType.swift in Sources */,
 				BD5DB58425FBF11200A46CD8 /* BannerColors.swift in Sources */,
+				4665D05C26091E8A00D4A959 /* AkhadaCell.swift in Sources */,
 				46564CDD260132350018254D /* ParkingCell.swift in Sources */,
 				466D128A2607409700E2305F /* JourneyPlannerVC.swift in Sources */,
-				466D128C2607409700E2305F /* TrackerList.swift in Sources */,
 				46564CDA260132350018254D /* ParkingVC.swift in Sources */,
 				BD5DB57225FBF11100A46CD8 /* Typealiases.swift in Sources */,
 				BD5DB57325FBF11100A46CD8 /* ConstraintConstantTarget.swift in Sources */,
@@ -932,6 +945,7 @@
 				BD5DB57C25FBF11200A46CD8 /* Debugging.swift in Sources */,
 				BD5DB55F25FBF11100A46CD8 /* BannerStyle.swift in Sources */,
 				466D12892607409700E2305F /* JourneyCell.swift in Sources */,
+				4665D05F26091E8A00D4A959 /* AkhadaVC.swift in Sources */,
 				466D128B2607409700E2305F /* TrackerCell.swift in Sources */,
 				BD5DB57625FBF11100A46CD8 /* ConstraintMaker.swift in Sources */,
 				BD5DB56425FBF11100A46CD8 /* ConstraintAttributes.swift in Sources */,
@@ -962,9 +976,11 @@
 				BD42593425FFB7F2003EFDB7 /* NSAttributedString+Addition.swift in Sources */,
 				BD5DB58F25FBF1CC00A46CD8 /* UIColor+Additions.swift in Sources */,
 				BD5DB56A25FBF11100A46CD8 /* ConstraintMakerExtendable.swift in Sources */,
+				46747ABC2609272800B3D1A8 /* AccommodationVC.swift in Sources */,
 				BD5DB57125FBF11100A46CD8 /* ConstraintLayoutSupport.swift in Sources */,
 				BD5DB58925FBF11200A46CD8 /* NotificationBanner.swift in Sources */,
 				BD5DB57F25FBF11200A46CD8 /* ConstraintLayoutGuide+Extensions.swift in Sources */,
+				4665D05E26091E8A00D4A959 /* TrackerList.swift in Sources */,
 				BD5DB59925FBF6DA00A46CD8 /* AppDefaults.swift in Sources */,
 				BD5DB58025FBF11200A46CD8 /* ConstraintLayoutSupportDSL.swift in Sources */,
 				46564CDB260132350018254D /* SocialIntegraionCell.swift in Sources */,
@@ -1150,15 +1166,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9YG7G7YB2J;
 				INFOPLIST_FILE = Kumbhdwar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.People.Kumbhdwar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ajeevi.Kumbhdwar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1172,15 +1188,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9YG7G7YB2J;
 				INFOPLIST_FILE = Kumbhdwar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.People.Kumbhdwar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ajeevi.Kumbhdwar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

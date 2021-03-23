@@ -20,6 +20,11 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var searchLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchTextFieldOuterView: UIView!
+    @IBOutlet weak var searchTextButton: UIButton!
+    @IBOutlet weak var searchViewHeightConstraint: NSLayoutConstraint!
+    
     let dropDown = DropDown()
     var detailsArray = [[String:Any]]()
     var locationManager = CLLocationManager()
@@ -51,6 +56,8 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
         titleLabel.text = title?.uppercased()
         switch title {
         case KumbhdwarList.allCases[3].text:
+            self.searchView.isHidden = true
+            self.searchViewHeightConstraint.constant = 0
             dataSource = ["Search Ghat Type","HK Ghat","Kumbh Ghat"]
         case KumbhdwarList.allCases[8].text:
             dataSource = ["Search Parking Type", "Kumbh ISBT Route", "Kumbh Parking"]
@@ -71,6 +78,9 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
         dropDown.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         DropDown.appearance().textColor = #colorLiteral(red: 0.9215686275, green: 0.231372549, blue: 0, alpha: 1)
         DropDown.appearance().backgroundColor = UIColor.white
+        searchTextFieldOuterView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
+        searchTextButton.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
+
 
     }
     func setupLocationManager() {
@@ -136,6 +146,13 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func searchTextButtonTapped(_ sender: UIButton) {
+        self.view.endEditing(true)
+        if let currentLocation = currentLocation {
+            getParkingDetails(location: currentLocation, amenityId: amenityTypeId, searchText: searchTextField.text ?? "")
+        }
+    }
+    
     @IBAction func locationButtonTapped(_ sender: UIButton) {
         let details = detailsArray[sender.tag]
         print(sender.tag)
@@ -170,13 +187,13 @@ extension ParkingVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ParkingVC {
-    private func getParkingDetails(location: CLLocation, amenityId: String) {
+    private func getParkingDetails(location: CLLocation, amenityId: String, searchText: String = "") {
         let headers = ["Authorization":"Basic cGF0bmE6cGF0bmEjMjAyMA==","Content-Type":"application/json"] as [String:String]
         let latitude = "\(location.coordinate.latitude)"
         let longitude = "\(location.coordinate.longitude)"
         if latitude.count > 0, longitude.count > 0 {
             Utility.showLoaderWithTextMsg(text: "Loading...")
-            let parameters = ["SearchText":"",
+            let parameters = ["SearchText":searchText,
                               "PageNo":"0",
                               "PageSize":"100",
                               "AmenityTypeId": amenityId,

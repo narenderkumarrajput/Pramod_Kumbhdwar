@@ -1,62 +1,50 @@
 //
-//  FeedbackStatusVC.swift
+//  AkhadaVC.swift
 //  Kumbhdwar
 //
-//  Created by Peoplelink on 3/18/21.
+//  Created by Peoplelink on 3/21/21.
 //  Copyright © 2021 Narender Kumar. All rights reserved.
 //
 
 import UIKit
 
-class FeedbackStatusVC: UIViewController {
+class AkhadaVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var raiseFeedBackButton: UIButton!
-
     var detailsArray = [Any]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
-        getAllCategories()
-        
+        getAllAkhadaInfo()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
-    }
-    
-    func setupUI() {
+    private func setupUI() {
         detailsArray.removeAll()
         detailsArray = []
         tableView.estimatedRowHeight = 300.0
         tableView.rowHeight = UITableView.automaticDimension
+        
+//        self.searchOuterView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
     }
-
-    @IBAction func backButtonTapped(_ sender: Any) {
+    
+    @IBAction func backButtonTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func locationButtonTapped(_ sender: UIButton) {
-        //sender.tag
+        
     }
     
-    @IBAction func imageButtonTapped(_ sender: UIButton) {
-    
-    }
-    @IBAction func raiseFeedBackTapped(_ sender: UIButton) {
-        guard let raiseFeedback = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.raiseFeedbackVC) as? RaiseFeedbackVC else { return }
-        self.navigationController?.pushViewController(raiseFeedback, animated: true)
-    }
-
-    
-    func getAllCategories() {
+    func getAllAkhadaInfo() {
         self.detailsArray.removeAll()
         self.detailsArray = []
         let headers = ["Authorization":"Basic cGF0bmE6cGF0bmEjMjAyMA==","Content-Type":"application/json"] as [String:String]
         Utility.showLoaderWithTextMsg(text: "Loading...")
-        let parameters = ["SearchText":"","PageNo":"0", "PageSize":"10", "ContactNo":"9990802194"] as [String: AnyObject]
-        let urlString = Constants.APIServices.getAllComplaint
+        let parameters = ["SearchTxt":"",
+                          "Lat":"30.1135881988418",
+                          "Lng":"78.2953164893311"] as [String: AnyObject]
+        let urlString = Constants.APIServices.getAllAkhada
         NetworkManager.requestPOSTURL(urlString, params: parameters, headers: headers) { (responseJson) in
             Utility.hideLoader()
             print(responseJson)
@@ -72,19 +60,20 @@ class FeedbackStatusVC: UIViewController {
         }
 
     }
+    
 }
-
-extension FeedbackStatusVC: UITableViewDelegate, UITableViewDataSource {
+extension AkhadaVC: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return detailsArray.count > 0 ? detailsArray.count : 0
+//        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.StoryboardIdentifiers.feedbackStatusCell) as? FeedbackStatusCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.StoryboardIdentifiers.akhadaCell) as? AkhadaCell else { return UITableViewCell() }
         if detailsArray.count > 0, let details = detailsArray[indexPath.row] as? [String:Any] {
             cell.setupCell(details: details)
             cell.locationButton.tag = indexPath.row
-            cell.imageButton.tag = indexPath.row
         }
         return cell
     }
@@ -92,4 +81,6 @@ extension FeedbackStatusVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+
 }
+

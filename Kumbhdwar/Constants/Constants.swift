@@ -22,7 +22,9 @@ struct Constants {
         //Pre-Prod
         //static let Domain = " "
         //development
-        static let Domain = "http://kumbhapi.ecosmartdc.com/api/"
+//        static let Domain = "http://kumbhapi.ecosmartdc.com/api/"
+        static let Domain = "http://kumbhdwar-api.haridwarkumbhmela2021.com:8081/api/"
+
         //Prod
         //static let Domain = " "
         //---------------------------------------------------------------------------------------------------//
@@ -70,6 +72,8 @@ struct Constants {
         static let getalluserTrackInfo = Constants.APIServices.apiURL("KumbhApp/GetAllUserTrackInfo")
         
         static let getAllPlannerList = Constants.APIServices.apiURL("JourneyPlanner/GetMyJourneyPlan?VisitorId=")
+        static let getAllAkhada = Constants.APIServices.apiURL("Amenities/GetAllAkhadaInfo")
+        static let getAllAccommodation = Constants.APIServices.apiURL("Amenities/GetAllAccomodationInfo")
         
         static func apiURL(_ methodName: String) -> String {
             return BaseUrl + methodName
@@ -138,6 +142,8 @@ struct Constants {
         static let feedbackStatusVC = "FeedbackStatusVC"
         static let journeyPlannerVC = "JourneyPlannerVC"
         static let trackerList = "TrackerList"
+        static let akhadaVC = "AkhadaVC"
+        static let accommodationVC = "AccommodationVC"
         
         static let dashboardCell = "DashboardCollectionCell"
         static let imagesCell = "ImagesCell"
@@ -146,6 +152,8 @@ struct Constants {
         static let feedbackStatusCell = "FeedbackStatusCell"
         static let journeyCell = "JourneyCell"
         static let trackerCell = "TrackerCell"
+        static let akhadaCell = "AkhadaCell"
+        static let accommodationCell = "AccommodationCell"
 
     }
     

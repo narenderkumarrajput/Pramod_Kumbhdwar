@@ -145,7 +145,7 @@ class DashboardVC: UIViewController {
     
     private func setupMarqueLabel() {
         marqueeLAbel.type = .continuous
-        marqueeLAbel.scrollDuration = 40.0
+        marqueeLAbel.scrollDuration = 45.0
         marqueeLAbel.animationCurve = .easeInOut
         marqueeLAbel.fadeLength = 10.0
         marqueeLAbel.leadingBuffer = 20.0
@@ -270,6 +270,10 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             introVC.text = KumbhdwarList.allCases[indexPath.item].text
             self.navigationController?.pushViewController(introVC, animated: true)
             break
+            
+        case 2:
+            guard let introVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.akhadaVC) as? AkhadaVC else { return }
+            self.navigationController?.pushViewController(introVC, animated: true)
         case 3,8,9,10:
             guard let parkingVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.parkingVC) as? ParkingVC else { return }
             parkingVC.title = KumbhdwarList.allCases[indexPath.item].text
@@ -280,8 +284,12 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             guard let trackerList = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.trackerList) as? TrackerList else { return }
             self.navigationController?.pushViewController(trackerList, animated: true)
         case 6:
-            guard let raiseFeedback = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.journeyPlannerVC) as? JourneyPlannerVC else { return }
-            self.navigationController?.pushViewController(raiseFeedback, animated: true)
+            guard let journeyPlannerVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.journeyPlannerVC) as? JourneyPlannerVC else { return }
+            self.navigationController?.pushViewController(journeyPlannerVC, animated: true)
+
+        case 7:
+            guard let accommodationVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.accommodationVC) as? AccommodationVC else { return }
+            self.navigationController?.pushViewController(accommodationVC, animated: true)
         case 16:
             guard let feedbackStatus = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.feedbackStatusVC) as? FeedbackStatusVC else { return }
             self.navigationController?.pushViewController(feedbackStatus, animated: true)
