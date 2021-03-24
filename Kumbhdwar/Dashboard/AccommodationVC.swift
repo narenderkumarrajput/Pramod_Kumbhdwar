@@ -51,7 +51,7 @@ class AccommodationVC: UIViewController,CLLocationManagerDelegate {
         self.detailsArray = []
         let headers = ["Authorization":"Basic cGF0bmE6cGF0bmEjMjAyMA==","Content-Type":"application/json"] as [String:String]
         Utility.showLoaderWithTextMsg(text: "Loading...")
-        let parameters = [ "SearchText":"", "PageNo":"0", "PageSize":"100", "Lat":"30.1135881988418", "Lng":"78.2953164893311"] as [String: AnyObject]
+        let parameters = [ "SearchText":searchText, "PageNo":"0", "PageSize":"100", "Lat":lat, "Lng":lon] as [String: AnyObject]
         let urlString = Constants.APIServices.getAllAccommodation
         NetworkManager.requestPOSTURL(urlString, params: parameters, headers: headers) { (responseJson) in
             Utility.hideLoader()
@@ -78,6 +78,16 @@ class AccommodationVC: UIViewController,CLLocationManagerDelegate {
         if let currentLocation = currentLocation {
             getAllAccommodationInfo(lat: "\(currentLocation.coordinate.latitude)", lon: "\(currentLocation.coordinate.longitude)", searchText: searchTextField.text)
         }
+    }
+    
+    @IBAction func locationButtonTapped(_ sender: UIButton) {
+        guard let details = detailsArray[sender.tag] as? [String : Any] else {return}
+        print(sender.tag)
+        if let lat = details["Lat"] as? String, let long = details["Lng"] as? String,let accommodationName = details["Accomodation_Name"] as? String, lat.count > 0, long.count > 0 {
+            let sourceLocation = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(long)!)
+            print(lat,long,accommodationName, sourceLocation)
+        }
+        
     }
     
 }

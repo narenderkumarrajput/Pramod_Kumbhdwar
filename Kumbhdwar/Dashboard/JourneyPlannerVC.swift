@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class JourneyPlannerVC: UIViewController {
 
@@ -40,7 +41,7 @@ class JourneyPlannerVC: UIViewController {
         Utility.showLoaderWithTextMsg(text: "Loading...")
         var
             urlString = Constants.APIServices.getAllPlannerList
-        let visitorId = "7849801367"
+        let visitorId = "7989237387"
         urlString += visitorId
         NetworkManager.requestGETURL(urlString, headers: headers) { (responseJSON) in
             Utility.hideLoader()
@@ -58,11 +59,30 @@ class JourneyPlannerVC: UIViewController {
     }
     
     @IBAction func locationButtonTapped(_ sender: UIButton) {
+        guard let details = detailsArray[sender.tag] as? [String : Any] else {return}
+        print(sender.tag)
+        var sourceLocation: CLLocationCoordinate2D?
+        var destinationGhatLocation: CLLocationCoordinate2D?
+        var parkingLocation: CLLocationCoordinate2D?
+
+        if let lat = details["SourceLat"] as? String, let long = details["SourceLng"] as? String, lat.count > 0, long.count > 0 {
+            sourceLocation = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(long)!)
+            print(lat,long,sourceLocation ?? 0.0)
+        }
+        if let lat = details["DestinationGhatLat"] as? String, let long = details["DestinationGhatLng"] as? String, lat.count > 0, long.count > 0 {
+            destinationGhatLocation = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(long)!)
+            print(lat,long,destinationGhatLocation ?? 0.0)
+        }
+        if let lat = details["ParkingLat"] as? String, let long = details["ParkingLng"] as? String, lat.count > 0, long.count > 0 {
+            parkingLocation = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(long)!)
+            print(lat,long,parkingLocation ?? 0)
+        }
         
     }
     
     @IBAction func addNewJourneyButtonTapped(_ sender: UIButton) {
-        
+        guard let addJourneyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddJourneyRegViewController") as? AddJourneyRegViewController else { return }
+        self.navigationController?.pushViewController(addJourneyVC, animated: true)
     }
     
 }

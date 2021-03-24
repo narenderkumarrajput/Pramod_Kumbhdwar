@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class FeedbackStatusVC: UIViewController {
 
@@ -39,6 +40,12 @@ class FeedbackStatusVC: UIViewController {
     
     @IBAction func locationButtonTapped(_ sender: UIButton) {
         //sender.tag
+        guard let details = detailsArray[sender.tag] as? [String : Any] else {return}
+        print(sender.tag)
+        if let lat = details["Lat"] as? String, let long = details["Lng"] as? String, let name = details["Complaint"] as? String, lat.count > 0, long.count > 0 {
+            let cllocationcordinator = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(long)!)
+            print(lat,long,name,cllocationcordinator)
+        }
     }
     
     @IBAction func imageButtonTapped(_ sender: UIButton) {
