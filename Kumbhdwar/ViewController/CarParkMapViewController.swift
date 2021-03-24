@@ -175,7 +175,7 @@ extension CarParkMapViewController {
                 
                 self.showOtherUsersLocationOnMap([carLoc])
             } else {
-                self.showAlertWithOk(title: "Info", message: "There is some issue. Please try after some time")
+                self.showAlertWithOk(title: "Info", message: "No car save location found")
             }
         }) { (error) in
             Utility.hideLoader()

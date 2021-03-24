@@ -49,6 +49,7 @@ class TrackerList: UIViewController {
         if let lat = details["Lat"] as? String, let long = details["Lng"] as? String, let name = details["Name"] as? String, lat.count > 0, long.count > 0 {
             let cllocationcordinator = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(long)!)
             print(lat,long,name,cllocationcordinator)
+            self.showMap(cllocationcordinator, title: name)
         }
     }
     
@@ -141,3 +142,23 @@ extension TrackerList: UITableViewDelegate, UITableViewDataSource {
 
 }
 
+
+
+
+extension TrackerList {
+    
+    private func showMap(_ destinationCoordinate: CLLocationCoordinate2D, title:String) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        var mapVC = MapViewController()
+        if #available(iOS 13.0, *) {
+            mapVC = (sb.instantiateViewController(identifier: "MapViewController") as? MapViewController)!
+        } else {
+            mapVC = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        }
+        mapVC.latLong = destinationCoordinate
+        mapVC.mapTitle = title
+        
+        self.navigationController?.pushViewController(mapVC, animated: true)
+    }
+    
+}

@@ -14,6 +14,7 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
     var latLong: CLLocationCoordinate2D =  CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+    var latLongParking: CLLocationCoordinate2D =  CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
     var locationManager = CLLocationManager()
     var mapTitle: String = ""
     
@@ -83,6 +84,13 @@ class MapViewController: UIViewController {
         dMarker.title = "Destination"
         dMarker.map = mapView
         mapView.selectedMarker = dMarker
+        
+        if latLongParking.latitude != 0.0 {
+            let pMarker = GMSMarker(position: latLongParking)
+            pMarker.title = "Parking"
+            pMarker.map = mapView
+            mapView.selectedMarker = pMarker
+        }
     }
 }
 
@@ -120,6 +128,10 @@ extension MapViewController: CLLocationManagerDelegate {
         
         self.putMarkerOnMap(location!.coordinate, destinationLocation: self.latLong)
         self.drawPathOnMap(from: location!.coordinate, to: self.latLong)
+        
+        if latLongParking.latitude != 0.0 {
+            self.drawPathOnMap(from: location!.coordinate, to: self.latLongParking)
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

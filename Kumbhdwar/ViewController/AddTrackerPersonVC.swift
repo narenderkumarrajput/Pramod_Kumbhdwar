@@ -43,6 +43,11 @@ class AddTrackerPersonVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     @objc func backAction() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -129,10 +134,13 @@ extension AddTrackerPersonVC {
             Utility.hideLoader()
             let responseDictionary = responseJSON.dictionaryObject!
             
-            if let msg = responseDictionary["Msg"] as? String {
-                if msg.containsIgnoringCase(find: "OTP HAS BEEN SENT SUCCESSFULLY") {
+            if let msg = responseDictionary["Result"] as? String {
+                if msg == "1" {
                     self.showAlertWithOk(title: "Info", message: "OTP Sent. Please fill it in OTP field.")
-                } else {
+                } else if msg == "2" {
+                    self.showAlertWithOk(title: "Info", message: "This contact number is already in your track list.")
+                }
+                else {
                     self.showAlertWithOk(title: "Info", message: "There is some issue. Please try after some time")
                 }
             } else {

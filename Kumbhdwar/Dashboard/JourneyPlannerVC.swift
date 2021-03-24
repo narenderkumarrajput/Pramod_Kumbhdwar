@@ -76,7 +76,12 @@ class JourneyPlannerVC: UIViewController {
         if let lat = details["ParkingLat"] as? String, let long = details["ParkingLng"] as? String, lat.count > 0, long.count > 0 {
             parkingLocation = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(long)!)
             print(lat,long,parkingLocation ?? 0)
+            
+            if let destinationGhatName = details["DestinationGhatName"] as? String {
+                self.showMap(destinationGhatLocation!, parkingCoordinate: parkingLocation!, title: destinationGhatName)
+            }
         }
+        
         
     }
     
@@ -106,4 +111,24 @@ extension JourneyPlannerVC: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
 
+}
+
+
+extension JourneyPlannerVC {
+    
+    private func showMap(_ destinationCoordinate: CLLocationCoordinate2D, parkingCoordinate: CLLocationCoordinate2D, title:String) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        var mapVC = MapViewController()
+        if #available(iOS 13.0, *) {
+            mapVC = (sb.instantiateViewController(identifier: "MapViewController") as? MapViewController)!
+        } else {
+            mapVC = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        }
+        mapVC.latLong = destinationCoordinate
+        mapVC.latLongParking = parkingCoordinate
+        mapVC.mapTitle = title
+        
+        self.navigationController?.pushViewController(mapVC, animated: true)
+    }
+    
 }
