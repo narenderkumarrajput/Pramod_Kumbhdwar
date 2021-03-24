@@ -110,14 +110,17 @@ extension ViewController {
             if let msg = responseDictionary["Msg"] as? String {
                 if msg.containsIgnoringCase(find:"PASSWORD SENT") {
                     self.showAlertWithOk(title: "Info", message: "Password sent througn OTP successfully")
-                } else if msg.containsIgnoringCase(find: "SUCCESSULLY") {
+                } else if (msg.containsIgnoringCase(find: "SUCCESSULLY") || msg.containsIgnoringCase(find: "SUCCESSFULLY")) {
                     UserManager.shared.activeUser = User(object: responseDictionary)
                     print(UserManager.shared.activeUser.CNO)
                     print(UserManager.shared.isUserLoggedIn())
                     UserManager.shared.saveActiveUser()
-                    
-                    guard let parkingVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.dashboardVC) as? DashboardVC else { return }
-                    self.navigationController?.pushViewController(parkingVC, animated: true)
+                    if (UserManager.shared.activeUser.RoleId == "6") {
+                        self.showAlertWithOk(title: "Info", message: "This is staff")
+                    } else {
+                        guard let parkingVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.dashboardVC) as? DashboardVC else { return }
+                        self.navigationController?.pushViewController(parkingVC, animated: true)
+                    }
                 } else {
                     self.showAlertWithOk(title: "Info", message: "There is some issue. Please try after some time")
                 }
