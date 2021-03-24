@@ -1,10 +1,11 @@
 //
-//  DashboardVC.swift
+//  StaffVC.swift
 //  Kumbhdwar
 //
-//  Created by Peoplelink on 3/13/21.
+//  Created by Peoplelink on 3/25/21.
 //  Copyright © 2021 Narender Kumar. All rights reserved.
 //
+
 
 import UIKit
 import MaterialPageControl
@@ -14,57 +15,28 @@ import MapKit
 import DropDown
 
 
-enum KumbhdwarList: CaseIterable {
-    case introduction,holyCityAttractions,Akhada, ghats, liveAarti, FriendsFamily, journeyPlanner, accommodation, parking, localFacilities, publicTransport, findMyCar, nearMe, SOSList, CovidSop, exitPlan, Feedback
+enum StaffList: CaseIterable {
+    case Attendance,Task,Leave
     
     var text: String {
         switch self {
-        case .introduction: return "Introduction"
-        case .holyCityAttractions: return "Holy City Attractions"
-        case .Akhada: return "Akhada"
-        case .ghats: return "Ghats"
-        case .liveAarti: return "Live Aarti"
-        case .FriendsFamily: return "Friends&Family"
-        case .journeyPlanner: return "Journey Planner"
-        case .accommodation: return "Accomodation"
-        case .parking: return "Parking"
-        case .localFacilities: return "Local Facilities"
-        case .publicTransport: return "Public Transport"
-        case .findMyCar: return "Find My Car"
-        case .nearMe: return "Near Me"
-        case .SOSList: return "SOS List"
-        case .CovidSop: return "Covid Sop"
-        case .exitPlan: return "Exit Plan"
-        case .Feedback: return "Feedback"
-            
+        case .Attendance: return "Attendance"
+        case .Task: return "Task"
+        case .Leave: return "Leave"
         }
     }
     var image: UIImage {
         switch self {
-        case .introduction: return #imageLiteral(resourceName: "introduction")
-        case .holyCityAttractions: return #imageLiteral(resourceName: "attractions")
-        case .Akhada: return #imageLiteral(resourceName: "person")
-        case .ghats: return #imageLiteral(resourceName: "book")
-        case .liveAarti: return #imageLiteral(resourceName: "aarti")
-        case .FriendsFamily: return #imageLiteral(resourceName: "tracker")
-        case .journeyPlanner: return #imageLiteral(resourceName: "journey_planner")
-        case .accommodation: return #imageLiteral(resourceName: "booking")
-        case .parking: return #imageLiteral(resourceName: "parking")
-        case .localFacilities: return #imageLiteral(resourceName: "local")
-        case .publicTransport: return #imageLiteral(resourceName: "parking")
-        case .findMyCar: return #imageLiteral(resourceName: "locations")
-        case .nearMe: return #imageLiteral(resourceName: "near")
-        case .SOSList: return #imageLiteral(resourceName: "sos")
-        case .CovidSop: return #imageLiteral(resourceName: "tour")
-        case .exitPlan: return #imageLiteral(resourceName: "route_desh")
-        case .Feedback: return #imageLiteral(resourceName: "complaints_icon")
+        case .Attendance: return #imageLiteral(resourceName: "local")
+        case .Task: return #imageLiteral(resourceName: "complaints_icon")
+        case .Leave: return #imageLiteral(resourceName: "complaint_icon")
+
         }
     }
 }
 
 
-class DashboardVC: UIViewController {
-
+class StaffVC: UIViewController {
     @IBOutlet weak var imagesBgView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var logoImageView: UIImageView!
@@ -74,7 +46,6 @@ class DashboardVC: UIViewController {
 
     @IBOutlet weak var aleppoPAgeControl: CHIPageControlAleppo!
     @IBOutlet var viewCollections: [UIView]!
-
     private let colors: [UIColor] = [.green, .blue, .black]
     var timer = Timer()
     var counter = 0
@@ -229,15 +200,15 @@ class DashboardVC: UIViewController {
     }
     
 }
-extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CHIBasePageControlDelegate {
+extension StaffVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CHIBasePageControlDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == imagesCollectionView ? kumbhdwarImages.count : KumbhdwarList.allCases.count + 1
+        return collectionView == imagesCollectionView ? kumbhdwarImages.count : StaffList.allCases.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         if collectionView == imagesCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "aCell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bCell", for: indexPath)
             let imageView = UIImageView(frame: CGRect(x: cell.contentView.frame.origin.x, y: cell.contentView.frame.origin.y, width: cell.contentView.frame.width, height: cell.contentView.frame.height))
             imageView.image = kumbhdwarImages[indexPath.row]
             imageView.contentMode = .scaleAspectFill
@@ -248,12 +219,12 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             return cell
             
         }
-        if indexPath.item == KumbhdwarList.allCases.count {
+        if indexPath.item == StaffList.allCases.count {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.StoryboardIdentifiers.socialIntegraionCell, for: indexPath) as? SocialIntegraionCell else { return UICollectionViewCell() }
             return cell
         } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.StoryboardIdentifiers.dashboardCell, for: indexPath) as? DashboardCollectionCell else { return UICollectionViewCell() }
-            let item = KumbhdwarList.allCases[indexPath.item]
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.StoryboardIdentifiers.staffCollectionCell, for: indexPath) as? StaffCollectionCell else { return UICollectionViewCell() }
+            let item = StaffList.allCases[indexPath.item]
             cell.textLabel.text = item.text
             cell.imageView.image = item.image
             return cell
@@ -268,7 +239,7 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             return CGSize(width: width, height: height)
         } else {
             switch indexPath.item {
-            case KumbhdwarList.allCases.count :
+            case StaffList.allCases.count :
                 let width = self.collectionView.frame.size.width - 20 - 16
                 let height:CGFloat = 60.0
                 return CGSize(width: width, height: height)
@@ -283,45 +254,13 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.item {
-        case 0,1:
-            guard let introVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.introductionVC) as? IntroductionVC else { return }
-            introVC.index = indexPath.row
-            introVC.text = KumbhdwarList.allCases[indexPath.item].text
-            self.navigationController?.pushViewController(introVC, animated: true)
+        case 0:
+            guard let attendanceVC = UIStoryboard(name: Constants.StroyboardFiles.staff, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.attendanceVC) as? AttendanceVC else { return }
+            self.navigationController?.pushViewController(attendanceVC, animated: true)
             break
             
-        case 2:
-            guard let introVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.akhadaVC) as? AkhadaVC else { return }
-            self.navigationController?.pushViewController(introVC, animated: true)
-        case 3,8,9,10:
-            guard let parkingVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.parkingVC) as? ParkingVC else { return }
-            parkingVC.title = KumbhdwarList.allCases[indexPath.item].text
-                parkingVC.amenityTypeId =  indexPath.item == 3 ? amenityIds[0] : amenityIds[indexPath.item - 7]
-            self.navigationController?.pushViewController(parkingVC, animated: true)
-            break
-        case 4:
-            successLabel(view: self.view, message: "Work in progress", completion: nil)
-        case 5:
-            guard let trackerList = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.trackerList) as? TrackerList else { return }
-            self.navigationController?.pushViewController(trackerList, animated: true)
-        case 6:
-            guard let journeyPlannerVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.journeyPlannerVC) as? JourneyPlannerVC else { return }
-            self.navigationController?.pushViewController(journeyPlannerVC, animated: true)
-
-        case 7:
-            guard let accommodationVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.accommodationVC) as? AccommodationVC else { return }
-            self.navigationController?.pushViewController(accommodationVC, animated: true)
-        case 16:
-            guard let feedbackStatus = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.feedbackStatusVC) as? FeedbackStatusVC else { return }
-            self.navigationController?.pushViewController(feedbackStatus, animated: true)
-            break
-            
-        case 11:
-            showCarPark()
-        case 12:
-            nearMe()
-        case 13:
-            showSOS()
+        case 1,2: successLabel(view: self.view, message: "work in progress", completion: nil)
+        
         default: return
         }
     }
@@ -367,105 +306,4 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         
     }
         
-}
-
-class LeftAlignedCollectionViewFlowLayout: UICollectionViewFlowLayout {
-
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        let attributes = super.layoutAttributesForElements(in: rect)
-        var leftMargin = sectionInset.left
-        var maxY: CGFloat = -1.0
-        minimumLineSpacing = 14.0
-        minimumInteritemSpacing = 14.0
-        attributes?.forEach { layoutAttribute in
-            if layoutAttribute.frame.origin.y >= maxY {
-                leftMargin = sectionInset.left
-            }
-            layoutAttribute.frame.origin.x = leftMargin + 10
-            
-            leftMargin += layoutAttribute.frame.width + minimumInteritemSpacing
-            maxY = max(layoutAttribute.frame.maxY , maxY)
-            
-            
-        }
-
-        return attributes
-    }
-}
-
-extension DashboardVC {
-    private func dummmyData() -> [UserLocation] {
-        var userLocation: [UserLocation] = []
-        userLocation.append(UserLocation(latLong: CLLocationCoordinate2D(latitude: 25.4358, longitude: 81.8463), name: "ABCDEFG 1"))
-        userLocation.append(UserLocation(latLong: CLLocationCoordinate2D(latitude: 25.5358, longitude: 81.6463), name: "ABCDEFG 2"))
-        userLocation.append(UserLocation(latLong: CLLocationCoordinate2D(latitude: 25.6358, longitude: 81.7463), name: "ABCDEFG 3"))
-        userLocation.append(UserLocation(latLong: CLLocationCoordinate2D(latitude: 25.6358, longitude: 81.9463), name: "ABCDEFG 4"))
-        return userLocation
-    }
-    
-    private func showAddTracker() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        var mapTrackerVC = MapTrackerViewController()
-        if #available(iOS 13.0, *) {
-            mapTrackerVC = (sb.instantiateViewController(identifier: "MapTrackerViewController") as? MapTrackerViewController)!
-        } else {
-            mapTrackerVC = sb.instantiateViewController(withIdentifier: "MapTrackerViewController") as! MapTrackerViewController
-        }
-        mapTrackerVC.usersLocationsWithName = self.dummmyData()
-        self.navigationController?.pushViewController(mapTrackerVC, animated: true)
-    }
-    
-    private func showSOS() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        var sosVC = SOSViewController()
-        if #available(iOS 13.0, *) {
-            sosVC = (sb.instantiateViewController(identifier: "SOSViewController") as? SOSViewController)!
-        } else {
-            sosVC = sb.instantiateViewController(withIdentifier: "SOSViewController") as! SOSViewController
-        }
-        self.navigationController?.pushViewController(sosVC, animated: true)
-    }
-    
-    private func showCarPark() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        var sosVC = CarParkMapViewController()
-        if #available(iOS 13.0, *) {
-            sosVC = (sb.instantiateViewController(identifier: "CarParkMapViewController") as? CarParkMapViewController)!
-        } else {
-            sosVC = sb.instantiateViewController(withIdentifier: "CarParkMapViewController") as! CarParkMapViewController
-        }
-        self.navigationController?.pushViewController(sosVC, animated: true)
-    }
-    private func nearMe() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        var nearMeVC = NearMeViewController()
-        if #available(iOS 13.0, *) {
-            nearMeVC = (sb.instantiateViewController(identifier: "NearMeViewController") as? NearMeViewController)!
-        } else {
-            nearMeVC = sb.instantiateViewController(withIdentifier: "NearMeViewController") as! NearMeViewController
-        }
-        self.navigationController?.pushViewController(nearMeVC, animated: true)
-    }
-    
-    private func showlocation() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        var nearMeVC = LocationsViewController()
-        if #available(iOS 13.0, *) {
-            nearMeVC = (sb.instantiateViewController(identifier: "LocationsViewController") as? LocationsViewController)!
-        } else {
-            nearMeVC = sb.instantiateViewController(withIdentifier: "LocationsViewController") as! LocationsViewController
-        }
-        self.navigationController?.pushViewController(nearMeVC, animated: true)
-    }
-    
-    private func showAddJourneyRegVC() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        var nearMeVC = AddJourneyRegViewController()
-        if #available(iOS 13.0, *) {
-            nearMeVC = (sb.instantiateViewController(identifier: "AddJourneyRegViewController") as? AddJourneyRegViewController)!
-        } else {
-            nearMeVC = sb.instantiateViewController(withIdentifier: "AddJourneyRegViewController") as! AddJourneyRegViewController
-        }
-        self.navigationController?.pushViewController(nearMeVC, animated: true)
-    }
 }

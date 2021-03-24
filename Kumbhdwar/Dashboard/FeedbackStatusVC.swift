@@ -49,8 +49,13 @@ class FeedbackStatusVC: UIViewController {
     }
     
     @IBAction func imageButtonTapped(_ sender: UIButton) {
-    
+        guard let details = detailsArray[sender.tag] as? [String : Any] else {return}
+        guard let imageVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.imageVC) as? ImageVC else { return }
+        guard let url = details["ImgUrl"] as? String else { return }
+        imageVC.url = url
+        self.navigationController?.pushViewController(imageVC, animated: true)
     }
+    
     @IBAction func raiseFeedBackTapped(_ sender: UIButton) {
         guard let raiseFeedback = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.raiseFeedbackVC) as? RaiseFeedbackVC else { return }
         self.navigationController?.pushViewController(raiseFeedback, animated: true)

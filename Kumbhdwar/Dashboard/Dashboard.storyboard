@@ -210,7 +210,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfPages">
-                                        <integer key="value" value="3"/>
+                                        <integer key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="progress">
                                         <real key="value" value="0.0"/>
@@ -3229,10 +3229,75 @@
             </objects>
             <point key="canvasLocation" x="8148" y="115"/>
         </scene>
+        <!--ImageVC-->
+        <scene sceneID="Hkn-pW-X6t">
+            <objects>
+                <viewController storyboardIdentifier="ImageVC" id="1yx-jL-ihI" customClass="ImageVC" customModule="Kumbhdwar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TfH-bu-pvh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jVk-Fe-fSH">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1L2-uT-Iid">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACCOMMODATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zk6-5a-qYJ">
+                                        <rect key="frame" x="125" y="19.5" width="164.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRo-2M-pd1">
+                                        <rect key="frame" x="10" y="10" width="50" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="O5n-v3-Hwc"/>
+                                            <constraint firstAttribute="width" constant="50" id="i32-31-Jba"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_arrow_back_white_24dp"/>
+                                        <connections>
+                                            <action selector="backTapped:" destination="1yx-jL-ihI" eventType="touchUpInside" id="RHn-F2-Cme"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="PrimaryColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="LTY-Ne-Zpv"/>
+                                    <constraint firstItem="zk6-5a-qYJ" firstAttribute="centerY" secondItem="1L2-uT-Iid" secondAttribute="centerY" id="NtT-a4-W9A"/>
+                                    <constraint firstItem="zk6-5a-qYJ" firstAttribute="centerX" secondItem="1L2-uT-Iid" secondAttribute="centerX" id="cJh-QT-COV"/>
+                                    <constraint firstItem="fRo-2M-pd1" firstAttribute="leading" secondItem="1L2-uT-Iid" secondAttribute="leading" constant="10" id="gNm-D7-z6b"/>
+                                    <constraint firstItem="fRo-2M-pd1" firstAttribute="centerY" secondItem="1L2-uT-Iid" secondAttribute="centerY" id="zxk-pK-HqG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gfF-md-qDJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gfF-md-qDJ" firstAttribute="trailing" secondItem="jVk-Fe-fSH" secondAttribute="trailing" id="Cpr-GD-deq"/>
+                            <constraint firstAttribute="trailing" secondItem="1L2-uT-Iid" secondAttribute="trailing" id="Zoj-Xm-JbL"/>
+                            <constraint firstItem="1L2-uT-Iid" firstAttribute="leading" secondItem="gfF-md-qDJ" secondAttribute="leading" id="aNj-fK-pQ1"/>
+                            <constraint firstItem="jVk-Fe-fSH" firstAttribute="top" secondItem="1L2-uT-Iid" secondAttribute="bottom" id="aTk-IH-0jO"/>
+                            <constraint firstItem="gfF-md-qDJ" firstAttribute="bottom" secondItem="jVk-Fe-fSH" secondAttribute="bottom" id="hM6-ZN-53v"/>
+                            <constraint firstItem="1L2-uT-Iid" firstAttribute="top" secondItem="gfF-md-qDJ" secondAttribute="top" id="hOH-g0-dgo"/>
+                            <constraint firstItem="jVk-Fe-fSH" firstAttribute="leading" secondItem="gfF-md-qDJ" secondAttribute="leading" id="mWz-bz-6bu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myImageView" destination="jVk-Fe-fSH" id="vfk-qE-XRf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zCq-i2-H45" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8953.6231884057979" y="114.50892857142857"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="YLv-Ua-7RH">
             <size key="intrinsicContentSize" width="2404" height="20.5"/>
+        </designable>
+        <designable name="nJq-HH-eGA">
+            <size key="intrinsicContentSize" width="86" height="8"/>
         </designable>
     </designables>
     <resources>
@@ -3250,13 +3315,13 @@
         <image name="maps" width="170.66667175292969" height="170.66667175292969"/>
         <image name="twitter" width="170.66667175292969" height="170.66667175292969"/>
         <namedColor name="PrimaryColor">
-            <color red="1" green="0.30980392156862746" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.31000000238418579" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="StatusbarColor">
-            <color red="0.92156862745098034" green="0.23137254901960785" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92199999094009399" green="0.23100000619888306" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="secondaryColor">
-            <color red="0.95686274509803926" green="0.6470588235294118" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9570000171661377" green="0.6470000147819519" blue="0.35699999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

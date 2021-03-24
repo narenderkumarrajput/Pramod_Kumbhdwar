@@ -70,7 +70,8 @@ struct Constants {
         static let saveJourney = Constants.APIServices.apiURL("JourneyPlanner/SaveAndUpdateJourneyPlan")
         static let getMyCarLocation = Constants.APIServices.apiURL("JourneyPlanner/GetMyCarLocation?VisitorId=")
         static let getalluserTrackInfo = Constants.APIServices.apiURL("KumbhApp/GetAllUserTrackInfo")
-        
+        static let getAttendance = Constants.APIServices.apiURL("Employee/mGetEmployeeAttendance")
+
         static let getAllPlannerList = Constants.APIServices.apiURL("JourneyPlanner/GetMyJourneyPlan?VisitorId=")
         static let getAllAkhada = Constants.APIServices.apiURL("Amenities/GetAllAkhadaInfo")
         static let getAllAccommodation = Constants.APIServices.apiURL("Amenities/GetAllAccomodationInfo")
@@ -132,6 +133,8 @@ struct Constants {
     }
     struct StroyboardFiles {
         static let dashboard = "Dashboard"
+        static let staff = "Staff"
+
     }
     
     struct StoryboardIdentifiers {
@@ -144,6 +147,9 @@ struct Constants {
         static let trackerList = "TrackerList"
         static let akhadaVC = "AkhadaVC"
         static let accommodationVC = "AccommodationVC"
+        static let imageVC = "ImageVC"
+        static let staffVC = "StaffVC"
+        static let attendanceVC = "AttendanceVC"
         
         static let dashboardCell = "DashboardCollectionCell"
         static let imagesCell = "ImagesCell"
@@ -154,6 +160,9 @@ struct Constants {
         static let trackerCell = "TrackerCell"
         static let akhadaCell = "AkhadaCell"
         static let accommodationCell = "AccommodationCell"
+        static let staffCollectionCell = "StaffCollectionCell"
+        static let imagesCollectionCell = "ImagesCollectionCell"
+        static let attendanceCell = "AttendanceCell"
 
     }
     

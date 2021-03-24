@@ -116,8 +116,8 @@ extension ViewController {
                     print(UserManager.shared.isUserLoggedIn())
                     UserManager.shared.saveActiveUser()
                     if (UserManager.shared.activeUser.RoleId == "6") {
-                        self.showAlertWithOk(title: "Info", message: "This is staff")
-                    } else {
+                        guard let staffvc = UIStoryboard(name: Constants.StroyboardFiles.staff, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.staffVC) as? StaffVC else { return }
+                        self.navigationController?.pushViewController(staffvc, animated: true)                    } else {
                         guard let parkingVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.dashboardVC) as? DashboardVC else { return }
                         self.navigationController?.pushViewController(parkingVC, animated: true)
                     }
