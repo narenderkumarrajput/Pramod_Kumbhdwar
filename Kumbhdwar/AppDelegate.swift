@@ -51,10 +51,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate func rootViewController() -> UIViewController! {
         if UserManager.shared.isUserLoggedIn() {
-            //TODO
-            let sb = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil)
-            let mainVC = sb.instantiateViewController(withIdentifier: "DashboardNav")
-            return mainVC
+            if (UserManager.shared.activeUser.RoleId == "6") {
+                let staffvc = UIStoryboard(name: Constants.StroyboardFiles.staff, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.staffVC) as? StaffVC
+                let navBar = UINavigationController(rootViewController: staffvc!)
+                staffvc?.navigationController?.isNavigationBarHidden = true
+                return navBar
+            } else {
+                let sb = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil)
+                let mainVC = sb.instantiateViewController(withIdentifier: "DashboardNav")
+                return mainVC
+            }
         } else {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let mainVC = sb.instantiateViewController(withIdentifier: "MainNav")
