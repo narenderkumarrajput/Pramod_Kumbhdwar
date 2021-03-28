@@ -40,6 +40,8 @@
 		468FD63326105F410065338B /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FD62926105F410065338B /* TaskCell.swift */; };
 		468FD63426105F410065338B /* AttendanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FD62A26105F410065338B /* AttendanceVC.swift */; };
 		468FD63526105F410065338B /* LeaveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FD62B26105F410065338B /* LeaveCell.swift */; };
+		46EC4BB8261064C200A74ADB /* OfficialNoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EC4BB7261064C200A74ADB /* OfficialNoVC.swift */; };
+		46EC4BBD261064D700A74ADB /* OfficialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EC4BBC261064D700A74ADB /* OfficialCell.swift */; };
 		56E9C985AB0ED6AD945FFEC0 /* Pods_Kumbhdwar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5894F6C2C26F927EC462C0 /* Pods_Kumbhdwar.framework */; };
 		64528E205D04DE0549FF96C8 /* Pods_Kumbhdwar_KumbhdwarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F809761F78E4D877BAFF72DC /* Pods_Kumbhdwar_KumbhdwarUITests.framework */; };
 		BD2FDED8260143230009186A /* SOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FDED7260143230009186A /* SOSViewController.swift */; };
@@ -182,6 +184,8 @@
 		468FD62926105F410065338B /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		468FD62A26105F410065338B /* AttendanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceVC.swift; sourceTree = "<group>"; };
 		468FD62B26105F410065338B /* LeaveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaveCell.swift; sourceTree = "<group>"; };
+		46EC4BB7261064C200A74ADB /* OfficialNoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficialNoVC.swift; sourceTree = "<group>"; };
+		46EC4BBC261064D700A74ADB /* OfficialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficialCell.swift; sourceTree = "<group>"; };
 		4AA5D86B3BAD5B01F114D79F /* Pods-Kumbhdwar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kumbhdwar.debug.xcconfig"; path = "Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar.debug.xcconfig"; sourceTree = "<group>"; };
 		746680A4C3BC623E190A596D /* Pods-Kumbhdwar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kumbhdwar.release.xcconfig"; path = "Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar.release.xcconfig"; sourceTree = "<group>"; };
 		9C2FA8E33328955094861945 /* Pods-Kumbhdwar-KumbhdwarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kumbhdwar-KumbhdwarUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -360,6 +364,8 @@
 				468FD60726105F3A0065338B /* AkhadaCell.swift */,
 				468FD60826105F3A0065338B /* Dashboard.storyboard */,
 				468FD60926105F3A0065338B /* AccommodationVC.swift */,
+				46EC4BB7261064C200A74ADB /* OfficialNoVC.swift */,
+				46EC4BBC261064D700A74ADB /* OfficialCell.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -975,10 +981,12 @@
 				468FD61A26105F3B0065338B /* ParkingCell.swift in Sources */,
 				BD5DB56D25FBF11100A46CD8 /* ConstraintConfig.swift in Sources */,
 				BD5DB59225FBF27500A46CD8 /* Utilities.swift in Sources */,
+				46EC4BBD261064D700A74ADB /* OfficialCell.swift in Sources */,
 				BD5DB57925FBF11200A46CD8 /* ConstraintView+Extensions.swift in Sources */,
 				BD5DB56125FBF11100A46CD8 /* LayoutConstraintItem.swift in Sources */,
 				BDF9A8FE2600E79E0084C9ED /* AddTrackerPersonVC.swift in Sources */,
 				BD42593525FFB7F2003EFDB7 /* String+RepeatCount.swift in Sources */,
+				46EC4BB8261064C200A74ADB /* OfficialNoVC.swift in Sources */,
 				468FD60A26105F3A0065338B /* FeedbackStatusCell.swift in Sources */,
 				468FD63426105F410065338B /* AttendanceVC.swift in Sources */,
 				468FD63126105F410065338B /* StaffCollectionCell.swift in Sources */,

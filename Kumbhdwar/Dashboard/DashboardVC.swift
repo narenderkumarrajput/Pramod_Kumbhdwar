@@ -15,7 +15,7 @@ import DropDown
 
 
 enum KumbhdwarList: CaseIterable {
-    case introduction,holyCityAttractions,Akhada, ghats, liveAarti, FriendsFamily, journeyPlanner, accommodation, parking, localFacilities, publicTransport, findMyCar, nearMe, SOSList, CovidSop, exitPlan, Feedback
+    case introduction,holyCityAttractions,Akhada, ghats, liveAarti, FriendsFamily, journeyPlanner, accommodation, parking, localFacilities, publicTransport, findMyCar, nearMe, SOSList, exitPlan, Feedback, OfficialNo
     
     var text: String {
         switch self {
@@ -33,9 +33,10 @@ enum KumbhdwarList: CaseIterable {
         case .findMyCar: return "Find My Car"
         case .nearMe: return "Near Me"
         case .SOSList: return "SOS List"
-        case .CovidSop: return "Covid Sop"
         case .exitPlan: return "Exit Plan"
         case .Feedback: return "Feedback"
+        case .OfficialNo: return "Official No."
+            
             
         }
     }
@@ -44,20 +45,20 @@ enum KumbhdwarList: CaseIterable {
         case .introduction: return #imageLiteral(resourceName: "introduction")
         case .holyCityAttractions: return #imageLiteral(resourceName: "attractions")
         case .Akhada: return #imageLiteral(resourceName: "person")
-        case .ghats: return #imageLiteral(resourceName: "book")
+        case .ghats: return #imageLiteral(resourceName: "ghat")
         case .liveAarti: return #imageLiteral(resourceName: "aarti")
         case .FriendsFamily: return #imageLiteral(resourceName: "tracker")
         case .journeyPlanner: return #imageLiteral(resourceName: "journey_planner")
         case .accommodation: return #imageLiteral(resourceName: "booking")
         case .parking: return #imageLiteral(resourceName: "parking")
         case .localFacilities: return #imageLiteral(resourceName: "local")
-        case .publicTransport: return #imageLiteral(resourceName: "parking")
-        case .findMyCar: return #imageLiteral(resourceName: "locations")
+        case .publicTransport: return #imageLiteral(resourceName: "transport.jpg")
+        case .findMyCar: return #imageLiteral(resourceName: "find_car")
         case .nearMe: return #imageLiteral(resourceName: "near")
         case .SOSList: return #imageLiteral(resourceName: "sos")
-        case .CovidSop: return #imageLiteral(resourceName: "tour")
-        case .exitPlan: return #imageLiteral(resourceName: "route_desh")
+        case .exitPlan: return #imageLiteral(resourceName: "exit")
         case .Feedback: return #imageLiteral(resourceName: "complaints_icon")
+        case .OfficialNo: return #imageLiteral(resourceName: "phone")
         }
     }
 }
@@ -145,8 +146,8 @@ class DashboardVC: UIViewController {
     
     private func setupMarqueLabel() {
         marqueeLAbel.type = .continuous
-        marqueeLAbel.scrollDuration = 45.0
-        marqueeLAbel.animationCurve = .easeInOut
+        marqueeLAbel.scrollDuration = 90.0
+        marqueeLAbel.animationCurve = .linear
         marqueeLAbel.fadeLength = 10.0
         marqueeLAbel.leadingBuffer = 20.0
         marqueeLAbel.trailingBuffer = 20.0
@@ -196,6 +197,22 @@ class DashboardVC: UIViewController {
                counter = 1
            }
       }
+    @IBAction func facebookTapped(_ sender: UIButton) {
+        if let url = URL(string: "https://www.facebook.com/2021mahakumbh/") {
+            UIApplication.shared.open(url)
+        }
+    }
+    @IBAction func twitterTapped(_ sender: UIButton) {
+        if let url = URL(string: "https://twitter.com/2021mahakumbh") {
+            UIApplication.shared.open(url)
+        }
+    }
+    @IBAction func instagramTapped(_ sender: UIButton) {
+        if let url = URL(string: "https://www.instagram.com/haridwarkumbh2021/") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
     @IBAction func logOutMenuTapped(_ sender: UIButton) {
         dropDown.show()
         // Action triggered on selection
@@ -311,7 +328,7 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         case 7:
             guard let accommodationVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.accommodationVC) as? AccommodationVC else { return }
             self.navigationController?.pushViewController(accommodationVC, animated: true)
-        case 16:
+        case 15:
             guard let feedbackStatus = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.feedbackStatusVC) as? FeedbackStatusVC else { return }
             self.navigationController?.pushViewController(feedbackStatus, animated: true)
             break
@@ -322,6 +339,9 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             nearMe()
         case 13:
             showSOS()
+        case 16:
+            guard let officailNo = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.officialNo) as? OfficialNoVC else { return }
+            self.navigationController?.pushViewController(officailNo, animated: true)
         default: return
         }
     }
