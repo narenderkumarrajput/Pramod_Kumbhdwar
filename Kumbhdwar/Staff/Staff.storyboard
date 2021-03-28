@@ -272,27 +272,28 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="HFv-lS-Yit">
-                                        <rect key="frame" x="63" y="10" width="296" height="47"/>
+                                        <rect key="frame" x="58" y="10" width="301" height="47"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KUMBHDWAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCQ-IX-OAb">
-                                                <rect key="frame" x="81.5" y="0.0" width="133" height="24"/>
+                                                <rect key="frame" x="84" y="0.0" width="133" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="fri-OH-kYa">
-                                                <rect key="frame" x="113" y="30" width="70.5" height="17"/>
+                                                <rect key="frame" x="115.5" y="30" width="70.5" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="EPB-m9-Xez">
-                                        <rect key="frame" x="8" y="5" width="50" height="50"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="EPB-m9-Xez">
+                                        <rect key="frame" x="8" y="7.5" width="45" height="45"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="dIN-Yg-zmg"/>
-                                            <constraint firstAttribute="width" constant="50" id="erG-5e-vvE"/>
+                                            <constraint firstAttribute="height" constant="45" id="dIN-Yg-zmg"/>
+                                            <constraint firstAttribute="width" constant="45" id="erG-5e-vvE"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arX-id-9P5">
@@ -349,20 +350,12 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRp-sp-j6p">
-                                        <rect key="frame" x="371" y="7" width="33" height="16"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="10"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="GRp-sp-j6p" firstAttribute="centerY" secondItem="hEg-66-Y2O" secondAttribute="centerY" id="1dI-g2-gsA"/>
                                     <constraint firstItem="Sjv-Oj-4Et" firstAttribute="top" secondItem="hEg-66-Y2O" secondAttribute="top" id="65j-Jo-rTO"/>
                                     <constraint firstAttribute="bottom" secondItem="Sjv-Oj-4Et" secondAttribute="bottom" id="G7F-Wq-ybe"/>
                                     <constraint firstAttribute="height" constant="30" id="YEp-RO-s8l"/>
-                                    <constraint firstAttribute="trailing" secondItem="GRp-sp-j6p" secondAttribute="trailing" constant="10" id="hXI-Lg-mpW"/>
                                     <constraint firstItem="Sjv-Oj-4Et" firstAttribute="centerX" secondItem="hEg-66-Y2O" secondAttribute="centerX" id="sg0-PY-axp"/>
                                 </constraints>
                             </view>
@@ -2179,6 +2172,9 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="Pxe-yN-7Rg">
+            <size key="intrinsicContentSize" width="86" height="8"/>
+        </designable>
         <designable name="gDD-79-53H">
             <size key="intrinsicContentSize" width="3811.5" height="20.5"/>
         </designable>
@@ -2190,7 +2186,7 @@
         <image name="header_reg" width="227" height="239.66667175292969"/>
         <image name="ic_arrow_back_white_24dp" width="32" height="32"/>
         <image name="instagram" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="logo" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="logo" width="40" height="40"/>
         <image name="maps" width="170.66667175292969" height="170.66667175292969"/>
         <image name="twitter" width="170.66667175292969" height="170.66667175292969"/>
         <namedColor name="PrimaryColor">

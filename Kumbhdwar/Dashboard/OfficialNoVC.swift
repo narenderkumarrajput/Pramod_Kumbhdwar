@@ -18,7 +18,7 @@ class OfficialNoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        logoIcon.borderWithColor(enable: true, withRadius: 25.0, width: 1.0, color: .gray
+        logoIcon.borderWithColor(enable: true, withRadius: 22.5, width: 1.0, color: .gray
         )
         getAllOfficialNo()
     }
