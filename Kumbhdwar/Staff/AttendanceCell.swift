@@ -43,6 +43,8 @@ class AttendanceCell: UITableViewCell {
         punchOutView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
 
     }
+    
+    
     func setupCell(details: [String: Any]) {
         if let text = details["Name"] as? String {
             self.nameLabel.text = text

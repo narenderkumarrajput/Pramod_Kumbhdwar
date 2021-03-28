@@ -46,6 +46,7 @@ class StaffVC: UIViewController {
 
     @IBOutlet weak var aleppoPAgeControl: CHIPageControlAleppo!
     @IBOutlet var viewCollections: [UIView]!
+    
     private let colors: [UIColor] = [.green, .blue, .black]
     var timer = Timer()
     var counter = 0
@@ -259,7 +260,14 @@ extension StaffVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             self.navigationController?.pushViewController(attendanceVC, animated: true)
             break
             
-        case 1,2: successLabel(view: self.view, message: "work in progress", completion: nil)
+        case 1:
+            guard let taskVC = UIStoryboard(name: Constants.StroyboardFiles.staff, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.taskVC) as? TaskVC else { return }
+            self.navigationController?.pushViewController(taskVC, animated: true)
+            break
+        case 2:
+            guard let leaveVC = UIStoryboard(name: Constants.StroyboardFiles.staff, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.leaveVC) as? LeaveVC else { return }
+            self.navigationController?.pushViewController(leaveVC, animated: true)
+            break
         
         default: return
         }

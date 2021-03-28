@@ -11,6 +11,8 @@ import UIKit
 class AttendanceVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
+ 
     var detailsArray = [Any]()
 
     override func viewDidLoad() {
@@ -18,12 +20,12 @@ class AttendanceVC: UIViewController {
         setupUI()
         getAllAttendanceInfo(searchText: "")
     }
+    
     private func setupUI() {
         detailsArray.removeAll()
         detailsArray = []
         tableView.estimatedRowHeight = 300.0
         tableView.rowHeight = UITableView.automaticDimension
-    
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {

@@ -75,6 +75,7 @@ struct Constants {
         static let getAllPlannerList = Constants.APIServices.apiURL("JourneyPlanner/GetMyJourneyPlan?VisitorId=")
         static let getAllAkhada = Constants.APIServices.apiURL("Amenities/GetAllAkhadaInfo")
         static let getAllAccommodation = Constants.APIServices.apiURL("Amenities/GetAllAccomodationInfo")
+        static let getMyAssignedTask = Constants.APIServices.apiURL("UserTask/GetMyAssignedTask")
         
         static func apiURL(_ methodName: String) -> String {
             return BaseUrl + methodName
@@ -150,6 +151,8 @@ struct Constants {
         static let imageVC = "ImageVC"
         static let staffVC = "StaffVC"
         static let attendanceVC = "AttendanceVC"
+        static let taskVC = "TaskVC"
+        static let leaveVC = "LeaveVC"
         
         static let dashboardCell = "DashboardCollectionCell"
         static let imagesCell = "ImagesCell"
@@ -163,6 +166,8 @@ struct Constants {
         static let staffCollectionCell = "StaffCollectionCell"
         static let imagesCollectionCell = "ImagesCollectionCell"
         static let attendanceCell = "AttendanceCell"
+        static let taskCell = "TaskCell"
+        static let leaveCell = "LeaveCell"
 
     }
     
