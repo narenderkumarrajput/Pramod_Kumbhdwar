@@ -86,6 +86,7 @@ class TaskVC: UIViewController {
             } else {
                 self.successLabel(view: self.view, message: "No Data", completion: nil)
                 self.detailsArray.removeAll()
+                self.tableView.reloadData()
             }
         } failure: { (error) in
             print(error)

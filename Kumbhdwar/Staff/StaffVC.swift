@@ -37,6 +37,7 @@ enum StaffList: CaseIterable {
 
 
 class StaffVC: UIViewController {
+    
     @IBOutlet weak var imagesBgView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var logoImageView: UIImageView!
@@ -117,8 +118,8 @@ class StaffVC: UIViewController {
     
     private func setupMarqueLabel() {
         marqueeLAbel.type = .continuous
-        marqueeLAbel.scrollDuration = 45.0
-        marqueeLAbel.animationCurve = .easeInOut
+        marqueeLAbel.scrollDuration = 90.0
+        marqueeLAbel.animationCurve = .linear
         marqueeLAbel.fadeLength = 10.0
         marqueeLAbel.leadingBuffer = 20.0
         marqueeLAbel.trailingBuffer = 20.0
@@ -126,7 +127,7 @@ class StaffVC: UIViewController {
     private func setupUI() {
         self.title = "KUMBHDWAR"
         DispatchQueue.main.async {
-              self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
         locationManager.requestWhenInUseAuthorization()
         logoImageView.round(enable: true, withRadius: logoImageView.frame.height/2)
@@ -139,6 +140,23 @@ class StaffVC: UIViewController {
             
         }
     }
+    
+    @IBAction func facebookTapped(_ sender: UIButton) {
+        if let url = URL(string: "https://www.facebook.com/2021mahakumbh/") {
+            UIApplication.shared.open(url)
+        }
+    }
+    @IBAction func twitterTapped(_ sender: UIButton) {
+        if let url = URL(string: "https://twitter.com/2021mahakumbh") {
+            UIApplication.shared.open(url)
+        }
+    }
+    @IBAction func instagramTapped(_ sender: UIButton) {
+        if let url = URL(string: "https://www.instagram.com/haridwarkumbh2021/") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
     @IBAction func sosButtonTapped(_ sender: Any) {
         
         

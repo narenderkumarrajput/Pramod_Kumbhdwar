@@ -46,6 +46,7 @@ class LeaveVC: UIViewController {
         fromDateTextField.text = stringDate(date: Date())
         toDateTextField.text = stringDate(date: Date())
 //        toDateTextField.delegate = self
+        getMyLeavesList(searchText: "")
     }
     
     func stringDate(date: Date) -> String {
@@ -60,20 +61,67 @@ class LeaveVC: UIViewController {
     
     @IBAction func applyLeaveTapped(_ sender: UIButton) {
     
+        
+    }
+    
+    @IBAction func fromDateValueChanged(_ sender: UIDatePicker) {
+        fromDateTextField.text = stringDate(date: sender.date)
+    }
+    
+    @IBAction func toDateValueChanged(_ sender: UIDatePicker) {
+        toDateTextField.text = stringDate(date: sender.date)
+    }
+    
+    @IBAction func fromDateEndEditing(_ sender: UIDatePicker) {
+        toDateTextField.text = ""
+    }
+    
+    @IBAction func todateEndEditing(_ sender: UIDatePicker) {
+        getMyLeavesList(searchText: "")
+    }
+    
+    func getMyLeavesList(searchText: String) {
+        self.detailsArray.removeAll()
+        self.detailsArray = []
+        let headers = ["Authorization":"Basic cGF0bmE6cGF0bmEjMjAyMA==","Content-Type":"application/json"] as [String:String]
+        Utility.showLoaderWithTextMsg(text: "Loading...")
+        
+        let parameters = ["SearchText":"",
+                          "PageNo":"0",
+                          "PageSize":"10",
+                          "LoginId":"6262151234",
+                          "DateFrom": self.fromDateTextField.text ?? "",
+                          "DateTo": self.toDateTextField.text ?? ""] as [String: AnyObject]
+        let urlString = Constants.APIServices.spGetMyLeave
+        NetworkManager.requestPOSTURL(urlString, params: parameters, headers: headers) { (responseJson) in
+            Utility.hideLoader()
+            print(responseJson)
+            if responseJson.count > 0, let arrayOfObjects = responseJson.arrayObject as? [[String:Any]] {
+                self.detailsArray = arrayOfObjects
+                self.tableView.reloadData()
+            } else {
+                self.successLabel(view: self.view, message: "No Data", completion: nil)
+                self.detailsArray.removeAll()
+                self.tableView.reloadData()
+            }
+        } failure: { (error) in
+            print(error)
+            Utility.hideLoader()
+        }
+
     }
 }
 extension LeaveVC: UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return detailsArray.count > 0 ? detailsArray.count : 0
-        return 10
+        return detailsArray.count > 0 ? detailsArray.count : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.StoryboardIdentifiers.leaveCell) as? LeaveCell else { return UITableViewCell() }
-//        if detailsArray.count > 0, let details = detailsArray[indexPath.row] as? [String:Any] {
-//            cell.setupCell(details: details)
-//        }
+        if detailsArray.count > 0, let details = detailsArray[indexPath.row] as? [String:Any] {
+            cell.setupCell(details: details)
+        }
         return cell
     }
     

@@ -83,6 +83,7 @@ class AkhadaVC: UIViewController, CLLocationManagerDelegate {
                 self.tableView.reloadData()
             } else {
                 self.detailsArray.removeAll()
+                self.tableView.reloadData()
             }
         } failure: { (error) in
             print(error)

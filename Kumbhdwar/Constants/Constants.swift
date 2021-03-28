@@ -23,7 +23,8 @@ struct Constants {
         //static let Domain = " "
         //development
 //        static let Domain = "http://kumbhapi.ecosmartdc.com/api/"
-        static let Domain = "http://kumbhdwar-api.haridwarkumbhmela2021.com:8081/api/"
+//        static let Domain = "http://kumbhdwar-api.haridwarkumbhmela2021.com:8081/api/"
+        static let Domain = "https://kumbhdwar-api.haridwarkumbhmela2021.com/api/"
 
         //Prod
         //static let Domain = " "
@@ -77,7 +78,8 @@ struct Constants {
         static let getAllAccommodation = Constants.APIServices.apiURL("Amenities/GetAllAccomodationInfo")
         static let getMyAssignedTask = Constants.APIServices.apiURL("UserTask/GetMyAssignedTask")
         static let getAllOfficialNo = Constants.APIServices.apiURL("JourneyPlanner/GetAllOfficialNo")
-        
+        static let spGetMyLeave = Constants.APIServices.apiURL("UserTask/spGetMyLeave")
+        static let pushBiometricData = Constants.APIServices.apiURL("Employee/PushBiometricData")
         static func apiURL(_ methodName: String) -> String {
             return BaseUrl + methodName
         }

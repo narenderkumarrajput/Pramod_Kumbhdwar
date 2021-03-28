@@ -39,30 +39,30 @@ class LeaveCell: UITableViewCell {
     
     
     func setupCell(details: [String: Any]) {
-//        if let text = details["UserLoginId"] as? String {
-//            self.loginIdLabel.text = text
-//        }
-//        if let text = details["CircleName"] as? String {
-//            self.circleNameLAbel.text = text
-//        }
-//        if let text = details["WardName"] as? String {
-//            self.wardLabel.text = text
-//        }
-//        if let text = details["TaskDescription"] as? String {
-//            self.descriptionLabel.text = text
-//        }
-//        if let text = details["FeedbackRemark"] as? String {
-//            self.feedbackLabel.text = text
-//        }
-//        if let text = details["AssingedOn"] as? String {
-//            self.assignedOnLabel.text = text
-//        }
-//        if let text = details["FromDate"] as? String {
-//            self.fromLabel.text = text
-//        }
-//        if let text = details["ToDate"] as? String {
-//            self.toLabel.text = text
-//        }
+        if let text = details["LoginId"] as? String {
+            self.loginIdLabel.text = text
+        }
+        if let text = details["Remark"] as? String {
+            self.remarkLabel.text = text
+        }
+        if let text = details["ApprovedOn"] as? String {
+            self.approvedOn.text = text
+        }
+        if let text = details["ApprovedRemark"] as? String {
+            self.approvedRemarkLabel.text = text
+        }
+        if let text = details["AssingedOn"] as? String {
+            self.assignedOnLabel.text = text
+        }
+        if let text = details["IsApproved"] as? String {
+            self.isApprovedLabel.text = text
+        }
+        if let text = details["FromDate"] as? String {
+            self.fromLabel.text = text
+        }
+        if let text = details["ToDate"] as? String {
+            self.toLabel.text = text
+        }
         
     }
 
