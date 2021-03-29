@@ -169,7 +169,7 @@ class DashboardVC: UIViewController {
         }
     }
     @IBAction func sosButtonTapped(_ sender: Any) {
-        
+        self.showSOS()
         
     }
     
