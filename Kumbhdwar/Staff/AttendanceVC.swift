@@ -103,8 +103,12 @@ class AttendanceVC: UIViewController {
         self.detailsArray.removeAll()
         self.detailsArray = []
         let headers = ["Authorization":"Basic cGF0bmE6cGF0bmEjMjAyMA==","Content-Type":"application/json"] as [String:String]
+        guard let userContactNo = UserManager.shared.activeUser.Code, userContactNo.count > 0 else {
+            successLabel(view: self.view, message: "Contact number is not available", completion: nil)
+            return
+        }
         Utility.showLoaderWithTextMsg(text: "Loading...")
-        let parameters = [ "EmpId":"7829801367",
+        let parameters = [ "EmpId": userContactNo,
                            "TDate":"2021-03-28T16:47:42",
                            "TabId":"101",
                            "Lat":"76.898230",

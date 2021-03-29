@@ -10,6 +10,7 @@
 		40FCEDF6B957D966777EFE62 /* Pods_KumbhdwarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D87C437076CE3D98B72B92 /* Pods_KumbhdwarTests.framework */; };
 		4664769D260BEB26006AC634 /* introductionhindi.docx in Resources */ = {isa = PBXBuildFile; fileRef = 4664769C260BEB26006AC634 /* introductionhindi.docx */; };
 		466476A2260BEB2F006AC634 /* writeuptemple.docx in Resources */ = {isa = PBXBuildFile; fileRef = 466476A1260BEB2F006AC634 /* writeuptemple.docx */; };
+		46738AC526116AF900023613 /* ApplyLeaveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46738AC426116AF900023613 /* ApplyLeaveVC.swift */; };
 		468FD60A26105F3A0065338B /* FeedbackStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FD5F626105F3A0065338B /* FeedbackStatusCell.swift */; };
 		468FD60B26105F3A0065338B /* ImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FD5F726105F3A0065338B /* ImagesCell.swift */; };
 		468FD60C26105F3A0065338B /* IntroductionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FD5F826105F3A0065338B /* IntroductionVC.swift */; };
@@ -154,6 +155,7 @@
 		21BDCCAB0A3F61BFED8774F4 /* Pods-Kumbhdwar-KumbhdwarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kumbhdwar-KumbhdwarUITests.release.xcconfig"; path = "Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4664769C260BEB26006AC634 /* introductionhindi.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = introductionhindi.docx; sourceTree = "<group>"; };
 		466476A1260BEB2F006AC634 /* writeuptemple.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = writeuptemple.docx; sourceTree = "<group>"; };
+		46738AC426116AF900023613 /* ApplyLeaveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyLeaveVC.swift; sourceTree = "<group>"; };
 		468FD5F626105F3A0065338B /* FeedbackStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackStatusCell.swift; sourceTree = "<group>"; };
 		468FD5F726105F3A0065338B /* ImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesCell.swift; sourceTree = "<group>"; };
 		468FD5F826105F3A0065338B /* IntroductionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionVC.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				468FD62226105F410065338B /* Staff.storyboard */,
 				468FD62326105F410065338B /* AttendanceCell.swift */,
 				468FD62426105F410065338B /* LeaveVC.swift */,
+				46738AC426116AF900023613 /* ApplyLeaveVC.swift */,
 				468FD62526105F410065338B /* ImagesCollectionCell.swift */,
 				468FD62626105F410065338B /* TaskVC.swift */,
 				468FD62726105F410065338B /* StaffCollectionCell.swift */,
@@ -1054,6 +1057,7 @@
 				BDB1301D25FDD9F200DC0B8A /* RegisterViewController.swift in Sources */,
 				BD5DB57725FBF11100A46CD8 /* ConstraintRelation.swift in Sources */,
 				BD5DB59025FBF1CC00A46CD8 /* UIButton+Additions.swift in Sources */,
+				46738AC526116AF900023613 /* ApplyLeaveVC.swift in Sources */,
 				BD42593325FFB7F2003EFDB7 /* String+ValidationAdditions.swift in Sources */,
 				468FD61826105F3B0065338B /* AkhadaVC.swift in Sources */,
 				468FD62F26105F410065338B /* ImagesCollectionCell.swift in Sources */,

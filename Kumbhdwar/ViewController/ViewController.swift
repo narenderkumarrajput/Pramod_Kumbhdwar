@@ -118,9 +118,9 @@ extension ViewController {
                     if (UserManager.shared.activeUser.RoleId == "6") {
                         guard let staffvc = UIStoryboard(name: Constants.StroyboardFiles.staff, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.staffVC) as? StaffVC else { return }
                         self.navigationController?.pushViewController(staffvc, animated: true)                    } else {
-                        guard let parkingVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.dashboardVC) as? DashboardVC else { return }
-                        self.navigationController?.pushViewController(parkingVC, animated: true)
-                    }
+                            guard let parkingVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.dashboardVC) as? DashboardVC else { return }
+                            self.navigationController?.pushViewController(parkingVC, animated: true)
+                        }
                 } else {
                     self.showAlertWithOk(title: "Info", message: "There is some issue. Please try after some time")
                 }

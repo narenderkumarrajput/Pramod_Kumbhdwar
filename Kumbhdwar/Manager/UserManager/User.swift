@@ -32,12 +32,14 @@ public final class User: NSObject, NSCoding {
         static let RoleId = "RoleId"
         static let CNO = "CNO"
         static let EmpCode = "EmpCode"
+        static let Code = "Code"
     }
     
     public var UHouseId: String?
     public var RoleId: String?
     public var CNO: String?
     public var EmpCode: String?
+    public var Code: String?
     
     public override init() {
         super.init()
@@ -60,6 +62,7 @@ public final class User: NSObject, NSCoding {
         RoleId = json[SerializationKeys.RoleId].string
         CNO = json[SerializationKeys.CNO].string
         EmpCode = json[SerializationKeys.EmpCode].string
+        Code = json[SerializationKeys.Code].string
     }
     
     /// Generates description of the object in the form of a NSDictionary.
@@ -79,6 +82,9 @@ public final class User: NSObject, NSCoding {
         if let value = EmpCode {
             dictionary[SerializationKeys.EmpCode] = value
         }
+        if let value = Code {
+            dictionary[SerializationKeys.Code] = value
+        }
         return dictionary
     }
     
@@ -88,6 +94,7 @@ public final class User: NSObject, NSCoding {
         RoleId = aDecoder.decodeObject(forKey: SerializationKeys.RoleId) as? String
         CNO = aDecoder.decodeObject(forKey: SerializationKeys.CNO) as? String
         EmpCode = aDecoder.decodeObject(forKey: SerializationKeys.EmpCode) as? String
+        Code = aDecoder.decodeObject(forKey: SerializationKeys.Code) as? String
     }
     
     public func encode(with aCoder: NSCoder) {
@@ -95,6 +102,7 @@ public final class User: NSObject, NSCoding {
         aCoder.encode(RoleId, forKey: SerializationKeys.RoleId)
         aCoder.encode(CNO, forKey: SerializationKeys.CNO)
         aCoder.encode(EmpCode, forKey: SerializationKeys.EmpCode)
-        
+        aCoder.encode(Code, forKey: SerializationKeys.Code)
+
     }
 }

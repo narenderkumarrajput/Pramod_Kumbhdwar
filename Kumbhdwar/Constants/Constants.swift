@@ -80,6 +80,7 @@ struct Constants {
         static let getAllOfficialNo = Constants.APIServices.apiURL("JourneyPlanner/GetAllOfficialNo")
         static let spGetMyLeave = Constants.APIServices.apiURL("UserTask/spGetMyLeave")
         static let pushBiometricData = Constants.APIServices.apiURL("Employee/PushBiometricData")
+        static let requestLeave = Constants.APIServices.apiURL("UserTask/RequestLeaveByLoginId")
         static func apiURL(_ methodName: String) -> String {
             return BaseUrl + methodName
         }
@@ -157,6 +158,7 @@ struct Constants {
         static let taskVC = "TaskVC"
         static let leaveVC = "LeaveVC"
         static let officialNo = "OfficialNoVC"
+        static let applyLeaveVC = "ApplyLeaveVC"
         
         static let dashboardCell = "DashboardCollectionCell"
         static let imagesCell = "ImagesCell"

@@ -68,12 +68,16 @@ class TaskVC: UIViewController {
     func getMyAssignedTask(searchText: String) {
         self.detailsArray.removeAll()
         self.detailsArray = []
+        guard let userContactNo = UserManager.shared.activeUser.Code, userContactNo.count > 0 else {
+            successLabel(view: self.view, message: "Contact number is not available", completion: nil)
+            return
+        }
         let headers = ["Authorization":"Basic cGF0bmE6cGF0bmEjMjAyMA==","Content-Type":"application/json"] as [String:String]
         Utility.showLoaderWithTextMsg(text: "Loading...")
         let parameters = ["SearchText":"",
                           "PageNo":"0",
                           "PageSize":"10",
-                          "LoginId":"9992841473",
+                          "LoginId": userContactNo,
                           "DateFrom": fromDateTextField.text ?? "",
                           "DateTo": toDateTextField.text ?? ""] as [String: AnyObject]
         let urlString = Constants.APIServices.getMyAssignedTask
