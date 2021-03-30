@@ -21,6 +21,7 @@ class JourneyCell: UITableViewCell {
     @IBOutlet weak var personLabel: UILabel!
     @IBOutlet weak var visitDateLAbel: UILabel!
     @IBOutlet weak var locationButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var locationButtonOterView: UIView!
     
     override func awakeFromNib() {

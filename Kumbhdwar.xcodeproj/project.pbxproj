@@ -47,6 +47,7 @@
 		64528E205D04DE0549FF96C8 /* Pods_Kumbhdwar_KumbhdwarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F809761F78E4D877BAFF72DC /* Pods_Kumbhdwar_KumbhdwarUITests.framework */; };
 		BD2FDED8260143230009186A /* SOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FDED7260143230009186A /* SOSViewController.swift */; };
 		BD2FDEDD26014B0B0009186A /* NearMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FDEDC26014B0A0009186A /* NearMeViewController.swift */; };
+		BD3748E62613A00400A7C052 /* JourneyPlannerMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3748E52613A00400A7C052 /* JourneyPlannerMapViewController.swift */; };
 		BD42592A25FFAABB003EFDB7 /* UserDefaults+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42592925FFAABB003EFDB7 /* UserDefaults+Additions.swift */; };
 		BD42593225FFB7F2003EFDB7 /* String+ManipulationAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42592C25FFB7F2003EFDB7 /* String+ManipulationAdditions.swift */; };
 		BD42593325FFB7F2003EFDB7 /* String+ValidationAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42592D25FFB7F2003EFDB7 /* String+ValidationAdditions.swift */; };
@@ -194,6 +195,7 @@
 		B6D87C437076CE3D98B72B92 /* Pods_KumbhdwarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KumbhdwarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2FDED7260143230009186A /* SOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSViewController.swift; sourceTree = "<group>"; };
 		BD2FDEDC26014B0A0009186A /* NearMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeViewController.swift; sourceTree = "<group>"; };
+		BD3748E52613A00400A7C052 /* JourneyPlannerMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyPlannerMapViewController.swift; sourceTree = "<group>"; };
 		BD42592925FFAABB003EFDB7 /* UserDefaults+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Additions.swift"; sourceTree = "<group>"; };
 		BD42592C25FFB7F2003EFDB7 /* String+ManipulationAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ManipulationAdditions.swift"; sourceTree = "<group>"; };
 		BD42592D25FFB7F2003EFDB7 /* String+ValidationAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ValidationAdditions.swift"; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 				BDD3FF0D26028B2600D1F80B /* CarParkMapViewController.swift */,
 				BDD300BF2603CDAB00D1F80B /* LocationsViewController.swift */,
 				BDD300EE2603DBAE00D1F80B /* AddJourneyRegViewController.swift */,
+				BD3748E52613A00400A7C052 /* JourneyPlannerMapViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1039,6 +1042,7 @@
 				BD5DB57A25FBF11200A46CD8 /* ConstraintItem.swift in Sources */,
 				BD5DB57E25FBF11200A46CD8 /* LayoutConstraint.swift in Sources */,
 				BD5DB56225FBF11100A46CD8 /* ConstraintDescription.swift in Sources */,
+				BD3748E62613A00400A7C052 /* JourneyPlannerMapViewController.swift in Sources */,
 				BD42592A25FFAABB003EFDB7 /* UserDefaults+Additions.swift in Sources */,
 				468FD61726105F3B0065338B /* TrackerCell.swift in Sources */,
 				468FD61526105F3A0065338B /* ImageVC.swift in Sources */,

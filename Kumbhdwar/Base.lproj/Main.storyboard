@@ -2339,6 +2339,96 @@
             </objects>
             <point key="canvasLocation" x="1922" y="775"/>
         </scene>
+        <!--JourneyPlannerMapViewController-->
+        <scene sceneID="V2p-Y1-bhR">
+            <objects>
+                <viewController storyboardIdentifier="JourneyPlannerMapViewController" title="JourneyPlannerMapViewController" id="R8P-JA-giq" customClass="JourneyPlannerMapViewController" customModule="Kumbhdwar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PGl-8Z-69x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOa-x0-bqq" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ry2-0Z-BE4">
+                                <rect key="frame" x="210" y="732" width="184" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muq-AN-rVj">
+                                        <rect key="frame" x="5" y="5" width="174" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Y6T-Er-acu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="PERSONAL VEHICLE">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="personalAction:" destination="R8P-JA-giq" eventType="touchUpInside" id="Q4z-8U-OsW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTq-0G-YzM">
+                                        <rect key="frame" x="5" y="65" width="174" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="lyc-aH-3nP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="WALKING">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="walkAction:" destination="R8P-JA-giq" eventType="touchUpInside" id="EnJ-RA-Reg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ZTq-0G-YzM" secondAttribute="trailing" constant="5" id="ILt-5t-jnQ"/>
+                                    <constraint firstAttribute="width" constant="184" id="QWf-hY-0vj"/>
+                                    <constraint firstAttribute="height" constant="110" id="Qfj-cn-e97"/>
+                                    <constraint firstItem="Muq-AN-rVj" firstAttribute="top" secondItem="Ry2-0Z-BE4" secondAttribute="top" constant="5" id="Zft-cw-PIu"/>
+                                    <constraint firstItem="Muq-AN-rVj" firstAttribute="leading" secondItem="Ry2-0Z-BE4" secondAttribute="leading" constant="5" id="ZkQ-Fd-FJb"/>
+                                    <constraint firstItem="ZTq-0G-YzM" firstAttribute="leading" secondItem="Ry2-0Z-BE4" secondAttribute="leading" constant="5" id="f7K-nD-Zmr"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZTq-0G-YzM" secondAttribute="bottom" constant="5" id="fnI-An-VFX"/>
+                                    <constraint firstAttribute="trailing" secondItem="Muq-AN-rVj" secondAttribute="trailing" constant="5" id="r0z-dt-2e7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hr2-7v-uHs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hr2-7v-uHs" firstAttribute="bottom" secondItem="Ry2-0Z-BE4" secondAttribute="bottom" constant="20" id="4MU-KB-eel"/>
+                            <constraint firstItem="Hr2-7v-uHs" firstAttribute="trailing" secondItem="HOa-x0-bqq" secondAttribute="trailing" id="ILr-qu-ZQW"/>
+                            <constraint firstItem="HOa-x0-bqq" firstAttribute="leading" secondItem="Hr2-7v-uHs" secondAttribute="leading" id="OF4-9u-I9D"/>
+                            <constraint firstItem="Hr2-7v-uHs" firstAttribute="trailing" secondItem="Ry2-0Z-BE4" secondAttribute="trailing" constant="20" id="QRW-7n-R5L"/>
+                            <constraint firstItem="HOa-x0-bqq" firstAttribute="top" secondItem="Hr2-7v-uHs" secondAttribute="top" id="RYt-Lo-46d"/>
+                            <constraint firstItem="Hr2-7v-uHs" firstAttribute="bottom" secondItem="HOa-x0-bqq" secondAttribute="bottom" id="x8R-oz-s2J"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="HOa-x0-bqq" id="fsC-mo-8wm"/>
+                        <outlet property="personalBtn" destination="Muq-AN-rVj" id="b97-op-Fjk"/>
+                        <outlet property="walkBtn" destination="ZTq-0G-YzM" id="veg-RF-vGN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZS-J4-k9B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1171" y="2169"/>
+        </scene>
         <!--LocationsViewController-->
         <scene sceneID="V1j-b9-Orn">
             <objects>
@@ -2495,7 +2585,7 @@
     <resources>
         <image name="downarrow" width="8.3333330154418945" height="6"/>
         <image name="glas" width="12.666666984558105" height="14"/>
-        <image name="logo" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="logo" width="40" height="40"/>
         <image name="newloc" width="19" height="18.666666030883789"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

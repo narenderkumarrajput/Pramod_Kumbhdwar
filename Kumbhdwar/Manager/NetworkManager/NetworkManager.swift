@@ -111,7 +111,7 @@ class NetworkManager: NSObject {
                     //UserManager.shared.deleteActiveUser()
                     AppDelegate.shared.presentRootViewController()
                 }
-                print(resJson.dictionary)
+                print(resJson)
                 success(resJson)
             }
             if responseObject.result.isFailure {

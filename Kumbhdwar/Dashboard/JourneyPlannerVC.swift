@@ -41,7 +41,7 @@ class JourneyPlannerVC: UIViewController {
         Utility.showLoaderWithTextMsg(text: "Loading...")
         var
             urlString = Constants.APIServices.getAllPlannerList
-        let visitorId = "7989237387"
+        let visitorId =  UserManager.shared.activeUser.CNO ?? "7989237387"
         urlString += visitorId
         NetworkManager.requestGETURL(urlString, headers: headers) { (responseJSON) in
             Utility.hideLoader()
@@ -59,6 +59,9 @@ class JourneyPlannerVC: UIViewController {
         }
     }
     
+    @IBAction func deleteButtonTapped(_ sender: UIButton) {
+    }
+    
     @IBAction func locationButtonTapped(_ sender: UIButton) {
         guard let details = detailsArray[sender.tag] as? [String : Any] else {return}
         print(sender.tag)
@@ -73,14 +76,12 @@ class JourneyPlannerVC: UIViewController {
         if let lat = details["DestinationGhatLat"] as? String, let long = details["DestinationGhatLng"] as? String, lat.count > 0, long.count > 0 {
             destinationGhatLocation = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(long)!)
             print(lat,long,destinationGhatLocation ?? 0.0)
+            
+            self.showMap(details)
         }
         if let lat = details["ParkingLat"] as? String, let long = details["ParkingLng"] as? String, lat.count > 0, long.count > 0 {
             parkingLocation = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(long)!)
             print(lat,long,parkingLocation ?? 0)
-            
-            if let destinationGhatName = details["DestinationGhatName"] as? String {
-                self.showMap(destinationGhatLocation!, parkingCoordinate: parkingLocation!, title: destinationGhatName)
-            }
         }
         
         
@@ -104,6 +105,7 @@ extension JourneyPlannerVC: UITableViewDelegate, UITableViewDataSource {
         if detailsArray.count > 0, let details = detailsArray[indexPath.row] as? [String:Any] {
             cell.setupCell(details: details)
             cell.locationButton.tag = indexPath.row
+            cell.deleteButton.tag = indexPath.row
         }
         return cell
     }
@@ -117,18 +119,15 @@ extension JourneyPlannerVC: UITableViewDelegate, UITableViewDataSource {
 
 extension JourneyPlannerVC {
     
-    private func showMap(_ destinationCoordinate: CLLocationCoordinate2D, parkingCoordinate: CLLocationCoordinate2D, title:String) {
+    private func showMap(_ detail: [String : Any]) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        var mapVC = MapViewController()
+        var mapVC = JourneyPlannerMapViewController()
         if #available(iOS 13.0, *) {
-            mapVC = (sb.instantiateViewController(identifier: "MapViewController") as? MapViewController)!
+            mapVC = (sb.instantiateViewController(identifier: "JourneyPlannerMapViewController") as? JourneyPlannerMapViewController)!
         } else {
-            mapVC = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+            mapVC = sb.instantiateViewController(withIdentifier: "JourneyPlannerMapViewController") as! JourneyPlannerMapViewController
         }
-        mapVC.latLong = destinationCoordinate
-        mapVC.latLongParking = parkingCoordinate
-        mapVC.mapTitle = title
-        
+        mapVC.detailDict = detail
         self.navigationController?.pushViewController(mapVC, animated: true)
     }
     
