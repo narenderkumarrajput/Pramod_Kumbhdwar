@@ -59,7 +59,31 @@ class JourneyPlannerVC: UIViewController {
         }
     }
     
+    func deletePlanner(_ idx: Int) {
+ 
+        let details = detailsArray[idx] as? [String : Any]
+        let journeyId = details!["JourneyPlanId"] as? Int
+        
+        let headers = ["Authorization":"Basic cGF0bmE6cGF0bmEjMjAyMA==","Content-Type":"application/json"] as [String:String]
+        Utility.showLoaderWithTextMsg(text: "Loading...")
+        var urlString = Constants.APIServices.deletePlanner
+        urlString += String(journeyId ?? 0)
+        NetworkManager.requestGETURL(urlString, headers: headers) { (responseJSON) in
+            Utility.hideLoader()
+            print(responseJSON)
+            let seconds = 0.4
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                self.getAllPlannerList()
+            }
+            
+        } failure: { (error) in
+            print(error)
+            Utility.hideLoader()
+        }
+    }
+    
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
+        self.deletePlanner(sender.tag)
     }
     
     @IBAction func locationButtonTapped(_ sender: UIButton) {

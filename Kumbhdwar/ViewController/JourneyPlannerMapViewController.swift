@@ -23,9 +23,12 @@ class JourneyPlannerMapViewController: UIViewController {
     var parkingLocation = CLLocationCoordinate2D()
     var routeStartLocation = CLLocationCoordinate2D()
     var routeEndLocation = CLLocationCoordinate2D()
+    var ghatLocation = CLLocationCoordinate2D()
+    var sourceLocation = CLLocationCoordinate2D()
     var route:[MyRoute] = []
     var routeData: RouteData? = nil
     var vPath: [CLLocationCoordinate2D] = []
+    var isWalk = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,13 @@ class JourneyPlannerMapViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let lat: Double = Double(detailDict["DestinationGhatLat"] as? String ?? "0.0")!
+        let lng: Double = Double(detailDict["DestinationGhatLng"] as? String ?? "0.0")!
+        self.ghatLocation = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        
+        let sLat: Double = Double(detailDict["SourceLat"] as? String ?? "0.0")!
+        let sLng: Double = Double(detailDict["SourceLng"] as? String ?? "0.0")!
+        self.sourceLocation = CLLocationCoordinate2D(latitude: sLat, longitude: sLng)
         
         self.showUserLocationOnMap()
         self.getPlannerPhaseWise()
@@ -72,6 +82,19 @@ class JourneyPlannerMapViewController: UIViewController {
         }
     }
     
+    private func setBtnTitle() {
+        self.personalBtn.setTitle("NO USE", for: .normal)
+        self.walkBtn.setTitle("NO USE", for: .normal)
+        for temp in self.route {
+            if temp.modeOfTravel == "PERSONAL VEHICLE" {
+                self.personalBtn.setTitle("PERSONAL VEHICLE", for: .normal)
+            }
+            if temp.modeOfTravel == "WALKING"  {
+                self.walkBtn.setTitle("WALKING", for: .normal)
+            }
+        }
+    }
+    
     
     private func setVpath(_ pathString: String) {
 
@@ -88,6 +111,8 @@ class JourneyPlannerMapViewController: UIViewController {
     }
     
     @IBAction func personalAction(_ sender: UIButton) {
+        self.isWalk = false
+        
         for temp in self.route {
             if temp.modeOfTravel == "PERSONAL VEHICLE" {
                 if temp.rFile.count > 5 {
@@ -99,15 +124,27 @@ class JourneyPlannerMapViewController: UIViewController {
                 let seconds = 0.4
                 DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                     self.parkingLocation = CLLocationCoordinate2D(latitude: temp.parkingLat, longitude: temp.parkingLng)
-                    self.setMarker(self.parkingLocation, name: "Parking", color: .red)
+                    //self.setMarker(self.parkingLocation, name: "Parking", color: .red)
                     
                     self.routeStartLocation = CLLocationCoordinate2D(latitude: temp.routeSLat, longitude: temp.routeSLng)
-                    self.setMarker(self.routeStartLocation, name: "Route Start", color: .orange)
+                    //self.setMarker(self.routeStartLocation, name: "Route Start", color: .orange)
                     
                     self.routeEndLocation = CLLocationCoordinate2D(latitude: temp.routeEndLat, longitude: temp.routeEndLng)
-                    self.setMarker(self.routeEndLocation, name: "Route End", color: .orange)
+                    //self.setMarker(self.routeEndLocation, name: "Route End", color: .orange)
+                    
+                    self.drawPathOnMap(from: self.myLocation, to: self.sourceLocation)
+                    self.drawPath([self.sourceLocation, self.parkingLocation])
+                    self.setMarker(self.parkingLocation, name: "Destination", color: .red)
+                    
+                    let coo = self.myLocation
+                    let camera = GMSCameraPosition.camera(withLatitude: coo.latitude, longitude: coo.longitude, zoom: 17.0)
+                    self.mapView?.animate(to: camera)
+                    
+                    self.locationManager.startUpdatingLocation()
+                    
                 }
                 
+                /*
                 if temp.vPath.count > 5 {
                     self.setVpath(temp.vPath)
                 }
@@ -122,6 +159,7 @@ class JourneyPlannerMapViewController: UIViewController {
                         self.drawPath(finalCoordinate)
                     }
                 }
+                */
                 
                 break
             }
@@ -129,6 +167,8 @@ class JourneyPlannerMapViewController: UIViewController {
     }
     
     @IBAction func walkAction(_ sender: UIButton) {
+        self.isWalk = true
+        
         for temp in self.route {
             if temp.modeOfTravel == "WALKING"  {
                 if temp.rFile.count > 5 {
@@ -140,22 +180,36 @@ class JourneyPlannerMapViewController: UIViewController {
                 let seconds = 0.4
                 DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                     self.parkingLocation = CLLocationCoordinate2D(latitude: temp.parkingLat, longitude: temp.parkingLng)
-                    self.setMarker(self.parkingLocation, name: "Parking", color: .red)
+                    //self.setMarker(self.parkingLocation, name: "Parking", color: .red)
                     
                     self.routeStartLocation = CLLocationCoordinate2D(latitude: temp.routeSLat, longitude: temp.routeSLng)
-                    self.setMarker(self.routeStartLocation, name: "Route Start", color: .red)
+                    //self.setMarker(self.routeStartLocation, name: "Route Start", color: .red)
                     
                     self.routeEndLocation = CLLocationCoordinate2D(latitude: temp.routeEndLat, longitude: temp.routeEndLng)
-                    self.setMarker(self.routeEndLocation, name: "Route End", color: .red)
+                    //self.setMarker(self.routeEndLocation, name: "Route End", color: .red)
+                    
+                    self.setMarker(self.ghatLocation, name: "Ghat", color: .red)
                 }
                 
                 if temp.vPath.count > 5 {
-                    self.setVpath(temp.vPath)
+                    //self.setVpath(temp.vPath)
                 }
                 
                 break
             }
         }
+    }
+    
+    private func drawPathOnMap(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D) {
+        mapView.drawPolygon(from: source, to: destination)
+        
+        var bounds = GMSCoordinateBounds()
+        bounds = bounds.includingCoordinate(source)
+        bounds = bounds.includingCoordinate(destination)
+        
+        mapView.setMinZoom(1, maxZoom: 15)
+        let update = GMSCameraUpdate.fit(bounds, withPadding: 50)
+        mapView.animate(with: update)
     }
     
     
@@ -264,8 +318,8 @@ extension JourneyPlannerMapViewController {
                     let route = MyRoute(parkingLng: ParkingLng, vPath: VPath, routeEndLat: RouteEndLat, id: ID, welcomeDescription: Description, modeOfTravel: ModeOfTravel, routeEndLng: RouteEndLng, parkingLat: ParkingLat, routeSLat: RouteSLat, routeSLng: RouteSLng, rFile: RFile, parkingName: ParkingName)
                     
                     self.route.append(route)
-                    
                 }
+                self.setBtnTitle()
             } else {
                 self.showAlertWithOk(title: "Info", message: "There is some issue. Please try after some time")
             }
@@ -281,12 +335,30 @@ extension JourneyPlannerMapViewController {
         let headers = ["Authorization":"Basic cGF0bmE6cGF0bmEjMjAyMA==","Content-Type":"application/json"] as [String:String]
         Utility.showLoaderWithTextMsg(text: "Loading...")
         let urlString = urlStr
-        NetworkManager.requestGETURL(urlString, headers: headers) { (responseJSON) in
+        NetworkManager.requestGETURL(urlString, headers: headers) { [self] (responseJSON) in
             Utility.hideLoader()
             print(responseJSON)
             let jsonData = try? responseJSON.rawData()
             self.routeData = try! JSONDecoder().decode(RouteData.self, from: jsonData!)
             print(self.routeData)
+            if self.isWalk {
+                if let _ = self.routeData {
+                    let features = self.routeData?.features.first
+                    if let coordinates = features?.geometry.coordinates {
+                        var finalCoordinate: [CLLocationCoordinate2D] = []
+                        for cord in coordinates {
+                            finalCoordinate.append(CLLocationCoordinate2D(latitude: cord.last!, longitude: cord.first!))
+                        }
+                        self.drawPath(finalCoordinate)
+                        
+                        let coo = finalCoordinate.first
+                        let camera = GMSCameraPosition.camera(withLatitude: coo!.latitude, longitude: coo!.longitude, zoom: 17.0)
+                        self.mapView?.animate(to: camera)
+                    }
+                }
+            } else {
+                
+            }
         } failure: { (error) in
             print(error)
             Utility.hideLoader()

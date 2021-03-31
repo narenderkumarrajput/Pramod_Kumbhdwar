@@ -16,6 +16,7 @@ class TrackerCell: UITableViewCell {
     @IBOutlet weak var contactNoLabel: UILabel!
     @IBOutlet weak var groupTypeLabel: UILabel!
     @IBOutlet weak var trackerButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -80,7 +80,7 @@ class AttendanceVC: UIViewController {
         let parameters = [ "SearchText":"",
                            "PageNo":0,
                            "PageSize":10,
-                           "LoginId":"7829801367",
+                           "LoginId": UserManager.shared.activeUser.CNO ?? "7989237387",
                            "TDate": dateTextField.text ?? ""] as [String: AnyObject]
         let urlString = Constants.APIServices.getAttendance
         NetworkManager.requestPOSTURL(urlString, params: parameters, headers: headers) { (responseJson) in

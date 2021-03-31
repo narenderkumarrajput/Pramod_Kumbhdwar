@@ -1143,17 +1143,16 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mY-a4-C3q">
                                                                             <rect key="frame" x="0.0" y="10.5" width="228" height="45"/>
                                                                             <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maps" translatesAutoresizingMaskIntoConstraints="NO" id="FgE-7r-Iqd">
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FgE-7r-Iqd">
                                                                                     <rect key="frame" x="5" y="5" width="35" height="35"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="35" id="o6f-rb-rx1"/>
                                                                                         <constraint firstAttribute="width" constant="35" id="r6m-dv-uiu"/>
                                                                                     </constraints>
                                                                                 </imageView>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afF-hQ-Xr8">
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afF-hQ-Xr8">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="228" height="45"/>
-                                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                                    <state key="normal" title="Show Journey Route  ">
+                                                                                    <state key="normal" title="   Show Journey Route  " image="mapsSmall">
                                                                                         <color key="titleColor" name="PrimaryColor"/>
                                                                                     </state>
                                                                                     <connections>
@@ -1503,19 +1502,41 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0t-CD-Iyr">
-                                                                    <rect key="frame" x="10" y="193" width="354" height="40"/>
+                                                                    <rect key="frame" x="10" y="193" width="214" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="uO5-Bm-qbM"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                                    <state key="normal" title="Track Location">
+                                                                    <state key="normal" title="   Track Location" image="mapsSmall">
                                                                         <color key="titleColor" name="StatusbarColor"/>
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="trackButtonTapped:" destination="hCU-tx-qHt" eventType="touchUpInside" id="bME-IC-f4F"/>
                                                                     </connections>
                                                                 </button>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maps" translatesAutoresizingMaskIntoConstraints="NO" id="c9l-3g-xgK">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ht-ug-m9l">
+                                                                    <rect key="frame" x="234" y="190.5" width="120" height="45"/>
+                                                                    <color key="backgroundColor" red="0.94117647059999998" green="0.35294117650000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="45" id="6jn-Oi-ZQj"/>
+                                                                        <constraint firstAttribute="width" constant="120" id="Uli-nB-Bdz"/>
+                                                                    </constraints>
+                                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <state key="normal" title="  Delete">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <imageReference key="image" image="trash" catalog="system" symbolScale="medium" renderingMode="template"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="deleteTapped:" destination="hCU-tx-qHt" eventType="touchUpInside" id="DZX-7M-VMH"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c9l-3g-xgK">
                                                                     <rect key="frame" x="20" y="198" width="30" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="Q5a-Xh-w4m"/>
@@ -1527,8 +1548,10 @@
                                                             <constraints>
                                                                 <constraint firstItem="K0t-CD-Iyr" firstAttribute="top" secondItem="Fg5-cZ-cse" secondAttribute="bottom" constant="6" id="70l-4U-7Zv"/>
                                                                 <constraint firstItem="Fg5-cZ-cse" firstAttribute="leading" secondItem="GAC-dA-Go6" secondAttribute="leading" constant="10" id="KOV-lY-eIB"/>
+                                                                <constraint firstItem="1Ht-ug-m9l" firstAttribute="centerY" secondItem="K0t-CD-Iyr" secondAttribute="centerY" id="LVd-w2-pz8"/>
+                                                                <constraint firstItem="1Ht-ug-m9l" firstAttribute="leading" secondItem="K0t-CD-Iyr" secondAttribute="trailing" constant="10" id="VHU-md-rsw"/>
                                                                 <constraint firstItem="c9l-3g-xgK" firstAttribute="centerY" secondItem="K0t-CD-Iyr" secondAttribute="centerY" id="WKz-bc-d8O"/>
-                                                                <constraint firstAttribute="trailing" secondItem="K0t-CD-Iyr" secondAttribute="trailing" constant="10" id="cN4-vx-NWT"/>
+                                                                <constraint firstAttribute="trailing" secondItem="1Ht-ug-m9l" secondAttribute="trailing" constant="20" symbolic="YES" id="cMB-qL-nqy"/>
                                                                 <constraint firstItem="Fg5-cZ-cse" firstAttribute="top" secondItem="GAC-dA-Go6" secondAttribute="top" constant="8" id="eW8-SS-4yr"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Fg5-cZ-cse" secondAttribute="trailing" constant="10" id="gNs-kX-JbC"/>
                                                                 <constraint firstItem="K0t-CD-Iyr" firstAttribute="leading" secondItem="GAC-dA-Go6" secondAttribute="leading" constant="10" id="rey-uv-qkg"/>
@@ -1556,6 +1579,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="contactNoLabel" destination="PRQ-jt-Win" id="gr8-Yf-UfB"/>
+                                            <outlet property="deleteButton" destination="1Ht-ug-m9l" id="hhG-J2-cVH"/>
                                             <outlet property="groupTypeLabel" destination="R6m-NQ-jo2" id="wR2-K6-a7n"/>
                                             <outlet property="mainBGView" destination="OHy-kL-S4N" id="ypi-RV-AZ1"/>
                                             <outlet property="nameLabel" destination="r9c-KM-IfD" id="3Ww-B7-POR"/>
@@ -2311,17 +2335,16 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lad-FT-JKy">
                                                                             <rect key="frame" x="0.0" y="10.5" width="170.5" height="45"/>
                                                                             <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maps" translatesAutoresizingMaskIntoConstraints="NO" id="bMd-yK-hOd">
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bMd-yK-hOd">
                                                                                     <rect key="frame" x="5" y="5" width="35" height="35"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="35" id="ZLN-sF-da7"/>
                                                                                         <constraint firstAttribute="height" constant="35" id="nRx-re-tdl"/>
                                                                                     </constraints>
                                                                                 </imageView>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzX-SR-HEZ">
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzX-SR-HEZ">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="170.5" height="45"/>
-                                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                                                    <state key="normal" title="      Location">
+                                                                                    <state key="normal" title="      Location" image="mapsSmall">
                                                                                         <color key="titleColor" name="PrimaryColor"/>
                                                                                     </state>
                                                                                     <connections>
@@ -3636,9 +3659,6 @@
         <designable name="YLv-Ua-7RH">
             <size key="intrinsicContentSize" width="3583" height="18"/>
         </designable>
-        <designable name="nJq-HH-eGA">
-            <size key="intrinsicContentSize" width="86" height="8"/>
-        </designable>
     </designables>
     <resources>
         <image name="ajeevi_logo" width="76.333335876464844" height="32.333332061767578"/>
@@ -3654,6 +3674,7 @@
         <image name="instagram" width="170.66667175292969" height="170.66667175292969"/>
         <image name="logo" width="40" height="40"/>
         <image name="maps" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="mapsSmall" width="26.666666030883789" height="26.666666030883789"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <image name="twitter" width="170.66667175292969" height="170.66667175292969"/>
         <namedColor name="PrimaryColor">

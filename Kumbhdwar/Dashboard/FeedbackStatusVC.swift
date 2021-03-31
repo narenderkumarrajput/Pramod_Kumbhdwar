@@ -69,7 +69,7 @@ class FeedbackStatusVC: UIViewController {
         self.detailsArray = []
         let headers = ["Authorization":"Basic cGF0bmE6cGF0bmEjMjAyMA==","Content-Type":"application/json"] as [String:String]
         Utility.showLoaderWithTextMsg(text: "Loading...")
-        let parameters = ["SearchText":"","PageNo":"0", "PageSize":"10", "ContactNo":"9990802194"] as [String: AnyObject]
+        let parameters = ["SearchText":"","PageNo":"0", "PageSize":"100", "ContactNo":UserManager.shared.activeUser.CNO ?? "7989237387"] as [String: AnyObject]
         let urlString = Constants.APIServices.getAllComplaint
         NetworkManager.requestPOSTURL(urlString, params: parameters, headers: headers) { (responseJson) in
             Utility.hideLoader()

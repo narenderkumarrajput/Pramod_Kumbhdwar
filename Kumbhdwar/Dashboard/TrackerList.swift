@@ -20,12 +20,14 @@ class TrackerList: UIViewController {
     
     var detailsArray = [Any]()
     let dropDown = DropDown()
+    var isFamily = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         setupDropDown()
+        isFamily = true
         getAllTrackerList(type: "FAMILY")
     }
     
@@ -41,6 +43,10 @@ class TrackerList: UIViewController {
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func deleteTapped(_ sender: UIButton) {
+        self.deleteTrack(sender.tag)
     }
     
     @IBAction func trackButtonTapped(_ sender: UIButton) {
@@ -69,8 +75,14 @@ class TrackerList: UIViewController {
           print("Selected item: \(item) at index: \(index)")
             self.searchButton.setTitle(item, for: .normal)
             switch index {
-            case 0: getAllTrackerList(type:"FAMILY"); break
-            case 1: getAllTrackerList(type: "FRIEND"); break
+            case 0:
+                getAllTrackerList(type:"FAMILY");
+                isFamily = true
+                break
+            case 1:
+                getAllTrackerList(type: "FRIEND");
+                isFamily = false
+                break
             default: break
             }
             self.dropDown.hide()
@@ -86,8 +98,8 @@ class TrackerList: UIViewController {
         Utility.showLoaderWithTextMsg(text: "Loading...")
         let parameters = ["SearchText":"",
                           "PageNo":"0",
-                          "PageSize":"100",
-                          "LoginId":"9599913932",
+                          "PageSize":"1000",
+                          "LoginId": UserManager.shared.activeUser.CNO ?? "7989237387",
                           "GroupType":type] as [String: AnyObject]
         let urlString = Constants.APIServices.getalluserTrackInfo
         NetworkManager.requestPOSTURL(urlString, params: parameters, headers: headers) { (responseJson) in
@@ -105,6 +117,35 @@ class TrackerList: UIViewController {
             Utility.hideLoader()
         }
 
+    }
+    
+    
+    func deleteTrack(_ idx: Int) {
+ 
+        let details = detailsArray[idx] as? [String : Any]
+        let journeyId = details!["UserTrackPId"] as? Int
+        
+        let headers = ["Authorization":"Basic cGF0bmE6cGF0bmEjMjAyMA==","Content-Type":"application/json"] as [String:String]
+        Utility.showLoaderWithTextMsg(text: "Loading...")
+        var urlString = Constants.APIServices.deleteTracker
+        urlString += String(journeyId ?? 0)
+        NetworkManager.requestGETURL(urlString, headers: headers) { (responseJSON) in
+            Utility.hideLoader()
+            print(responseJSON)
+            let seconds = 0.4
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                if self.isFamily {
+                    self.getAllTrackerList(type: "FAMILY")
+                } else {
+                    self.getAllTrackerList(type: "FRIEND");
+                }
+                
+            }
+            
+        } failure: { (error) in
+            print(error)
+            Utility.hideLoader()
+        }
     }
     
     
@@ -133,6 +174,7 @@ extension TrackerList: UITableViewDelegate, UITableViewDataSource {
         if detailsArray.count > 0, let details = detailsArray[indexPath.row] as? [String:Any] {
             cell.setupCell(details: details)
             cell.trackerButton.tag = indexPath.row
+            cell.deleteButton.tag = indexPath.row
         }
         return cell
     }
