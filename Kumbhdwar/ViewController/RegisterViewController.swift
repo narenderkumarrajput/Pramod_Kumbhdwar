@@ -21,6 +21,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var modeOfComBtn: UIButton!
     @IBOutlet weak var placeBtn: UIButton!
     @IBOutlet weak var otpTxtFild: UITextField!
+    @IBOutlet weak var changeIconButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     let datePicker = UIDatePicker()
     var iconClick = true
     let dropDown = DropDown()
@@ -30,6 +32,7 @@ class RegisterViewController: UIViewController {
     private var selectModeString = "Select Mode Of Commute"
     private var param:[String: AnyObject] = [:]
     private var modeOfCommArray: [ModeOfComm] = []
+    var isSelectedIcon = false
     
 
     override func viewDidLoad() {
@@ -51,7 +54,7 @@ class RegisterViewController: UIViewController {
         let refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshAction))
         refreshButton.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItem = refreshButton
-        
+        registerButton.isUserInteractionEnabled = false
         
         self.addLeftButtonOn(self.passwordTxtFild)
         self.passwordTxtFild.isSecureTextEntry = true
@@ -145,6 +148,22 @@ class RegisterViewController: UIViewController {
 
         iconClick = !iconClick
     }
+    @IBAction func changeIconButton(_ sender: Any) {
+        if isSelectedIcon == false {
+            changeIconButton.setImage(#imageLiteral(resourceName: "fillSquare"), for: .normal)
+            registerButton.isUserInteractionEnabled = true
+            isSelectedIcon = true
+        } else {
+            changeIconButton.setImage(#imageLiteral(resourceName: "stop"), for: .normal)
+            registerButton.isUserInteractionEnabled = false
+            isSelectedIcon = false
+        }
+    }
+    
+    @IBAction func termsAndConditionsButtonTapped(_ sender: UIButton) {
+        guard let termsAndConditions = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TermsAndConditionsVC") as? TermsAndConditionsVC else { return }
+        self.navigationController?.pushViewController(termsAndConditions, animated: true)
+    }
     @IBAction func selectDateAction(_ sender: Any) {
         self.showDatePicker()
     }
@@ -193,7 +212,7 @@ class RegisterViewController: UIViewController {
          "HasEPass":0,
          "EPassNo":"" -------
          */
-        
+     
         let phone = phoneTxtFild.text?.trimmed()
         if !(phone != nil && (phone!.count) > 0) {
             self.showAlertWithOk(title: "Info", message: "Please enter phone number")

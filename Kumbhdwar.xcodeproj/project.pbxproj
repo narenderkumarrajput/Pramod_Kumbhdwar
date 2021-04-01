@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		40FCEDF6B957D966777EFE62 /* Pods_KumbhdwarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D87C437076CE3D98B72B92 /* Pods_KumbhdwarTests.framework */; };
+		4611321826163E730043E099 /* TermsAndConditionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4611321726163E730043E099 /* TermsAndConditionsVC.swift */; };
+		4611321D261640030043E099 /* TermsofUse.docx in Resources */ = {isa = PBXBuildFile; fileRef = 4611321C261640030043E099 /* TermsofUse.docx */; };
 		4664769D260BEB26006AC634 /* introductionhindi.docx in Resources */ = {isa = PBXBuildFile; fileRef = 4664769C260BEB26006AC634 /* introductionhindi.docx */; };
 		466476A2260BEB2F006AC634 /* writeuptemple.docx in Resources */ = {isa = PBXBuildFile; fileRef = 466476A1260BEB2F006AC634 /* writeuptemple.docx */; };
 		46738AC526116AF900023613 /* ApplyLeaveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46738AC426116AF900023613 /* ApplyLeaveVC.swift */; };
@@ -154,6 +156,8 @@
 
 /* Begin PBXFileReference section */
 		21BDCCAB0A3F61BFED8774F4 /* Pods-Kumbhdwar-KumbhdwarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kumbhdwar-KumbhdwarUITests.release.xcconfig"; path = "Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4611321726163E730043E099 /* TermsAndConditionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsVC.swift; sourceTree = "<group>"; };
+		4611321C261640030043E099 /* TermsofUse.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = TermsofUse.docx; sourceTree = "<group>"; };
 		4664769C260BEB26006AC634 /* introductionhindi.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = introductionhindi.docx; sourceTree = "<group>"; };
 		466476A1260BEB2F006AC634 /* writeuptemple.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = writeuptemple.docx; sourceTree = "<group>"; };
 		46738AC426116AF900023613 /* ApplyLeaveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyLeaveVC.swift; sourceTree = "<group>"; };
@@ -492,6 +496,7 @@
 				BDF9A8EB2600DF190084C9ED /* MapTrackerViewController.swift */,
 				BDF9A8FD2600E79E0084C9ED /* AddTrackerPersonVC.swift */,
 				BD2FDED7260143230009186A /* SOSViewController.swift */,
+				4611321726163E730043E099 /* TermsAndConditionsVC.swift */,
 				BD2FDEDC26014B0A0009186A /* NearMeViewController.swift */,
 				BDD3FF0D26028B2600D1F80B /* CarParkMapViewController.swift */,
 				BDD300BF2603CDAB00D1F80B /* LocationsViewController.swift */,
@@ -535,6 +540,7 @@
 			isa = PBXGroup;
 			children = (
 				4664769C260BEB26006AC634 /* introductionhindi.docx */,
+				4611321C261640030043E099 /* TermsofUse.docx */,
 				466476A1260BEB2F006AC634 /* writeuptemple.docx */,
 				BD5DB50F25FBED5700A46CD8 /* Constants.swift */,
 			);
@@ -787,6 +793,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD5DB4DF25FBE97400A46CD8 /* LaunchScreen.storyboard in Resources */,
+				4611321D261640030043E099 /* TermsofUse.docx in Resources */,
 				BDD300C52603CDE000D1F80B /* kumbh_facilities.kmz in Resources */,
 				BD5DB4DC25FBE97400A46CD8 /* Assets.xcassets in Resources */,
 				468FD62C26105F410065338B /* Staff.storyboard in Resources */,
@@ -979,6 +986,7 @@
 				468FD60C26105F3A0065338B /* IntroductionVC.swift in Sources */,
 				BD5DB58525FBF11200A46CD8 /* BannerHapticGenerator.swift in Sources */,
 				BD5DB51225FBEDE500A46CD8 /* ImagePicker.swift in Sources */,
+				4611321826163E730043E099 /* TermsAndConditionsVC.swift in Sources */,
 				BD5DB57425FBF11100A46CD8 /* ConstraintOffsetTarget.swift in Sources */,
 				BD2FDED8260143230009186A /* SOSViewController.swift in Sources */,
 				BD5DB55E25FBF11100A46CD8 /* MarqueeLabelSwift.swift in Sources */,
