@@ -277,6 +277,16 @@ class RegisterViewController: UIViewController {
         //param["Lat"] = String(latLong.0) as AnyObject
         //param["Lng"] = String(latLong.1) as AnyObject
         
+        
+        param["Location"] = "" as AnyObject
+        param["Lat"] = "" as AnyObject
+        param["Lng"] = "" as AnyObject
+        param["ModeOfCommuteId"] = "" as AnyObject
+        param["DateOfVisit"] = "2021-04-25T11:28:42" as AnyObject
+        param["VehicleNo"] = "" as AnyObject
+        param["HasEPass"]  = 0 as AnyObject
+        param["EPassNo"] = "" as AnyObject
+        
         param["HasOtp"] = 0 as AnyObject
         param["Otp"] = "" as AnyObject
         let otp = otpTxtFild.text?.trimmed()
@@ -353,7 +363,15 @@ extension RegisterViewController {
                                 self.backAction()
                             }))
                             self.present(alert, animated: true, completion: nil)
-                        } else {
+                        } else if msg.containsIgnoringCase(find: "ALREADY REGISTRED") {
+                            let alert = UIAlertController(title: "Info", message: "User already registred", preferredStyle: UIAlertController.Style.alert)
+                            // add an action (button)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
+                                self.backAction()
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                        else {
                             self.showAlertWithOk(title: "Info", message: "There is some issue. Please try after some time")
                         }
                     }

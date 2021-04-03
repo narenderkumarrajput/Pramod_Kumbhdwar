@@ -3011,14 +3011,18 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HPL-bU-w0X">
-                                <rect key="frame" x="174" y="512" width="240" height="350"/>
+                                <rect key="frame" x="174" y="742" width="240" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="XSs-Ry-h96"/>
+                                    <constraint firstAttribute="height" constant="120" id="XSs-Ry-h96"/>
                                     <constraint firstAttribute="width" constant="240" id="uZ2-Mp-v1n"/>
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="TSW-pN-osI" id="uMq-Tl-Ucr"/>
+                                    <outlet property="delegate" destination="TSW-pN-osI" id="lEo-wL-lIV"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="B4t-Ub-iSH"/>
@@ -3034,6 +3038,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="YH3-83-O4u" id="4Rj-Vn-2Yk"/>
+                        <outlet property="tblView" destination="HPL-bU-w0X" id="9tX-es-5Xt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jx4-WD-6WL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

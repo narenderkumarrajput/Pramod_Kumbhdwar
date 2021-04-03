@@ -60,7 +60,20 @@ class TrackerList: UIViewController {
     }
     
     @IBAction func onMapButtonTapped(_ sender: UIButton) {
-        
+        if self.detailsArray.count > 0 {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            var nearMeVC = LocationsViewController()
+            if #available(iOS 13.0, *) {
+                nearMeVC = (sb.instantiateViewController(identifier: "LocationsViewController") as? LocationsViewController)!
+            } else {
+                nearMeVC = sb.instantiateViewController(withIdentifier: "LocationsViewController") as! LocationsViewController
+            }
+            let seconds = 0.5
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                nearMeVC.showMamberList(self.detailsArray)
+            }
+            self.navigationController?.pushViewController(nearMeVC, animated: true)
+        }
     }
     
     @IBAction func addNewTapped(_ sender: UIButton) {
