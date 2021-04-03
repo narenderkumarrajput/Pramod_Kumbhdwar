@@ -135,6 +135,12 @@
 		BDD3FF0E26028B2600D1F80B /* CarParkMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD3FF0D26028B2600D1F80B /* CarParkMapViewController.swift */; };
 		BDF9A8EC2600DF190084C9ED /* MapTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF9A8EB2600DF190084C9ED /* MapTrackerViewController.swift */; };
 		BDF9A8FE2600E79E0084C9ED /* AddTrackerPersonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF9A8FD2600E79E0084C9ED /* AddTrackerPersonVC.swift */; };
+		BDFDF27326189F4C00E340E8 /* Har_Ki_Pauri_to_Motichur_ISBT_Parking.geojson in Resources */ = {isa = PBXBuildFile; fileRef = BDFDF26D26189F4C00E340E8 /* Har_Ki_Pauri_to_Motichur_ISBT_Parking.geojson */; };
+		BDFDF27426189F4C00E340E8 /* Har_Ki_Pauri_to_Sector_1_BHEL_Parking.geojson in Resources */ = {isa = PBXBuildFile; fileRef = BDFDF26E26189F4C00E340E8 /* Har_Ki_Pauri_to_Sector_1_BHEL_Parking.geojson */; };
+		BDFDF27526189F4C00E340E8 /* Har_Ki_Pauri_to_Jwalapur_Railway_Station_Haridwar.geojson in Resources */ = {isa = PBXBuildFile; fileRef = BDFDF26F26189F4C00E340E8 /* Har_Ki_Pauri_to_Jwalapur_Railway_Station_Haridwar.geojson */; };
+		BDFDF27626189F4C00E340E8 /* Har_Ki_Pauri_to_Dakshdweep_Parking.geojson in Resources */ = {isa = PBXBuildFile; fileRef = BDFDF27026189F4C00E340E8 /* Har_Ki_Pauri_to_Dakshdweep_Parking.geojson */; };
+		BDFDF27726189F4C00E340E8 /* Har_Ki_Pauri_to_Saptrishi_Ashram_Parking.geojson in Resources */ = {isa = PBXBuildFile; fileRef = BDFDF27126189F4C00E340E8 /* Har_Ki_Pauri_to_Saptrishi_Ashram_Parking.geojson */; };
+		BDFDF27826189F4C00E340E8 /* Har_Ki_Pauri_to_Gaurishankar_Parking.geojson in Resources */ = {isa = PBXBuildFile; fileRef = BDFDF27226189F4C00E340E8 /* Har_Ki_Pauri_to_Gaurishankar_Parking.geojson */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -292,6 +298,12 @@
 		BDD3FF0D26028B2600D1F80B /* CarParkMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParkMapViewController.swift; sourceTree = "<group>"; };
 		BDF9A8EB2600DF190084C9ED /* MapTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTrackerViewController.swift; sourceTree = "<group>"; };
 		BDF9A8FD2600E79E0084C9ED /* AddTrackerPersonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTrackerPersonVC.swift; sourceTree = "<group>"; };
+		BDFDF26D26189F4C00E340E8 /* Har_Ki_Pauri_to_Motichur_ISBT_Parking.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Har_Ki_Pauri_to_Motichur_ISBT_Parking.geojson; sourceTree = "<group>"; };
+		BDFDF26E26189F4C00E340E8 /* Har_Ki_Pauri_to_Sector_1_BHEL_Parking.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Har_Ki_Pauri_to_Sector_1_BHEL_Parking.geojson; sourceTree = "<group>"; };
+		BDFDF26F26189F4C00E340E8 /* Har_Ki_Pauri_to_Jwalapur_Railway_Station_Haridwar.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Har_Ki_Pauri_to_Jwalapur_Railway_Station_Haridwar.geojson; sourceTree = "<group>"; };
+		BDFDF27026189F4C00E340E8 /* Har_Ki_Pauri_to_Dakshdweep_Parking.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Har_Ki_Pauri_to_Dakshdweep_Parking.geojson; sourceTree = "<group>"; };
+		BDFDF27126189F4C00E340E8 /* Har_Ki_Pauri_to_Saptrishi_Ashram_Parking.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Har_Ki_Pauri_to_Saptrishi_Ashram_Parking.geojson; sourceTree = "<group>"; };
+		BDFDF27226189F4C00E340E8 /* Har_Ki_Pauri_to_Gaurishankar_Parking.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Har_Ki_Pauri_to_Gaurishankar_Parking.geojson; sourceTree = "<group>"; };
 		CADF5A38B156B6C290209EA4 /* Pods-KumbhdwarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KumbhdwarTests.debug.xcconfig"; path = "Target Support Files/Pods-KumbhdwarTests/Pods-KumbhdwarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC5894F6C2C26F927EC462C0 /* Pods_Kumbhdwar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kumbhdwar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8467EBD4E5E669210075A0 /* Pods-KumbhdwarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KumbhdwarTests.release.xcconfig"; path = "Target Support Files/Pods-KumbhdwarTests/Pods-KumbhdwarTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -451,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				BDD300C42603CDDF00D1F80B /* kumbh_facilities.kmz */,
+				BDFDF26C26189F4C00E340E8 /* JeoJson */,
 				BD5DB58A25FBF1B000A46CD8 /* Extensions */,
 				BD5DB52C25FBF0EA00A46CD8 /* Externals */,
 				BD5DB51325FBEE8700A46CD8 /* Manager */,
@@ -681,6 +694,19 @@
 			path = UserManager;
 			sourceTree = "<group>";
 		};
+		BDFDF26C26189F4C00E340E8 /* JeoJson */ = {
+			isa = PBXGroup;
+			children = (
+				BDFDF26D26189F4C00E340E8 /* Har_Ki_Pauri_to_Motichur_ISBT_Parking.geojson */,
+				BDFDF26E26189F4C00E340E8 /* Har_Ki_Pauri_to_Sector_1_BHEL_Parking.geojson */,
+				BDFDF26F26189F4C00E340E8 /* Har_Ki_Pauri_to_Jwalapur_Railway_Station_Haridwar.geojson */,
+				BDFDF27026189F4C00E340E8 /* Har_Ki_Pauri_to_Dakshdweep_Parking.geojson */,
+				BDFDF27126189F4C00E340E8 /* Har_Ki_Pauri_to_Saptrishi_Ashram_Parking.geojson */,
+				BDFDF27226189F4C00E340E8 /* Har_Ki_Pauri_to_Gaurishankar_Parking.geojson */,
+			);
+			path = JeoJson;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -795,11 +821,17 @@
 				BD5DB4DF25FBE97400A46CD8 /* LaunchScreen.storyboard in Resources */,
 				4611321D261640030043E099 /* TermsofUse.docx in Resources */,
 				BDD300C52603CDE000D1F80B /* kumbh_facilities.kmz in Resources */,
+				BDFDF27826189F4C00E340E8 /* Har_Ki_Pauri_to_Gaurishankar_Parking.geojson in Resources */,
 				BD5DB4DC25FBE97400A46CD8 /* Assets.xcassets in Resources */,
+				BDFDF27626189F4C00E340E8 /* Har_Ki_Pauri_to_Dakshdweep_Parking.geojson in Resources */,
 				468FD62C26105F410065338B /* Staff.storyboard in Resources */,
 				BD5DB4DA25FBE96E00A46CD8 /* Main.storyboard in Resources */,
 				466476A2260BEB2F006AC634 /* writeuptemple.docx in Resources */,
+				BDFDF27526189F4C00E340E8 /* Har_Ki_Pauri_to_Jwalapur_Railway_Station_Haridwar.geojson in Resources */,
+				BDFDF27726189F4C00E340E8 /* Har_Ki_Pauri_to_Saptrishi_Ashram_Parking.geojson in Resources */,
 				468FD61C26105F3B0065338B /* Dashboard.storyboard in Resources */,
+				BDFDF27326189F4C00E340E8 /* Har_Ki_Pauri_to_Motichur_ISBT_Parking.geojson in Resources */,
+				BDFDF27426189F4C00E340E8 /* Har_Ki_Pauri_to_Sector_1_BHEL_Parking.geojson in Resources */,
 				4664769D260BEB26006AC634 /* introductionhindi.docx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

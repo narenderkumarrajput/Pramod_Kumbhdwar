@@ -15,11 +15,11 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var phoneTxtFild: UITextField!
     @IBOutlet weak var nameTxtFild: UITextField!
     @IBOutlet weak var passwordTxtFild: UITextField!
-    @IBOutlet weak var vehicleNoTxtFild: UITextField!
-    @IBOutlet weak var epassTxtFild: UITextField!
-    @IBOutlet weak var selectDateTxtFild: UITextField!
-    @IBOutlet weak var modeOfComBtn: UIButton!
-    @IBOutlet weak var placeBtn: UIButton!
+    //@IBOutlet weak var vehicleNoTxtFild: UITextField!
+    //@IBOutlet weak var epassTxtFild: UITextField!
+    //@IBOutlet weak var selectDateTxtFild: UITextField!
+    //@IBOutlet weak var modeOfComBtn: UIButton!
+    //@IBOutlet weak var placeBtn: UIButton!
     @IBOutlet weak var otpTxtFild: UITextField!
     @IBOutlet weak var changeIconButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
@@ -61,7 +61,7 @@ class RegisterViewController: UIViewController {
         self.showDatePicker()
         
         // The view to which the drop down will appear on
-        dropDown.anchorView = self.modeOfComBtn // UIView or UIBarButtonItem
+        // dropDown.anchorView = self.modeOfComBtn // UIView or UIBarButtonItem
         // The list of items to display. Can be changed dynamically
         //dropDown.dataSource = [selectModeString, "TRAIN", "BUS", "TAXI", "PERSONAL VEHICLE"]
         let mode = ModeOfComm()
@@ -69,7 +69,7 @@ class RegisterViewController: UIViewController {
         mode.MOCDId =  0
         mode.ModeOfCummute = selectModeString
         self.modeOfCommArray.append(mode)
-        self.placeBtn.setTitle(self.selectPlaceString, for: .normal)
+        // self.placeBtn.setTitle(self.selectPlaceString, for: .normal)
 
     }
     
@@ -87,11 +87,11 @@ class RegisterViewController: UIViewController {
         phoneTxtFild.text = ""
         nameTxtFild.text = ""
         passwordTxtFild.text = ""
-        vehicleNoTxtFild.text = ""
-        epassTxtFild.text = ""
-        selectDateTxtFild.text = ""
-        modeOfComBtn.setTitle(selectModeString, for: .normal)
-        placeBtn.setTitle(self.selectPlaceString, for: .normal)
+        //vehicleNoTxtFild.text = ""
+        //epassTxtFild.text = ""
+        //selectDateTxtFild.text = ""
+        //modeOfComBtn.setTitle(selectModeString, for: .normal)
+        //placeBtn.setTitle(self.selectPlaceString, for: .normal)
         otpTxtFild.text = ""
     }
     
@@ -124,14 +124,14 @@ class RegisterViewController: UIViewController {
 
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         
-        selectDateTxtFild.inputAccessoryView = toolbar
-        selectDateTxtFild.inputView = datePicker
+        //selectDateTxtFild.inputAccessoryView = toolbar
+        //selectDateTxtFild.inputView = datePicker
     }
     
      @objc func donedatePicker() {
       let formatter = DateFormatter()
       formatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSS"
-      selectDateTxtFild.text = formatter.string(from: datePicker.date)
+      //selectDateTxtFild.text = formatter.string(from: datePicker.date)
       self.view.endEditing(true)
     }
 
@@ -175,7 +175,7 @@ class RegisterViewController: UIViewController {
           print("Selected item: \(item) at index: \(index)")
             let obj = self.modeOfCommArray[index]
             self.selectModeOfComm = (obj.MOCDId, obj.ModeOfCummute)
-            self.modeOfComBtn.setTitle(item, for: .normal)
+            //self.modeOfComBtn.setTitle(item, for: .normal)
             
             self.self.dropDown.hide()
         }
@@ -234,17 +234,17 @@ class RegisterViewController: UIViewController {
         }
         param["Pwd"] = password as AnyObject?
         
-        param["VehicleNo"] = "" as AnyObject?
-        if vehicleNoTxtFild.text?.count ?? 0 > 0 {
-            param["VehicleNo"] = vehicleNoTxtFild.text as AnyObject?
-        }
+        //param["VehicleNo"] = "" as AnyObject?
+        //if vehicleNoTxtFild.text?.count ?? 0 > 0 {
+        //    param["VehicleNo"] = vehicleNoTxtFild.text as AnyObject?
+        //}
         
-        param["EPassNo"] = "" as AnyObject?
-        param["HasEPass"] = 0 as AnyObject?
-        if epassTxtFild.text?.count ?? 0 > 0 {
-            param["EPassNo"] = epassTxtFild.text as AnyObject?
-            param["HasEPass"] = 1 as AnyObject?
-        }
+        //param["EPassNo"] = "" as AnyObject?
+        //param["HasEPass"] = 0 as AnyObject?
+        //if epassTxtFild.text?.count ?? 0 > 0 {
+        //    param["EPassNo"] = epassTxtFild.text as AnyObject?
+        //    param["HasEPass"] = 1 as AnyObject?
+        //}
         /*
         "DateOfVisit":"2021-03-27T11:28:42",
         "ModeOfCommuteId":"1",
@@ -255,27 +255,27 @@ class RegisterViewController: UIViewController {
         "HasOtp":1,
          */
         
-        let date = selectDateTxtFild.text?.trimmed()
-        if !(date != nil && (date!.count) > 5) {
-            self.showAlertWithOk(title: "Info", message: "Please select date")
-            return
-        }
-        param["DateOfVisit"] = selectDateTxtFild.text as AnyObject?
+        //let date = selectDateTxtFild.text?.trimmed()
+        //if !(date != nil && (date!.count) > 5) {
+        //    self.showAlertWithOk(title: "Info", message: "Please select date")
+        //    return
+        //}
+        //param["DateOfVisit"] = selectDateTxtFild.text as AnyObject?
         
-        if self.selectModeOfComm.0 == 0 {
-            self.showAlertWithOk(title: "Info", message: "Please select mode of commute")
-            return
-        }
-        param["ModeOfCommuteId"] = String(self.selectModeOfComm.0) as AnyObject
+        //if self.selectModeOfComm.0 == 0 {
+        //    self.showAlertWithOk(title: "Info", message: "Please select mode of commute")
+        //    return
+        //}
+        //param["ModeOfCommuteId"] = String(self.selectModeOfComm.0) as AnyObject
         
-        let place = placeBtn.titleLabel?.text
-        if place == selectPlaceString {
-            self.showAlertWithOk(title: "Info", message: "Please select a place")
-            return
-        }
-        param["Location"] = place as AnyObject
-        param["Lat"] = String(latLong.0) as AnyObject
-        param["Lng"] = String(latLong.1) as AnyObject
+        //let place = placeBtn.titleLabel?.text
+        //if place == selectPlaceString {
+        //    self.showAlertWithOk(title: "Info", message: "Please select a place")
+        //    return
+        //}
+        //param["Location"] = place as AnyObject
+        //param["Lat"] = String(latLong.0) as AnyObject
+        //param["Lng"] = String(latLong.1) as AnyObject
         
         param["HasOtp"] = 0 as AnyObject
         param["Otp"] = "" as AnyObject
@@ -305,7 +305,7 @@ extension RegisterViewController: GMSAutocompleteViewControllerDelegate {
     print("Place attributions: \(place.attributions)")
     
     latLong = (place.coordinate.latitude, place.coordinate.longitude)
-    self.placeBtn.setTitle(("\(place.name ?? place.formattedAddress ?? self.selectPlaceString)"), for: .normal)
+    //self.placeBtn.setTitle(("\(place.name ?? place.formattedAddress ?? self.selectPlaceString)"), for: .normal)
     
     dismiss(animated: true, completion: nil)
   }
@@ -318,7 +318,7 @@ extension RegisterViewController: GMSAutocompleteViewControllerDelegate {
   // User canceled the operation.
   func wasCancelled(_ viewController: GMSAutocompleteViewController) {
     dismiss(animated: true, completion: nil)
-    self.placeBtn.setTitle(self.selectPlaceString, for: .normal)
+    //self.placeBtn.setTitle(self.selectPlaceString, for: .normal)
   }
 
   // Turn the network activity indicator on and off again.

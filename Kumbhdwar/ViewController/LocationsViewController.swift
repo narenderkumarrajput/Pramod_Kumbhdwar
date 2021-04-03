@@ -19,7 +19,7 @@ class LocationsViewController: UIViewController {
     //var polygonView : GMSPolygon!
     //var polygonCoordinatePoints : [CLLocationCoordinate2D] = []
     @IBOutlet weak var mapView: GMSMapView!
-    
+    @IBOutlet weak var tblView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +35,8 @@ class LocationsViewController: UIViewController {
         button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         let barButton = UIBarButtonItem(customView: button)
         self.navigationItem.leftBarButtonItems = [barButton]
+        
+        self.tblView.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +54,11 @@ class LocationsViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    func showMamberList() {
+        self.tblView.dataSource = self
+        self.tblView.delegate = self
+    }
+    
     func parseKm1ToMap() {
         
         let path = Bundle.main.path(forResource: kmlFileName, ofType: kmlFileType)
@@ -67,9 +74,22 @@ class LocationsViewController: UIViewController {
     
 
     }
-
-
 }
+
+extension LocationsViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    
+}
+
+
 /*
 func parseKmlToMap() { // THE PATH TO THE KML FILE IN XCODE PROJECT
  let path = Bundle.main.path(forResource: kmlFileName, ofType: kmlFileType) // CONVERTING THE PATH TO URL
