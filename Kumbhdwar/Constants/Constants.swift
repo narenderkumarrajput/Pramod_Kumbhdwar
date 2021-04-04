@@ -84,6 +84,7 @@ struct Constants {
         static let spGetMyLeave = Constants.APIServices.apiURL("UserTask/spGetMyLeave")
         static let pushBiometricData = Constants.APIServices.apiURL("Employee/PushBiometricData")
         static let requestLeave = Constants.APIServices.apiURL("UserTask/RequestLeaveByLoginId")
+        static let sosPushService = Constants.APIServices.apiURL("KumbhApp/PushSOSInfo")
         static func apiURL(_ methodName: String) -> String {
             return BaseUrl + methodName
         }

@@ -169,8 +169,7 @@ class DashboardVC: UIViewController {
         }
     }
     @IBAction func sosButtonTapped(_ sender: Any) {
-        self.showSOS()
-        
+        self.showSOSService()
     }
     
     
@@ -505,5 +504,16 @@ extension DashboardVC {
             mapVC.drawExitPlan()
         }
         self.navigationController?.pushViewController(mapVC, animated: true)
+    }
+    
+    private func showSOSService() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        var nearMeVC = SOSDashboardViewController()
+        if #available(iOS 13.0, *) {
+            nearMeVC = (sb.instantiateViewController(identifier: "SOSDashboardViewController") as? SOSDashboardViewController)!
+        } else {
+            nearMeVC = sb.instantiateViewController(withIdentifier: "SOSDashboardViewController") as! SOSDashboardViewController
+        }
+        self.navigationController?.pushViewController(nearMeVC, animated: true)
     }
 }

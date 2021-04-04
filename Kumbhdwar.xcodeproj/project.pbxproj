@@ -141,6 +141,7 @@
 		BDFDF27626189F4C00E340E8 /* Har_Ki_Pauri_to_Dakshdweep_Parking.geojson in Resources */ = {isa = PBXBuildFile; fileRef = BDFDF27026189F4C00E340E8 /* Har_Ki_Pauri_to_Dakshdweep_Parking.geojson */; };
 		BDFDF27726189F4C00E340E8 /* Har_Ki_Pauri_to_Saptrishi_Ashram_Parking.geojson in Resources */ = {isa = PBXBuildFile; fileRef = BDFDF27126189F4C00E340E8 /* Har_Ki_Pauri_to_Saptrishi_Ashram_Parking.geojson */; };
 		BDFDF27826189F4C00E340E8 /* Har_Ki_Pauri_to_Gaurishankar_Parking.geojson in Resources */ = {isa = PBXBuildFile; fileRef = BDFDF27226189F4C00E340E8 /* Har_Ki_Pauri_to_Gaurishankar_Parking.geojson */; };
+		BDFDF27D2619969200E340E8 /* SOSDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFDF27C2619969200E340E8 /* SOSDashboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -304,6 +305,7 @@
 		BDFDF27026189F4C00E340E8 /* Har_Ki_Pauri_to_Dakshdweep_Parking.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Har_Ki_Pauri_to_Dakshdweep_Parking.geojson; sourceTree = "<group>"; };
 		BDFDF27126189F4C00E340E8 /* Har_Ki_Pauri_to_Saptrishi_Ashram_Parking.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Har_Ki_Pauri_to_Saptrishi_Ashram_Parking.geojson; sourceTree = "<group>"; };
 		BDFDF27226189F4C00E340E8 /* Har_Ki_Pauri_to_Gaurishankar_Parking.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Har_Ki_Pauri_to_Gaurishankar_Parking.geojson; sourceTree = "<group>"; };
+		BDFDF27C2619969200E340E8 /* SOSDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSDashboardViewController.swift; sourceTree = "<group>"; };
 		CADF5A38B156B6C290209EA4 /* Pods-KumbhdwarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KumbhdwarTests.debug.xcconfig"; path = "Target Support Files/Pods-KumbhdwarTests/Pods-KumbhdwarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC5894F6C2C26F927EC462C0 /* Pods_Kumbhdwar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kumbhdwar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8467EBD4E5E669210075A0 /* Pods-KumbhdwarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KumbhdwarTests.release.xcconfig"; path = "Target Support Files/Pods-KumbhdwarTests/Pods-KumbhdwarTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 				BDD300BF2603CDAB00D1F80B /* LocationsViewController.swift */,
 				BDD300EE2603DBAE00D1F80B /* AddJourneyRegViewController.swift */,
 				BD3748E52613A00400A7C052 /* JourneyPlannerMapViewController.swift */,
+				BDFDF27C2619969200E340E8 /* SOSDashboardViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -997,6 +1000,7 @@
 				BD5DB56E25FBF11100A46CD8 /* UILayoutSupport+Extensions.swift in Sources */,
 				BD5DB58325FBF11200A46CD8 /* NotificationBannerUtilities.swift in Sources */,
 				BD5DB4D725FBE96E00A46CD8 /* ViewController.swift in Sources */,
+				BDFDF27D2619969200E340E8 /* SOSDashboardViewController.swift in Sources */,
 				468FD63226105F410065338B /* StaffVC.swift in Sources */,
 				BD5DB4D325FBE96E00A46CD8 /* AppDelegate.swift in Sources */,
 				468FD62D26105F410065338B /* AttendanceCell.swift in Sources */,

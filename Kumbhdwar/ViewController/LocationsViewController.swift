@@ -100,7 +100,7 @@ class LocationsViewController: UIViewController {
 
             let marker = GMSMarker(position: latLng)
             marker.icon = GMSMarker.markerImage(with: UIColor.red)
-            marker.title = user?["Name"] as? String
+            marker.title = user?["ContactNo"] as? String
             marker.map = mapView
             mapView.selectedMarker = marker
 

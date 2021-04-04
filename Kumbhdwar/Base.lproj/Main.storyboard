@@ -2908,6 +2908,58 @@
             </objects>
             <point key="canvasLocation" x="1922" y="775"/>
         </scene>
+        <!--SOSDashboardViewController-->
+        <scene sceneID="DI0-Nh-qoc">
+            <objects>
+                <viewController storyboardIdentifier="SOSDashboardViewController" title="SOSDashboardViewController" id="BQC-KU-eeR" customClass="SOSDashboardViewController" customModule="Kumbhdwar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZUu-AF-DHx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHa-kg-jad" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJk-Xo-BvI">
+                                <rect key="frame" x="132" y="822" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.8524614573" green="0.30056777600000001" blue="0.1410931051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9zx-Xq-i2Q"/>
+                                    <constraint firstAttribute="width" constant="150" id="xRc-zZ-zad"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Use Emergency SOS"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sosAction:" destination="BQC-KU-eeR" eventType="touchUpInside" id="NpE-sb-3Rj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c7W-Bc-g25"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qHa-kg-jad" firstAttribute="top" secondItem="c7W-Bc-g25" secondAttribute="top" id="7iv-YP-3C5"/>
+                            <constraint firstItem="c7W-Bc-g25" firstAttribute="trailing" secondItem="qHa-kg-jad" secondAttribute="trailing" id="XnY-ZT-T3z"/>
+                            <constraint firstItem="AJk-Xo-BvI" firstAttribute="centerX" secondItem="ZUu-AF-DHx" secondAttribute="centerX" id="ahS-zV-51g"/>
+                            <constraint firstItem="c7W-Bc-g25" firstAttribute="bottom" secondItem="AJk-Xo-BvI" secondAttribute="bottom" id="h2r-jL-XJS"/>
+                            <constraint firstItem="qHa-kg-jad" firstAttribute="leading" secondItem="c7W-Bc-g25" secondAttribute="leading" id="kwH-m5-C5m"/>
+                            <constraint firstItem="c7W-Bc-g25" firstAttribute="bottom" secondItem="qHa-kg-jad" secondAttribute="bottom" id="qre-3Z-Hpl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="qHa-kg-jad" id="iDE-7I-UEM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kyD-ry-bOb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1922" y="2169"/>
+        </scene>
         <!--JourneyPlannerMapViewController-->
         <scene sceneID="V2p-Y1-bhR">
             <objects>
