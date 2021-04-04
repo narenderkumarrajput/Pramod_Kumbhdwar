@@ -167,8 +167,7 @@ class DashboardVC: UIViewController {
         }
     }
     @IBAction func sosButtonTapped(_ sender: Any) {
-        self.showSOS()
-        
+        self.showSOSService()
     }
     
     
@@ -357,6 +356,8 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             nearMe()
         case 12:
             showSOS()
+        case 13:
+            showExitPlan()
         case 15:
             guard let officailNo = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.officialNo) as? OfficialNoVC else { return }
             self.navigationController?.pushViewController(officailNo, animated: true)
@@ -503,6 +504,33 @@ extension DashboardVC {
             nearMeVC = (sb.instantiateViewController(identifier: "AddJourneyRegViewController") as? AddJourneyRegViewController)!
         } else {
             nearMeVC = sb.instantiateViewController(withIdentifier: "AddJourneyRegViewController") as! AddJourneyRegViewController
+        }
+        self.navigationController?.pushViewController(nearMeVC, animated: true)
+    }
+    
+    private func showExitPlan() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        var mapVC = MapViewController()
+        if #available(iOS 13.0, *) {
+            mapVC = (sb.instantiateViewController(identifier: "MapViewController") as? MapViewController)!
+        } else {
+            mapVC = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        }
+        mapVC.isShowLocation = false
+        let seconds = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            mapVC.drawExitPlan()
+        }
+        self.navigationController?.pushViewController(mapVC, animated: true)
+    }
+    
+    private func showSOSService() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        var nearMeVC = SOSDashboardViewController()
+        if #available(iOS 13.0, *) {
+            nearMeVC = (sb.instantiateViewController(identifier: "SOSDashboardViewController") as? SOSDashboardViewController)!
+        } else {
+            nearMeVC = sb.instantiateViewController(withIdentifier: "SOSDashboardViewController") as! SOSDashboardViewController
         }
         self.navigationController?.pushViewController(nearMeVC, animated: true)
     }

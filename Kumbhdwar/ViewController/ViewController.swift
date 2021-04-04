@@ -121,7 +121,9 @@ extension ViewController {
                             guard let parkingVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.dashboardVC) as? DashboardVC else { return }
                             self.navigationController?.pushViewController(parkingVC, animated: true)
                         }
-                } else {
+                } else if (msg.containsIgnoringCase(find: "PASSWORD AND CONTACT NO DOES NOT MATCH")) {
+                    self.showAlertWithOk(title: "Info", message: "Password and contact no does not match")
+                }else {
                     self.showAlertWithOk(title: "Info", message: "There is some issue. Please try after some time")
                 }
             } else {

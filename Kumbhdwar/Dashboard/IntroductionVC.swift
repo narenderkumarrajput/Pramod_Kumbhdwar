@@ -30,7 +30,7 @@ class IntroductionVC: UIViewController {
         if index == 0 {
             loadText = "introductionhindi"
         } else {
-            loadText = "writeuptemple"
+            loadText = "holycityenglish"
         }
         if let filePath = Bundle.main.url(forResource: loadText, withExtension: "docx") {
             Utility.showLoaderWithTextMsg(text: "Loading...")
