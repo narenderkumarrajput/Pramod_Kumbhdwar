@@ -53,17 +53,20 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
         titleLabel.text = title?.uppercased()
 //        searchTextField.delegate = self
         switch title {
-        
         case KumbhdwarList.allCases[3].text:
+            searchView.isHidden = true
+            self.searchViewHeightConstraint.constant = 0
             dataSource = ["Search Ghat Type","HK Ghat","Kumbh Ghat"]
-        case KumbhdwarList.allCases[8].text:
+        case KumbhdwarList.allCases[7].text:
             self.searchView.isHidden = true
             self.searchViewHeightConstraint.constant = 0
             dataSource = ["Search Parking Type", "Kumbh ISBT Route", "Kumbh Parking"]
-        case KumbhdwarList.allCases[9].text:
+        case KumbhdwarList.allCases[8].text:
             dataSource = ["Search Facility Type", "Hospital", "Police Station", "Vending Zone","Toilet"]
-        case KumbhdwarList.allCases[10].text:
-            dataSource = ["Search Transport Type", "Isbt Parking", "Railway Station"]
+            self.searchLabel.text = dataSource[0]
+        case KumbhdwarList.allCases[9].text:
+            dataSource = ["Search Transport Type", "ISBT", "Railway Station"]
+            self.searchLabel.text = dataSource[0]
 
         default: break
         }
@@ -131,7 +134,7 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
           print("Selected item: \(item) at index: \(index)")
             self.searchLabel.text = item
             guard let currentLocation = self.currentLocation else { self.dropDown.hide(); return }
-            if title == KumbhdwarList.allCases[9].text {
+            if title == KumbhdwarList.allCases[8].text {
                 switch index {
                 case 0: getParkingDetails(location: currentLocation, amenityId: amenityTypeId);break
                 case 1: getParkingDetails(location: currentLocation, amenityId: "5");break
@@ -142,10 +145,11 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
                 default: break
                 }
             } else {
+                let arr = amenityTypeId.components(separatedBy: ",")
                 switch index {
                 case 0: getParkingDetails(location: currentLocation, amenityId: amenityTypeId);break
-                case 1: getParkingDetails(location: currentLocation, amenityId: String(amenityTypeId[0]));break
-                case 2: getParkingDetails(location: currentLocation, amenityId: String(amenityTypeId[2]));break
+                case 1: getParkingDetails(location: currentLocation, amenityId: arr[0]);break
+                case 2: getParkingDetails(location: currentLocation, amenityId: arr[1]);break
                 default: break
                 }
             }

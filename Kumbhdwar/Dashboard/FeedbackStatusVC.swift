@@ -19,8 +19,12 @@ class FeedbackStatusVC: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        getAllCategories()
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getAllCategories()
+
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

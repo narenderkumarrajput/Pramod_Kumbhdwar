@@ -15,18 +15,17 @@ import DropDown
 
 
 enum KumbhdwarList: CaseIterable {
-    case introduction,holyCityAttractions,Akhada, ghats, liveAarti, FriendsFamily, journeyPlanner, accommodation, parking, localFacilities, publicTransport, findMyCar, nearMe, SOSList, exitPlan, Feedback, OfficialNo
+    case introduction,holyCityAttractions,Akhadas, ghats, FriendsFamily, journeyPlanner, accommodation, parking, localFacilities, publicTransport, findMyCar, nearMe, SOSList, exitPlan, Feedback, OfficialNo
     
     var text: String {
         switch self {
         case .introduction: return "Introduction"
         case .holyCityAttractions: return "Holy City Attractions"
-        case .Akhada: return "Akhada"
+        case .Akhadas: return "Akhadas"
         case .ghats: return "Ghats"
-        case .liveAarti: return "Live Aarti"
-        case .FriendsFamily: return "Friends&Family"
-        case .journeyPlanner: return "Journey Planner"
-        case .accommodation: return "Accomodation"
+        case .FriendsFamily: return "Track Friends &Family"
+        case .journeyPlanner: return "Plan your Journey"
+        case .accommodation: return "Accommodation"
         case .parking: return "Parking"
         case .localFacilities: return "Local Facilities"
         case .publicTransport: return "Public Transport"
@@ -44,9 +43,8 @@ enum KumbhdwarList: CaseIterable {
         switch self {
         case .introduction: return #imageLiteral(resourceName: "introduction")
         case .holyCityAttractions: return #imageLiteral(resourceName: "attractions")
-        case .Akhada: return #imageLiteral(resourceName: "person")
+        case .Akhadas: return #imageLiteral(resourceName: "person")
         case .ghats: return #imageLiteral(resourceName: "ghat")
-        case .liveAarti: return #imageLiteral(resourceName: "aarti")
         case .FriendsFamily: return #imageLiteral(resourceName: "tracker")
         case .journeyPlanner: return #imageLiteral(resourceName: "journey_planner")
         case .accommodation: return #imageLiteral(resourceName: "booking")
@@ -82,10 +80,10 @@ class DashboardVC: UIViewController {
     let kumbhdwarImages = [#imageLiteral(resourceName: "one"), #imageLiteral(resourceName: "two"), #imageLiteral(resourceName: "three"), #imageLiteral(resourceName: "four"), #imageLiteral(resourceName: "five"), #imageLiteral(resourceName: "six"), #imageLiteral(resourceName: "seven")]
     var x = 1
     let loadUrls = [Constants.introductionUrl, Constants.attractionsUrl, Constants.howToReachUrl, Constants.accommodationUrl]
-    let amenityIds = ["2,4","6,8" ,"5,10,14,15,11", "6,11"]
+    let amenityIds = ["2,4","6,8" ,"5,10,14,15", "6,11"]
     let dropDown = DropDown()
     var locationManager = CLLocationManager()
-
+    let textsOnScrollImage = ["Kumbh Mela Haridwar 2021","Obtain a compulsory medical certificate from a competent authority prior to travelling", "Follow registration process before travelling.","Do not visit the Kumbh Mela if suffering from symptoms of COVID-19","Wear a mask at all times", "People above the age of 65 years, pregnant women, children below the age of 10 yearsand people with co-morbidities are advised not attend the Kumbh Mela", "Follow Covid Appropriate Behaviour" ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -261,6 +259,26 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             imageView.clipsToBounds = true
             cell.contentView.addSubview(imageView)
             imageView.round()
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: imageView.frame.width, height: imageView.frame.height))
+            view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+            imageView.addSubview(view)
+            var label = UILabel()
+            switch indexPath.item {
+            case 0,4,6:
+                label = UILabel(frame: CGRect(x: cell.contentView.frame.origin.x+10, y: imageView.frame.height - 60, width: cell.contentView.frame.width - 20, height:20))
+            case 1,2,3:
+                label = UILabel(frame: CGRect(x: cell.contentView.frame.origin.x+10, y: imageView.frame.height - 90, width: cell.contentView.frame.width - 20, height:45))
+            case 5:
+                label = UILabel(frame: CGRect(x: cell.contentView.frame.origin.x+10, y: imageView.frame.height - 120, width: cell.contentView.frame.width - 20, height:90))
+            default: break
+            }
+            label.numberOfLines = 0
+            label.textColor = .white
+            label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+            label.text = textsOnScrollImage[indexPath.item]
+//            label.backgroundColor = .cyan
+//            label.font = UIFont.systemFont(ofSize: 17)
+            cell.contentView.addSubview(label)
             cell.backgroundColor = .clear
             return cell
             
@@ -310,36 +328,36 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         case 2:
             guard let introVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.akhadaVC) as? AkhadaVC else { return }
             self.navigationController?.pushViewController(introVC, animated: true)
-        case 3,8,9,10:
+        case 3,7,8,9:
             guard let parkingVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.parkingVC) as? ParkingVC else { return }
             parkingVC.title = KumbhdwarList.allCases[indexPath.item].text
-                parkingVC.amenityTypeId =  indexPath.item == 3 ? amenityIds[0] : amenityIds[indexPath.item - 7]
+                parkingVC.amenityTypeId =  indexPath.item == 3 ? amenityIds[0] : amenityIds[indexPath.item - 6]
             self.navigationController?.pushViewController(parkingVC, animated: true)
             break
+//        case 4:
+//            successLabel(view: self.view, message: "Work in progress", completion: nil)
         case 4:
-            successLabel(view: self.view, message: "Work in progress", completion: nil)
-        case 5:
             guard let trackerList = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.trackerList) as? TrackerList else { return }
             self.navigationController?.pushViewController(trackerList, animated: true)
-        case 6:
+        case 5:
             guard let journeyPlannerVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.journeyPlannerVC) as? JourneyPlannerVC else { return }
             self.navigationController?.pushViewController(journeyPlannerVC, animated: true)
 
-        case 7:
+        case 6:
             guard let accommodationVC = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.accommodationVC) as? AccommodationVC else { return }
             self.navigationController?.pushViewController(accommodationVC, animated: true)
-        case 15:
+        case 14:
             guard let feedbackStatus = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.feedbackStatusVC) as? FeedbackStatusVC else { return }
             self.navigationController?.pushViewController(feedbackStatus, animated: true)
             break
             
-        case 11:
+        case 10:
             showCarPark()
-        case 12:
+        case 11:
             nearMe()
-        case 13:
+        case 12:
             showSOS()
-        case 16:
+        case 15:
             guard let officailNo = UIStoryboard(name: Constants.StroyboardFiles.dashboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIdentifiers.officialNo) as? OfficialNoVC else { return }
             self.navigationController?.pushViewController(officailNo, animated: true)
         default: return

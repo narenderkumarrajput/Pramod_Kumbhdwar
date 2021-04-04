@@ -54,7 +54,7 @@ class RaiseFeedbackVC: UIViewController {
     func setupDropDown() {
         dropDown.anchorView = self.selectCategoryButton // UIView or UIBarButtonItem
         // The list of items to display. Can be changed dynamically
-        dropDown.dataSource = ["Sekect Category","WASTE NOT COLLECTED"]
+        dropDown.dataSource = ["Select Category","TOILET CLEAN", "CHANGING ROOM", "SANITAION POINT"]
         dropDown.width = selectCategoryButton.frame.width - 80
         dropDown.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         DropDown.appearance().textColor = .black
@@ -101,22 +101,28 @@ class RaiseFeedbackVC: UIViewController {
     }
 
     @IBAction func attachPhotoTapped(_ sender: UIButton) {
+        #if targetEnvironment(simulator)
+        self.addedImage.image = #imageLiteral(resourceName: "iTunesArtwork")
+        selectedImage = #imageLiteral(resourceName: "iTunesArtwork")
+        #else
         let vc = UIImagePickerController()
         vc.sourceType = .camera
         vc.allowsEditing = true
         vc.delegate = self
         present(vc, animated: true)
+        #endif
+        
     }
     
     private func addComplaint() {
-        
+        guard let contactNo = UserManager.shared.activeUser.CNO else { successLabel(view: self.view, message: "Something is wrong with your contact number", completion: nil); return }
         if selectedIndex == 0 {
             successLabel(view: self.view, message: "Please Select Category", completion: nil); return
         }
         if descriptionextView.textColor == UIColor.gray {
             successLabel(view: self.view, message: "Please enter remark", completion: nil); return
         }
-//        guard let image = selectedImage else {successLabel(view: view, message: "Please enter remark", completion: nil); return }
+        guard let image = selectedImage else {successLabel(view: view, message: "Please add Photo", completion: nil); return }
         
         let headers = ["Authorization":"Basic cGF0bmE6cGF0bmEjMjAyMA=="] as [String:String]
         
@@ -126,15 +132,14 @@ class RaiseFeedbackVC: UIViewController {
         
         let jsonDictionary = [
             "Complaint": descriptionextView.text ?? "" ,
-            "CategoryId":"1",
+            "CategoryId": "\(selectedIndex)",
             "Lat": latitude.count > 0 ? latitude : "0",
             "Lng":longitude.count > 0 ? longitude : "0",
-            "ContactNo":"9990802194",
+            "ContactNo": contactNo,
             "UHouseId":""
         ] as [String: Any]
         let parameters = ["Input": jsonToString(json: jsonDictionary)]
         let urlString = Constants.APIServices.addComplaint
-        let image = #imageLiteral(resourceName: "contact_us")
         let imageData = image.jpegData(compressionQuality: 0.50) ?? Data()
 
         

@@ -17,7 +17,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>tel</string>
@@ -33,11 +33,11 @@
 	<key>NSCameraUsageDescription</key>
 	<string>App would like to access your camera for photo upload. It is secure and private.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>your location will be used to place area</string>
+	<string>This app is uses  the location for drawing the route on map and also use the current location of user.showing the location of key points like public transport in haridwar.</string>
 	<key>NSLocationUsageDescription</key>
-	<string>your location will be used to place area - Privacy - Location When In Use Usage Description</string>
+	<string>This app is uses  the location for drawing the route on map and also use the current location of user.showing the location of key points like public transport in haridwar.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>your location will be used to place area - Privacy - Location When In Use Usage Description</string>
+	<string>This app is uses  the location for drawing the route on map and also use the current location of user.showing the location of key points like public transport in haridwar.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>App would like to access your photo gallery for photo upload. It is secure and private.</string>
 	<key>UIBackgroundModes</key>
@@ -67,5 +67,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>
