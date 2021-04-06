@@ -48,6 +48,7 @@
 		46EC4BBD261064D700A74ADB /* OfficialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EC4BBC261064D700A74ADB /* OfficialCell.swift */; };
 		56E9C985AB0ED6AD945FFEC0 /* Pods_Kumbhdwar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5894F6C2C26F927EC462C0 /* Pods_Kumbhdwar.framework */; };
 		64528E205D04DE0549FF96C8 /* Pods_Kumbhdwar_KumbhdwarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F809761F78E4D877BAFF72DC /* Pods_Kumbhdwar_KumbhdwarUITests.framework */; };
+		BD2AC3AE261CE9A800A66202 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD2AC3B0261CE9A800A66202 /* Localizable.strings */; };
 		BD2FDED8260143230009186A /* SOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FDED7260143230009186A /* SOSViewController.swift */; };
 		BD2FDEDD26014B0B0009186A /* NearMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FDEDC26014B0A0009186A /* NearMeViewController.swift */; };
 		BD3748E62613A00400A7C052 /* JourneyPlannerMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3748E52613A00400A7C052 /* JourneyPlannerMapViewController.swift */; };
@@ -206,6 +207,8 @@
 		746680A4C3BC623E190A596D /* Pods-Kumbhdwar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kumbhdwar.release.xcconfig"; path = "Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar.release.xcconfig"; sourceTree = "<group>"; };
 		9C2FA8E33328955094861945 /* Pods-Kumbhdwar-KumbhdwarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kumbhdwar-KumbhdwarUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6D87C437076CE3D98B72B92 /* Pods_KumbhdwarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KumbhdwarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD2AC3AF261CE9A800A66202 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BD2AC3B1261CEAC300A66202 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BD2FDED7260143230009186A /* SOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSViewController.swift; sourceTree = "<group>"; };
 		BD2FDEDC26014B0A0009186A /* NearMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeViewController.swift; sourceTree = "<group>"; };
 		BD3748E52613A00400A7C052 /* JourneyPlannerMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyPlannerMapViewController.swift; sourceTree = "<group>"; };
@@ -482,6 +485,7 @@
 				BD5DB4DB25FBE97400A46CD8 /* Assets.xcassets */,
 				BD5DB4DD25FBE97400A46CD8 /* LaunchScreen.storyboard */,
 				BD5DB4E025FBE97400A46CD8 /* Info.plist */,
+				BD2AC3B0261CE9A800A66202 /* Localizable.strings */,
 			);
 			path = Kumbhdwar;
 			sourceTree = "<group>";
@@ -806,6 +810,7 @@
 			knownRegions = (
 				en,
 				Base,
+				hi,
 			);
 			mainGroup = BD5DB4C625FBE96E00A46CD8;
 			productRefGroup = BD5DB4D025FBE96E00A46CD8 /* Products */;
@@ -824,6 +829,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD2AC3AE261CE9A800A66202 /* Localizable.strings in Resources */,
 				BD5DB4DF25FBE97400A46CD8 /* LaunchScreen.storyboard in Resources */,
 				4611321D261640030043E099 /* TermsofUse.docx in Resources */,
 				BDD300C52603CDE000D1F80B /* kumbh_facilities.kmz in Resources */,
@@ -1151,6 +1157,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		BD2AC3B0261CE9A800A66202 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD2AC3AF261CE9A800A66202 /* en */,
+				BD2AC3B1261CEAC300A66202 /* hi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		BD5DB4D825FBE96E00A46CD8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1174,6 +1189,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1234,6 +1250,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
