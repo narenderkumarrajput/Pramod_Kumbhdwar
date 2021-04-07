@@ -20,6 +20,8 @@ target 'Kumbhdwar' do
   
   pod 'DropDown', '2.3.13'
   pod 'Google-Maps-iOS-Utils'
+  
+  pod 'Localize-Swift'
 
   target 'KumbhdwarTests' do
     inherit! :search_paths

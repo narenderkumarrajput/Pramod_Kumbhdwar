@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class ViewController: UIViewController {
     
@@ -16,11 +17,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTxtFild: UITextField!
     @IBOutlet weak var visitorBtn: CheckBox!
     @IBOutlet weak var staffBtn: CheckBox!
+    @IBOutlet weak var englishBtn: CheckBox!
+    @IBOutlet weak var hindiBtn: CheckBox!
     private var userType = "VISITOR"
     private var iconClick = true
     private var hasPwd = 0
-    
 
+    //Lang 1
+    let availableLanguages = Localize.availableLanguages()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -32,6 +37,16 @@ class ViewController: UIViewController {
         self.passwordBgView.backgroundColor = UIColor.white
         
         self.visitorBtn.isChecked = true
+        self.englishBtn.isChecked = true
+        
+        self.setTextOnView()
+        UserDefaults.standard.setValue("es", forKey: "Lang")
+        
+        for language in availableLanguages {
+            print(language)
+        }
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +62,11 @@ class ViewController: UIViewController {
         button.addTarget(self, action: #selector(self.showPassword), for: .touchUpInside)
         textField.rightView = button
         textField.rightViewMode = .always
+    }
+    
+    private func setTextOnView() {
+        self.visitorBtn.setTitle("Visitor".localized(), for: .normal)
+        self.staffBtn.setTitle("Staff".localized(), for: .normal)
     }
     
     @IBAction func showPassword(_ sender: Any) {
@@ -84,6 +104,22 @@ class ViewController: UIViewController {
     @IBAction func staffAction(_ sender: CheckBox) {
         self.visitorBtn.isChecked = false
         self.userType = "STAFF"
+    }
+    
+    @IBAction func englishAction(_ sender: CheckBox) {
+        self.hindiBtn.isChecked = false
+        UserDefaults.standard.setValue("es", forKey: "Lang")
+        //Lang 2
+        Localize.setCurrentLanguage("en")
+        self.setTextOnView()
+    }
+    
+    @IBAction func hindiAction(_ sender: CheckBox) {
+        self.englishBtn.isChecked = false
+        UserDefaults.standard.setValue("hi", forKey: "Lang")
+        //Lang 2
+        Localize.setCurrentLanguage("hi")
+        self.setTextOnView()
     }
     
 }

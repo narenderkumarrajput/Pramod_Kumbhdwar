@@ -8,6 +8,9 @@
 
 
 "Kumbhdwar" = "Kumbhdwar";
+"Visitor" = "Visitor";
+"Staff" = "Staff";
+
 "Open navigation drawer" = "Open navigation drawer";
 "Close navigation drawer" = "Close navigation drawer";
 "Android Studio" = "Android Studio";
@@ -46,9 +49,9 @@
 
 "Click the SUBSCRIBE TO WEATHER button below to subscribe to the weather topic. Messages sent to the weather topic will be received. The LOG TOKEN button logs the FCM registration token to logcat." = "Click the SUBSCRIBE TO WEATHER button below to subscribe to the weather topic. Messages sent to the weather topic will be received. The LOG TOKEN button logs the FCM registration token to logcat.";
 
-"Subscribe To Weather" = "Subscribe To Weather"
-"Log Token" = "Log Token"
-"Subscribed to weather topic" = "Subscribed to weather topic"
+"Subscribe To Weather" = "Subscribe To Weather";
+"Log Token" = "Log Token";
+"Subscribed to weather topic" = "Subscribed to weather topic";
 
 "Failed to subscribe to weather topic" = "Failed to subscribe to weather topic";
 "Message" = "Message";
@@ -142,8 +145,6 @@
 "longtKey" = "longtKey";
 "imeiKey" = "imeiKey";
 "Distance :" = "Distance :";
-"Visitor" = "Visitor";
-"Staff" = "Staff";
 "Please Select Login Type" = "Please Select Login Type";
 "Mark Attendance" = "Mark Attendance";
 "Contact No :" = "Contact No :";

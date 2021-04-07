@@ -28,6 +28,52 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" red="0.88377827409999998" green="0.3477009237" blue="0.18031793830000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTs-Wm-Fps">
+                                <rect key="frame" x="87" y="405" width="240" height="54"/>
+                                <subviews>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjt-XW-G9A" customClass="CheckBox" customModule="Kumbhdwar" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="7" width="90" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="H9T-Od-Obh"/>
+                                            <constraint firstAttribute="height" constant="40" id="zKx-yq-MrD"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="English">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="englishAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4mj-CX-Gtd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJg-V0-29a" customClass="CheckBox" customModule="Kumbhdwar" customModuleProvider="target">
+                                        <rect key="frame" x="144" y="7" width="76" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Gez-Om-vG1"/>
+                                            <constraint firstAttribute="width" constant="76" id="N5M-3q-Kyb"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="हिन्दी">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="hindiAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e4y-jD-8Ka"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dJg-V0-29a" secondAttribute="trailing" constant="20" symbolic="YES" id="2Wr-F0-iU2"/>
+                                    <constraint firstItem="Cjt-XW-G9A" firstAttribute="centerY" secondItem="PTs-Wm-Fps" secondAttribute="centerY" id="7pY-gU-dzb"/>
+                                    <constraint firstAttribute="height" constant="54" id="Dj4-aY-DcE"/>
+                                    <constraint firstItem="dJg-V0-29a" firstAttribute="centerY" secondItem="PTs-Wm-Fps" secondAttribute="centerY" id="GdL-K9-NRM"/>
+                                    <constraint firstItem="Cjt-XW-G9A" firstAttribute="leading" secondItem="PTs-Wm-Fps" secondAttribute="leading" constant="20" symbolic="YES" id="nKI-MO-oQA"/>
+                                    <constraint firstAttribute="width" constant="240" id="xk1-9p-wwk"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haridwar Kumbh 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhg-xH-aEM">
                                 <rect key="frame" x="109.5" y="80" width="195" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -130,9 +176,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrE-ga-klv" customClass="CheckBox" customModule="Kumbhdwar" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="20" width="76" height="40"/>
+                                        <rect key="frame" x="135" y="20" width="85" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="76" id="9RM-T3-ere"/>
+                                            <constraint firstAttribute="width" constant="85" id="9RM-T3-ere"/>
                                             <constraint firstAttribute="height" constant="40" id="wNX-Ih-Yph"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -283,6 +329,7 @@
                             <constraint firstItem="yAU-Nb-sp4" firstAttribute="leading" secondItem="WWU-S6-fm1" secondAttribute="trailing" constant="5" id="Dlh-p4-Yc1"/>
                             <constraint firstItem="rhg-xH-aEM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G2h-eT-PeS"/>
                             <constraint firstItem="uIq-Xe-v7R" firstAttribute="top" secondItem="Q8g-cl-8kq" secondAttribute="bottom" constant="20" id="G6l-HR-qT3"/>
+                            <constraint firstItem="PTs-Wm-Fps" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G7r-m0-MVd"/>
                             <constraint firstItem="xrS-E2-ihp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Gw5-Hq-KPj"/>
                             <constraint firstItem="W2e-N8-GsN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KvE-uA-mMr"/>
                             <constraint firstItem="QbP-92-Pnd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ldb-XV-HbO"/>
@@ -301,6 +348,7 @@
                             <constraint firstItem="AzK-5L-4iC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="boq-uW-11f"/>
                             <constraint firstItem="QbP-92-Pnd" firstAttribute="top" secondItem="txi-7k-XA6" secondAttribute="bottom" constant="20" id="eE0-dW-vCM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QbP-92-Pnd" secondAttribute="trailing" constant="20" id="iFQ-hb-LfL"/>
+                            <constraint firstItem="PTs-Wm-Fps" firstAttribute="top" secondItem="xrS-E2-ihp" secondAttribute="bottom" constant="25.5" id="k6d-VU-TI9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xrS-E2-ihp" secondAttribute="trailing" constant="20" id="kzL-0U-hpk"/>
                             <constraint firstItem="WWU-S6-fm1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="lF8-8O-2bQ"/>
                             <constraint firstItem="5H0-s6-X4L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="lJe-eY-KDc"/>
@@ -310,6 +358,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="pDl-rH-kmE"/>
                     <connections>
+                        <outlet property="englishBtn" destination="Cjt-XW-G9A" id="q35-bh-tLo"/>
+                        <outlet property="hindiBtn" destination="dJg-V0-29a" id="bdO-nc-POd"/>
                         <outlet property="passwordBgView" destination="xrS-E2-ihp" id="BSP-Lo-jsD"/>
                         <outlet property="passwordTxtFild" destination="UFj-8e-Phe" id="Zd4-S9-d1r"/>
                         <outlet property="phoneBgView" destination="QbP-92-Pnd" id="7nP-D9-2UZ"/>
@@ -3220,6 +3270,14 @@
             <point key="canvasLocation" x="1228.985507246377" y="774.77678571428567"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Cjt-XW-G9A">
+            <size key="intrinsicContentSize" width="60" height="18"/>
+        </designable>
+        <designable name="dJg-V0-29a">
+            <size key="intrinsicContentSize" width="38" height="18"/>
+        </designable>
+    </designables>
     <resources>
         <image name="downarrow" width="8.3333330154418945" height="6"/>
         <image name="glas" width="12.666666984558105" height="14"/>
