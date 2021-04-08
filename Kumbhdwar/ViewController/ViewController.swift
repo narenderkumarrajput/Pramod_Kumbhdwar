@@ -11,10 +11,19 @@ import Localize_Swift
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var headerTitle: UILabel! //Haridwar Kumbh 2021
+    @IBOutlet weak var loginLbl: UILabel! //Login
+    @IBOutlet weak var selectLoginTypeLbl: UILabel! //Please Select Login Type
+    @IBOutlet weak var sendBtn: UIButton! //Resend Password
+    @IBOutlet weak var sihninBtn: UIButton! //SIGN IN
+    @IBOutlet weak var donHaveAccountLbl: UILabel! //Do Not Have an Account?
+    @IBOutlet weak var signupBtn: UIButton! //Sign Up
+    @IBOutlet weak var selectLangLbl: UILabel! //Please Select Language
+    
     @IBOutlet weak var phoneBgView: CustomView!
     @IBOutlet weak var passwordBgView: CustomView!
-    @IBOutlet weak var phoneTxtFild: UITextField!
-    @IBOutlet weak var passwordTxtFild: UITextField!
+    @IBOutlet weak var phoneTxtFild: UITextField! //Mobile No
+    @IBOutlet weak var passwordTxtFild: UITextField! //Password
     @IBOutlet weak var visitorBtn: CheckBox!
     @IBOutlet weak var staffBtn: CheckBox!
     @IBOutlet weak var englishBtn: CheckBox!
@@ -67,6 +76,17 @@ class ViewController: UIViewController {
     private func setTextOnView() {
         self.visitorBtn.setTitle("Visitor".localized(), for: .normal)
         self.staffBtn.setTitle("Staff".localized(), for: .normal)
+        
+        self.headerTitle.text = "Haridwar Kumbh 2021".localized()
+        self.loginLbl.text = "Login".localized()
+        self.selectLoginTypeLbl.text = "Please Select Login Type".localized()
+        self.donHaveAccountLbl.text = "Do not have an account?".localized()
+        self.sendBtn.setTitle("Resend Password".localized(), for: .normal)
+        self.sihninBtn.setTitle("Sign In".localized(), for: .normal)
+        self.signupBtn.setTitle("Sign Up".localized(), for: .normal)
+        self.phoneTxtFild.placeholder = "Mobile No".localized()
+        self.passwordTxtFild.placeholder = "Password".localized()
+        self.selectLangLbl.text = "Please Select Language".localized()
     }
     
     @IBAction func showPassword(_ sender: Any) {

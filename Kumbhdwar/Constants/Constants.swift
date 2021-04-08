@@ -72,6 +72,7 @@ struct Constants {
         static let getMyCarLocation = Constants.APIServices.apiURL("JourneyPlanner/GetMyCarLocation?VisitorId=")
         static let getalluserTrackInfo = Constants.APIServices.apiURL("KumbhApp/GetAllUserTrackInfo")
         static let getAttendance = Constants.APIServices.apiURL("Employee/mGetEmployeeAttendance")
+        static let getSOSlist = Constants.APIServices.apiURL("Citizen/GetAllToFreeNo")
 
         static let getAllPlannerList = Constants.APIServices.apiURL("JourneyPlanner/GetMyJourneyPlan?VisitorId=")
         static let getAllPlannerPhaseWise = Constants.APIServices.apiURL("JourneyPlanner/GetAllJourneyPlanPhaseWise")

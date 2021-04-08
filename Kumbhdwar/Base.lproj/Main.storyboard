@@ -250,8 +250,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Select Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pc9-sS-cEp">
-                                <rect key="frame" x="20" y="389.5" width="155" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pc9-sS-cEp">
+                                <rect key="frame" x="20" y="389.5" width="153" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -358,12 +358,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="pDl-rH-kmE"/>
                     <connections>
+                        <outlet property="donHaveAccountLbl" destination="WWU-S6-fm1" id="T0l-tj-Ng0"/>
                         <outlet property="englishBtn" destination="Cjt-XW-G9A" id="q35-bh-tLo"/>
+                        <outlet property="headerTitle" destination="rhg-xH-aEM" id="iVw-6h-X6t"/>
                         <outlet property="hindiBtn" destination="dJg-V0-29a" id="bdO-nc-POd"/>
+                        <outlet property="loginLbl" destination="AzK-5L-4iC" id="1DB-g0-Xmm"/>
                         <outlet property="passwordBgView" destination="xrS-E2-ihp" id="BSP-Lo-jsD"/>
                         <outlet property="passwordTxtFild" destination="UFj-8e-Phe" id="Zd4-S9-d1r"/>
                         <outlet property="phoneBgView" destination="QbP-92-Pnd" id="7nP-D9-2UZ"/>
                         <outlet property="phoneTxtFild" destination="8eR-2W-9TU" id="NQK-fU-nUZ"/>
+                        <outlet property="selectLangLbl" destination="pc9-sS-cEp" id="SOv-jo-MxO"/>
+                        <outlet property="selectLoginTypeLbl" destination="kBd-st-Rw7" id="R38-2l-8LT"/>
+                        <outlet property="sendBtn" destination="uIq-Xe-v7R" id="FKc-Ep-JpE"/>
+                        <outlet property="signupBtn" destination="yAU-Nb-sp4" id="tfZ-sk-8e1"/>
+                        <outlet property="sihninBtn" destination="Q8g-cl-8kq" id="HzV-bE-Uo7"/>
                         <outlet property="staffBtn" destination="hrE-ga-klv" id="AZt-Tm-3BP"/>
                         <outlet property="visitorBtn" destination="iEt-nn-LWD" id="xvy-EC-jIu"/>
                     </connections>
@@ -846,12 +854,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="VKV-cm-aga"/>
                     <connections>
+                        <outlet property="alreadyLbl" destination="7Wf-PL-To4" id="qie-gv-O6X"/>
                         <outlet property="changeIconButton" destination="5Pc-1L-iQf" id="Jse-9O-BXt"/>
+                        <outlet property="desLbl" destination="5dW-22-aJ3" id="AHt-Bu-NAy"/>
+                        <outlet property="getStartRegiter" destination="wXT-eu-EQa" id="7ED-HM-2Fw"/>
+                        <outlet property="iAgreeLbl" destination="meY-OG-PIQ" id="2Ta-7o-j49"/>
+                        <outlet property="loginBtn" destination="XrQ-Fa-5Zg" id="h1s-e1-kBZ"/>
                         <outlet property="nameTxtFild" destination="ezT-h3-J29" id="sjR-zU-KPY"/>
+                        <outlet property="otpBtn" destination="z8Z-4B-nA4" id="UYL-dw-kBF"/>
                         <outlet property="otpTxtFild" destination="svX-S0-ocv" id="wcZ-ub-hd9"/>
                         <outlet property="passwordTxtFild" destination="yfp-TM-HuY" id="0bl-Ug-EuU"/>
                         <outlet property="phoneTxtFild" destination="xss-ht-oKG" id="rTH-Gv-iYG"/>
                         <outlet property="registerButton" destination="Y9y-Kl-6Ta" id="uZR-rG-kRX"/>
+                        <outlet property="regiterBtn" destination="Y9y-Kl-6Ta" id="u0g-DB-RbX"/>
+                        <outlet property="viewTerms" destination="2Zb-XP-deU" id="U0o-8B-Tha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBQ-GF-vnC" sceneMemberID="firstResponder"/>
@@ -3270,14 +3286,6 @@
             <point key="canvasLocation" x="1228.985507246377" y="774.77678571428567"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Cjt-XW-G9A">
-            <size key="intrinsicContentSize" width="60" height="18"/>
-        </designable>
-        <designable name="dJg-V0-29a">
-            <size key="intrinsicContentSize" width="38" height="18"/>
-        </designable>
-    </designables>
     <resources>
         <image name="downarrow" width="8.3333330154418945" height="6"/>
         <image name="glas" width="12.666666984558105" height="14"/>

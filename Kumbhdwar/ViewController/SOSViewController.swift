@@ -33,6 +33,8 @@ class SOSViewController: UIViewController {
         topView.clipsToBounds = true
         topView.layer.cornerRadius = 10
         topView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        
+        self.getSOSList()
     }
         
     override func viewWillDisappear(_ animated: Bool) {
@@ -55,7 +57,6 @@ class SOSViewController: UIViewController {
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
-    
     
 }
 
@@ -84,4 +85,32 @@ extension UINavigationItem {
 
     self.titleView = stackView
   }
+}
+
+
+
+
+extension SOSViewController {
+    
+    private func getSOSList() {
+
+        let headers = ["Authorization":"Basic cGF0bmE6cGF0bmEjMjAyMA==","Content-Type":"application/json"] as [String:String]
+        Utility.showLoaderWithTextMsg(text: "Loading...")
+        var urlString = Constants.APIServices.getSOSlist
+        NetworkManager.requestGETURL(urlString, headers: headers) { (responseJSON) in
+            Utility.hideLoader()
+            print(responseJSON)
+            if responseJSON.count > 0, let arrayOfObjects = responseJSON.arrayObject as? [[String:Any]] {
+                print("arrayOfObjects")
+            } else {
+                print("arrayOfObjects ---")
+            }
+        } failure: { (error) in
+            print(error)
+            Utility.hideLoader()
+        }
+    }
+    
+    
+    
 }

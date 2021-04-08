@@ -9,10 +9,11 @@
 import UIKit
 import DropDown
 import GooglePlaces
+import Localize_Swift
 
 class RegisterViewController: UIViewController {
     
-    @IBOutlet weak var phoneTxtFild: UITextField!
+    @IBOutlet weak var phoneTxtFild: UITextField! 
     @IBOutlet weak var nameTxtFild: UITextField!
     @IBOutlet weak var passwordTxtFild: UITextField!
     //@IBOutlet weak var vehicleNoTxtFild: UITextField!
@@ -33,6 +34,16 @@ class RegisterViewController: UIViewController {
     private var param:[String: AnyObject] = [:]
     private var modeOfCommArray: [ModeOfComm] = []
     var isSelectedIcon = false
+    
+    @IBOutlet weak var getStartRegiter: UILabel! //Get Stared with Registration
+    @IBOutlet weak var desLbl: UILabel! //We will send OTP on your registered Mobile No. please check your message and add OTP!
+    @IBOutlet weak var otpBtn: UIButton! //OTP
+    @IBOutlet weak var iAgreeLbl: UILabel! //I Agree to Terms
+    @IBOutlet weak var viewTerms: UIButton! //   View Terms!
+    @IBOutlet weak var regiterBtn: UIButton! //Register
+    @IBOutlet weak var alreadyLbl: UILabel! //Already a member?
+    @IBOutlet weak var loginBtn: UIButton! //Login
+    
     
 
     override func viewDidLoad() {
@@ -70,12 +81,21 @@ class RegisterViewController: UIViewController {
         mode.ModeOfCummute = selectModeString
         self.modeOfCommArray.append(mode)
         // self.placeBtn.setTitle(self.selectPlaceString, for: .normal)
+        
+        self.setTextOnView()
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.getModeOfComm()
+        //self.getModeOfComm()
+        
+        //UserDefaults.standard.setValue("es", forKey: "Lang")
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+        
     }
     
     @objc func backAction() {
@@ -93,6 +113,25 @@ class RegisterViewController: UIViewController {
         //modeOfComBtn.setTitle(selectModeString, for: .normal)
         //placeBtn.setTitle(self.selectPlaceString, for: .normal)
         otpTxtFild.text = ""
+        
+        self.setTextOnView()
+    }
+    
+    private func setTextOnView() {
+        self.phoneTxtFild.placeholder = "Mobile No".localized()
+        self.passwordTxtFild.placeholder = "Password".localized()
+        
+        self.otpTxtFild.placeholder = "OTP".localized()
+        self.registerButton.setTitle("Register".localized(), for: .normal)
+        self.nameTxtFild.placeholder = "Name".localized()
+        self.getStartRegiter.text = "Get Stared with Registration".localized()
+        self.desLbl.text = "We will send OTP on your registered Mobile No. please check your message and add OTP!".localized()
+        self.otpBtn.setTitle("OTP".localized(), for: .normal)
+        self.iAgreeLbl.text = "I Agree to Terms".localized()
+        self.viewTerms.setTitle("   View Terms!".localized(), for: .normal)
+        self.regiterBtn.setTitle("Register".localized(), for: .normal)
+        self.alreadyLbl.text = "Already a member?".localized()
+        self.loginBtn.setTitle("Login".localized(), for: .normal)
     }
     
     private func addLeftButtonOn(_ textField: UITextField) {
