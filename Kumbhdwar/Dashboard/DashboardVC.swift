@@ -73,17 +73,20 @@ class DashboardVC: UIViewController {
 
     @IBOutlet weak var aleppoPAgeControl: CHIPageControlAleppo!
     @IBOutlet var viewCollections: [UIView]!
-
+    @IBOutlet weak var travelRegistrationButton: UIButton!
+    
+    @IBOutlet var travelViewCollections: [UIView]!
+    
     private let colors: [UIColor] = [.green, .blue, .black]
     var timer = Timer()
     var counter = 0
-    let kumbhdwarImages = [#imageLiteral(resourceName: "one"), #imageLiteral(resourceName: "two"), #imageLiteral(resourceName: "three"), #imageLiteral(resourceName: "four"), #imageLiteral(resourceName: "five"), #imageLiteral(resourceName: "six"), #imageLiteral(resourceName: "seven")]
+    let kumbhdwarImages = [#imageLiteral(resourceName: "one"), #imageLiteral(resourceName: "two"), #imageLiteral(resourceName: "three"), #imageLiteral(resourceName: "four"), #imageLiteral(resourceName: "five"), #imageLiteral(resourceName: "six"), #imageLiteral(resourceName: "seven"), #imageLiteral(resourceName: "eighth")]
     var x = 1
     let loadUrls = [Constants.introductionUrl, Constants.attractionsUrl, Constants.howToReachUrl, Constants.accommodationUrl]
     let amenityIds = ["2,4","6,8" ,"5,10,14,15", "6,11"]
     let dropDown = DropDown()
     var locationManager = CLLocationManager()
-    let textsOnScrollImage = ["Kumbh Mela Haridwar 2021","Obtain a compulsory medical certificate from a competent authority prior to travelling", "Follow registration process before travelling.","Do not visit the Kumbh Mela if suffering from symptoms of COVID-19","Wear a mask at all times", "People above the age of 65 years, pregnant women, children below the age of 10 yearsand people with co-morbidities are advised not attend the Kumbh Mela", "Follow Covid Appropriate Behaviour" ]
+    let textsOnScrollImage = ["Kumbh Mela Haridwar 2021","Obtain a compulsory medical certificate from a competent authority prior to travelling", "Follow registration process before travelling.","Do not visit the Kumbh Mela if suffering from symptoms of COVID-19","Wear a mask at all times", "People above the age of 65 years, pregnant women, children below the age of 10 yearsand people with co-morbidities are advised not attend the Kumbh Mela", "Follow Covid Appropriate Behaviour", "Kumbh Mela Haridwar 2021" ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,8 +122,8 @@ class DashboardVC: UIViewController {
     func setupDropDown() {
         dropDown.anchorView = self.logoutMenu // UIView or UIBarButtonItem
         // The list of items to display. Can be changed dynamically
-        dropDown.dataSource = ["Logout"]
-        dropDown.width = 120
+        dropDown.dataSource = ["Logout", "Change Language"]
+        dropDown.width = 150
         dropDown.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         DropDown.appearance().textColor = #colorLiteral(red: 0.9215686275, green: 0.231372549, blue: 0, alpha: 1)
         DropDown.appearance().backgroundColor = UIColor.white
@@ -165,7 +168,17 @@ class DashboardVC: UIViewController {
             view.layer.masksToBounds = true
             
         }
+        for view in travelViewCollections {
+            let cornerRadius = view.bounds.height/2
+            view.layer.cornerRadius = cornerRadius
+            view.layer.masksToBounds = true
+        }
     }
+    
+    @IBAction func travelReistrationButtonTapped(_ sender: UIButton) {
+    
+    }
+    
     @IBAction func sosButtonTapped(_ sender: Any) {
         self.showSOSService()
     }
@@ -214,30 +227,37 @@ class DashboardVC: UIViewController {
         dropDown.show()
         // Action triggered on selection
         dropDown.selectionAction = { (index: Int, item: String) in
+            switch index {
+            case 0:
+                let alert = UIAlertController(title: "Logout", message: "Are you sure you want to sign out?", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                      switch action.style{
+                      case .default:
+                            print("default")
+                        UserManager.shared.userLogout()
+                        DispatchQueue.main.async {
+                            let loginNavVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainNav")
+                            let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                            appDel.window?.rootViewController = loginNavVC
+                        }
+                      case .cancel:
+                            print("cancel")
+
+                      case .destructive:
+                            print("destructive")
+
+
+                      @unknown default:
+                        fatalError()
+                      }}))
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+            case 1:
+                print("Change Language Tapped")
+            default: break
+            }
             
-            let alert = UIAlertController(title: "Logout", message: "Are you sure you want to sign out?", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-                  switch action.style{
-                  case .default:
-                        print("default")
-                    UserManager.shared.userLogout()
-                    DispatchQueue.main.async {
-                        let loginNavVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainNav")
-                        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                        appDel.window?.rootViewController = loginNavVC
-                    }
-                  case .cancel:
-                        print("cancel")
-
-                  case .destructive:
-                        print("destructive")
-
-
-                  @unknown default:
-                    fatalError()
-                  }}))
-            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
            
         }
     }
@@ -263,7 +283,7 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             imageView.addSubview(view)
             var label = UILabel()
             switch indexPath.item {
-            case 0,4,6:
+            case 0,4,6,7:
                 label = UILabel(frame: CGRect(x: cell.contentView.frame.origin.x+10, y: imageView.frame.height - 60, width: cell.contentView.frame.width - 20, height:20))
             case 1,2,3:
                 label = UILabel(frame: CGRect(x: cell.contentView.frame.origin.x+10, y: imageView.frame.height - 90, width: cell.contentView.frame.width - 20, height:45))

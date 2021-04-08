@@ -10,6 +10,7 @@
 		40FCEDF6B957D966777EFE62 /* Pods_KumbhdwarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D87C437076CE3D98B72B92 /* Pods_KumbhdwarTests.framework */; };
 		4611321826163E730043E099 /* TermsAndConditionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4611321726163E730043E099 /* TermsAndConditionsVC.swift */; };
 		4611321D261640030043E099 /* TermsofUse.docx in Resources */ = {isa = PBXBuildFile; fileRef = 4611321C261640030043E099 /* TermsofUse.docx */; };
+		46633788261E31530091A482 /* introductionEnglish.docx in Resources */ = {isa = PBXBuildFile; fileRef = 46633787261E31530091A482 /* introductionEnglish.docx */; };
 		4664769D260BEB26006AC634 /* introductionhindi.docx in Resources */ = {isa = PBXBuildFile; fileRef = 4664769C260BEB26006AC634 /* introductionhindi.docx */; };
 		466476A2260BEB2F006AC634 /* writeuptemple.docx in Resources */ = {isa = PBXBuildFile; fileRef = 466476A1260BEB2F006AC634 /* writeuptemple.docx */; };
 		46738AC526116AF900023613 /* ApplyLeaveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46738AC426116AF900023613 /* ApplyLeaveVC.swift */; };
@@ -166,6 +167,7 @@
 		21BDCCAB0A3F61BFED8774F4 /* Pods-Kumbhdwar-KumbhdwarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kumbhdwar-KumbhdwarUITests.release.xcconfig"; path = "Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4611321726163E730043E099 /* TermsAndConditionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsVC.swift; sourceTree = "<group>"; };
 		4611321C261640030043E099 /* TermsofUse.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = TermsofUse.docx; sourceTree = "<group>"; };
+		46633787261E31530091A482 /* introductionEnglish.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = introductionEnglish.docx; sourceTree = "<group>"; };
 		4664769C260BEB26006AC634 /* introductionhindi.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = introductionhindi.docx; sourceTree = "<group>"; };
 		466476A1260BEB2F006AC634 /* writeuptemple.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = writeuptemple.docx; sourceTree = "<group>"; };
 		46738AC426116AF900023613 /* ApplyLeaveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyLeaveVC.swift; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				4664769C260BEB26006AC634 /* introductionhindi.docx */,
 				4611321C261640030043E099 /* TermsofUse.docx */,
 				468233122619C1E7000AC675 /* holycityenglish.docx */,
+				46633787261E31530091A482 /* introductionEnglish.docx */,
 				466476A1260BEB2F006AC634 /* writeuptemple.docx */,
 				BD5DB50F25FBED5700A46CD8 /* Constants.swift */,
 			);
@@ -725,7 +728,7 @@
 				BD5DB4CC25FBE96E00A46CD8 /* Frameworks */,
 				BD5DB4CD25FBE96E00A46CD8 /* Resources */,
 				AD4220076FE89E46B4375075 /* [CP] Embed Pods Frameworks */,
-				4420980169B85FB17FF714C9 /* [CP] Copy Pods Resources */,
+				97EA11EE316EEB5167204441 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -764,7 +767,7 @@
 				BD5DB4ED25FBE97400A46CD8 /* Frameworks */,
 				BD5DB4EE25FBE97400A46CD8 /* Resources */,
 				7B9B5649DC1D2D2454546746 /* [CP] Embed Pods Frameworks */,
-				BA6D8F13BA72E081082ABA6D /* [CP] Copy Pods Resources */,
+				EDA817EA5495D7871792A1B0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -832,6 +835,7 @@
 				BDFDF27626189F4C00E340E8 /* Har_Ki_Pauri_to_Dakshdweep_Parking.geojson in Resources */,
 				468FD62C26105F410065338B /* Staff.storyboard in Resources */,
 				BD5DB4DA25FBE96E00A46CD8 /* Main.storyboard in Resources */,
+				46633788261E31530091A482 /* introductionEnglish.docx in Resources */,
 				466476A2260BEB2F006AC634 /* writeuptemple.docx in Resources */,
 				BDFDF27526189F4C00E340E8 /* Har_Ki_Pauri_to_Jwalapur_Railway_Station_Haridwar.geojson in Resources */,
 				BDFDF27726189F4C00E340E8 /* Har_Ki_Pauri_to_Saptrishi_Ashram_Parking.geojson in Resources */,
@@ -860,23 +864,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4420980169B85FB17FF714C9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7B9B5649DC1D2D2454546746 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -892,6 +879,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97EA11EE316EEB5167204441 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AD4220076FE89E46B4375075 /* [CP] Embed Pods Frameworks */ = {
@@ -955,7 +959,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BA6D8F13BA72E081082ABA6D /* [CP] Copy Pods Resources */ = {
+		EDA817EA5495D7871792A1B0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1291,7 +1295,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.5;
+				CURRENT_PROJECT_VERSION = 1.1.0;
 				DEVELOPMENT_TEAM = 9YG7G7YB2J;
 				INFOPLIST_FILE = Kumbhdwar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1299,6 +1303,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajeevi.Kumbhdwar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1314,7 +1319,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.5;
+				CURRENT_PROJECT_VERSION = 1.1.0;
 				DEVELOPMENT_TEAM = 9YG7G7YB2J;
 				INFOPLIST_FILE = Kumbhdwar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1322,6 +1327,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajeevi.Kumbhdwar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

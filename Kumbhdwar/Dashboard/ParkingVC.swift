@@ -62,7 +62,7 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
             self.searchViewHeightConstraint.constant = 0
             dataSource = ["Search Parking Type", "Kumbh ISBT Route", "Kumbh Parking"]
         case KumbhdwarList.allCases[8].text:
-            dataSource = ["Search Facility Type", "Hospital", "Police Station", "Vending Zone","Toilet"]
+            dataSource = ["Search Facility Type", "Hospital", "Police Station", "Vending Zone","Toilet", "Lost and found centers"]
             self.searchLabel.text = dataSource[0]
         case KumbhdwarList.allCases[9].text:
             dataSource = ["Search Transport Type", "ISBT", "Railway Station"]

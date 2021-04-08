@@ -28,7 +28,7 @@ class IntroductionVC: UIViewController {
 //            webView.allowsBackForwardNavigationGestures = true
 //        }
         if index == 0 {
-            loadText = "introductionhindi"
+            loadText = "introductionEnglish"
         } else {
             loadText = "holycityenglish"
         }
