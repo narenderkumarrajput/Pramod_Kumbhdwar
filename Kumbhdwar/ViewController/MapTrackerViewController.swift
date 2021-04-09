@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import GoogleMaps
+import Localize_Swift
 
 class MapTrackerViewController: UIViewController {
     
@@ -39,6 +40,11 @@ class MapTrackerViewController: UIViewController {
         
         self.showUserLocationOnMap()
         self.showOtherUsersLocationOnMap()
+        
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -48,6 +54,10 @@ class MapTrackerViewController: UIViewController {
     
     @objc func backAction() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setTextOnView() {
+        self.addPersonBtn.setTitle("Add New Person".localized(), for: .normal)
     }
     
     private func showUserLocationOnMap() {

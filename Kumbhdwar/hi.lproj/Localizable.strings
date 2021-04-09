@@ -33,3 +33,22 @@
 "Register" = "पंजीकरण";
 "Do not have an account?" = "कोई खाता नहीं है?";
 "Please Select Language" = "कृपया भाषा का चयन करें";
+
+
+"Registration for track person" = "ट्रैक व्यक्ति के लिए पंजीकरण";
+
+"ATM" = "एटीएम";
+"Hospital" = "अस्पताल";
+"Hotel" = "होटल";
+"Petrol Pump" = "पेट्रोल पंप";
+"Local Eateries" = "स्थानीय भोजन";
+
+"Add New Person" = "नया व्यक्ति जोड़ें";
+
+"Car Park" = "कार पार्क";
+"Car Search" = "कार खोज";
+
+"PERSONAL VEHICLE" = "व्यक्तिगत वाहन";
+"WALKING" = "वॉकिंग";
+
+"Use Emergency SOS" = "आपातकालीन एसओएस का उपयोग करें";

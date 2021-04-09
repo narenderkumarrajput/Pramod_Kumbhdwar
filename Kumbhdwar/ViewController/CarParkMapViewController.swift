@@ -9,10 +9,13 @@
 import UIKit
 import CoreLocation
 import GoogleMaps
+import Localize_Swift
 
 class CarParkMapViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var parkBtn: UIButton!
+    @IBOutlet weak var searchBtn: UIButton!
     private var locationManager = CLLocationManager()
     private var param:[String: AnyObject] = [:]
     private var carPark: CarPark? = nil
@@ -42,10 +45,20 @@ class CarParkMapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.showUserLocationOnMap()
+        
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
     }
     
     @objc func backAction() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setTextOnView() {
+        self.parkBtn.setTitle("Car Park".localized(), for: .normal)
+        self.searchBtn.setTitle("Car Search".localized(), for: .normal)
     }
     
     private func showUserLocationOnMap() {

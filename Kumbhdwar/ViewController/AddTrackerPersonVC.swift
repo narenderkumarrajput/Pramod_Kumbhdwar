@@ -8,8 +8,14 @@
 
 import UIKit
 import DropDown
+import Localize_Swift
 
 class AddTrackerPersonVC: UIViewController {
+    
+    @IBOutlet weak var trackTitle: UILabel!
+    @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var otpBtn: UIButton!
+    @IBOutlet weak var regsBtn: UIButton!
     
     @IBOutlet weak var phoneTxtFild: UITextField!
     @IBOutlet weak var nameTxtFild: UITextField!
@@ -41,6 +47,11 @@ class AddTrackerPersonVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
+        
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,6 +61,18 @@ class AddTrackerPersonVC: UIViewController {
     
     @objc func backAction() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setTextOnView() {
+        self.trackTitle.text = "Registration for track person".localized()
+        self.desc.text = "We will send OTP on your registered Mobile No. please check your message and add OTP!".localized()
+        self.otpBtn.setTitle("OTP".localized(), for: .normal)
+        self.regsBtn.setTitle("Register".localized(), for: .normal)
+        self.phoneTxtFild.placeholder = "Mobile No".localized()
+        self.nameTxtFild.placeholder = "Name".localized()
+        self.otpTxtFild.placeholder = "OTP".localized()
+        //self.familyBtn.setTitle("Sign Up".localized(), for: .normal)
+        
     }
     
     @IBAction func familyAction(_ sender: Any) {
