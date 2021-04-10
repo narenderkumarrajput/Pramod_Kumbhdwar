@@ -9,20 +9,23 @@
 import UIKit
 import DropDown
 import GooglePlaces
+import Localize_Swift
 
 class AddJourneyRegViewController: UIViewController {
     
-    @IBOutlet weak var nametxtFld: UITextField!
-    @IBOutlet weak var numberOfPersonTxtFld: UITextField!
-    @IBOutlet weak var vehicalNoTxtFld: UITextField!
-    @IBOutlet weak var epassTxtFld: UITextField!
-    @IBOutlet weak var selectDateTxtFild: UITextField!
-    @IBOutlet weak var modeOfCommBtn: UIButton!
-    @IBOutlet weak var destinationGhatBtn: UIButton!
-    @IBOutlet weak var destinationParkingBtn: UIButton!
-    @IBOutlet weak var placeBtn: UIButton!
+    @IBOutlet weak var addJoneyTitle: UILabel! //Add Journey Planning Data Details
+    @IBOutlet weak var nametxtFld: UITextField! //Name
+    @IBOutlet weak var numberOfPersonTxtFld: UITextField! //No of person
+    @IBOutlet weak var vehicalNoTxtFld: UITextField! //Vehicle No
+    @IBOutlet weak var epassTxtFld: UITextField! //E Pass
+    @IBOutlet weak var selectDateTxtFild: UITextField! //Date
+    @IBOutlet weak var modeOfCommBtn: UIButton! //Select Mode Of Commute
+    @IBOutlet weak var destinationGhatBtn: UIButton! //Select Destination
+    //@IBOutlet weak var destinationParkingBtn: UIButton!
+    @IBOutlet weak var placeBtn: UIButton! //Place
     @IBOutlet weak var descTxtVw: UITextView!
-    @IBOutlet weak var submitBtn: UIButton!
+    @IBOutlet weak var submitBtn: UIButton! //Submit
+    @IBOutlet weak var selectDateBtn: UIButton! //Select Date
     
     var journeyPlanId: String = "0"
     
@@ -68,7 +71,7 @@ class AddJourneyRegViewController: UIViewController {
         self.showDatePicker()
         self.placeBtn.setTitle(self.selectPlaceString, for: .normal)
         self.destinationGhatBtn.setTitle(self.selectGhatString, for: .normal)
-        self.destinationParkingBtn.setTitle(self.selectParkingString, for: .normal)
+        //self.destinationParkingBtn.setTitle(self.selectParkingString, for: .normal)
         
         dropDown.anchorView = self.modeOfCommBtn
         let mode = ModeOfComm()
@@ -83,10 +86,36 @@ class AddJourneyRegViewController: UIViewController {
         super.viewWillAppear(animated)
         self.getModeOfComm()
         self.showUserLocationOnMap()
+        
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
     }
     
     @objc func backAction() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setTextOnView() {
+        
+        self.addJoneyTitle.text = "Add Journey Planning Data Details".localized()
+        self.nametxtFld.placeholder = "Name".localized()
+        self.numberOfPersonTxtFld.placeholder = "No of person".localized()
+        self.vehicalNoTxtFld.placeholder = "Vehicle No".localized()
+        self.epassTxtFld.placeholder = "E Pass".localized()
+        self.selectDateTxtFild.placeholder = "Date".localized()
+        self.modeOfCommBtn.setTitle("Select Mode Of Commute".localized(), for: .normal)
+        self.destinationGhatBtn.setTitle("Select Destination".localized(), for: .normal)
+        self.placeBtn.setTitle("Place".localized(), for: .normal)
+        self.submitBtn.setTitle("Submit".localized(), for: .normal)
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            if lang == "hi" {
+                self.submitBtn.setTitle("सबमिट".localized(), for: .normal)
+            }
+        }
+        self.selectDateBtn.setTitle("Select Date".localized(), for: .normal)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -116,7 +145,7 @@ class AddJourneyRegViewController: UIViewController {
         placeBtn.setTitle(self.selectPlaceString, for: .normal)
         modeOfCommBtn.setTitle(selectModeString, for: .normal)
         destinationGhatBtn.setTitle(selectGhatString, for: .normal)
-        destinationParkingBtn.setTitle(selectParkingString, for: .normal)
+        //destinationParkingBtn.setTitle(selectParkingString, for: .normal)
     }
     
     private func showDatePicker() {
@@ -208,7 +237,7 @@ class AddJourneyRegViewController: UIViewController {
           print("Selected item: \(item) at index: \(index)")
             let obj = self.placePark[index]
             self.selectedPark = obj
-            self.destinationParkingBtn.setTitle(item, for: .normal)
+            //self.destinationParkingBtn.setTitle(item, for: .normal)
             
             param["ParkingName"] = obj.welcomeDescription as AnyObject
             param["ParkingLat"] = obj.lat1 as AnyObject
@@ -236,15 +265,15 @@ class AddJourneyRegViewController: UIViewController {
         
         let vehicalNo = vehicalNoTxtFld.text?.trimmed()
         if !(vehicalNo != nil && (vehicalNo!.count) > 0) {
-            self.showAlertWithOk(title: "Info", message: "Please enter vehicle number")
-            return
+            //self.showAlertWithOk(title: "Info", message: "Please enter vehicle number")
+            //return
         }
         param["VehicleNo"] = vehicalNo as AnyObject?
         
         let epass = epassTxtFld.text?.trimmed()
         if !(epass != nil && (epass!.count) > 0) {
-            self.showAlertWithOk(title: "Info", message: "Please enter e-pass number")
-            return
+            //self.showAlertWithOk(title: "Info", message: "Please enter e-pass number")
+            //return
         }
         param["ePass"] = epass as AnyObject?
         
@@ -280,11 +309,15 @@ class AddJourneyRegViewController: UIViewController {
             return
         }
         
-        let parking = destinationParkingBtn.titleLabel?.text
-        if parking == selectParkingString {
-            self.showAlertWithOk(title: "Info", message: "Please select a \(selectParkingString)")
-            return
-        }
+        //let parking = destinationParkingBtn.titleLabel?.text
+        //if parking == selectParkingString {
+        //    self.showAlertWithOk(title: "Info", message: "Please select a \(selectParkingString)")
+        //    return
+        //}
+        
+        param["ParkingName"] = "" as AnyObject
+        param["ParkingLat"] = "" as AnyObject
+        param["ParkingLng"] = "" as AnyObject
         
         self.submit()
     }
