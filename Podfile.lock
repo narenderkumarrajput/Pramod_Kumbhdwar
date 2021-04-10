@@ -25,8 +25,14 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (4.2.0):
     - GoogleMaps/Base (= 4.2.0)
-  - IQKeyboardManagerSwift (6.5.6)
-  - MarqueeLabel (4.0.5)
+  - IQKeyboardManagerSwift (6.5.5)
+  - Localize-Swift (3.2.0):
+    - Localize-Swift/LocalizeSwiftCore (= 3.2.0)
+    - Localize-Swift/UIKit (= 3.2.0)
+  - Localize-Swift/LocalizeSwiftCore (3.2.0)
+  - Localize-Swift/UIKit (3.2.0):
+    - Localize-Swift/LocalizeSwiftCore
+  - MarqueeLabel (4.0.2)
   - MaterialPageControl (1.0.2)
   - ReachabilitySwift (5.0.0)
   - SwiftyJSON (5.0.0)
@@ -39,6 +45,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - IQKeyboardManagerSwift
+  - Localize-Swift
   - MarqueeLabel
   - MaterialPageControl
   - ReachabilitySwift
@@ -53,6 +60,7 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - IQKeyboardManagerSwift
+    - Localize-Swift
     - MarqueeLabel
     - MaterialPageControl
     - ReachabilitySwift
@@ -65,12 +73,13 @@ SPEC CHECKSUMS:
   Google-Maps-iOS-Utils: 71c1a52fb5a3622e81a03a67dc3be9fd180cb9c3
   GoogleMaps: eb03e327edfd70b06de1e6e321653f73712df7ad
   GooglePlaces: 196a9dd88580dcb3f3df46f415057703d0d2a310
-  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
-  MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
+  MarqueeLabel: f762aa681ae201f66c1d511858b171f75d83013a
   MaterialPageControl: 4afe261037fdbc7e63a6ad90fdc408dbcfda7525
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 63cb2bc7f94cd7037587e31792141f26de1ea99a
+PODFILE CHECKSUM: 786eddfaaf8f86253776666c65113fe897c21a34
 
 COCOAPODS: 1.10.1

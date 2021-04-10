@@ -1,0 +1,184 @@
+/* 
+  Localizable.strings
+  Kumbhdwar
+
+  Created by Narender Kumar on 07/04/21.
+  Copyright © 2021 Narender Kumar. All rights reserved.
+*/
+
+
+"Kumbhdwar" = "Kumbhdwar";
+"Visitor" = "Visitor";
+"Staff" = "Staff";
+
+"Open navigation drawer" = "Open navigation drawer";
+"Close navigation drawer" = "Close navigation drawer";
+"Android Studio" = "Android Studio";
+"android.studio@android.com" = "android.studio@android.com";
+"Navigation header" = "Navigation header";
+"Settings" = "Settings";
+"Profile" = "Profile";
+"House Detail" = "House Detail";
+"Responsible Person" = "Responsible Person";
+"Logout" = "Logout";
+
+"Select Payment Type" = "Select Payment Type";
+"Cash" = "Cash";
+"Online" = "Online";
+
+
+"Home" = "Home";
+"Gallery" = "Gallery";
+"Slideshow" = "Slideshow";
+"Tools" = "Tools";
+"Share" = "Share";
+"Send" = "Send";
+"Name" = "Name";
+"Complaint Data Detail" = "Complaint Data Detail";
+"Submitted Complaints" = "Submitted Complaints";
+"Near by Waste Collection" = "Near by Waste Collection";
+"Scan Qr Code" = "Scan Qr Code";
+"Email" = "Email";
+"Password" = "Password";
+"Are you sure you want to logout?" = "Are you sure you want to logout?";
+"Logout" = "Logout";
+
+"Select Occupation" = "Select Occupation";
+"Job" = "Job";
+"Business" = "Business";
+
+"Click the SUBSCRIBE TO WEATHER button below to subscribe to the weather topic. Messages sent to the weather topic will be received. The LOG TOKEN button logs the FCM registration token to logcat." = "Click the SUBSCRIBE TO WEATHER button below to subscribe to the weather topic. Messages sent to the weather topic will be received. The LOG TOKEN button logs the FCM registration token to logcat.";
+
+"Subscribe To Weather" = "Subscribe To Weather";
+"Log Token" = "Log Token";
+"Subscribed to weather topic" = "Subscribed to weather topic";
+
+"Failed to subscribe to weather topic" = "Failed to subscribe to weather topic";
+"Message" = "Message";
+"Send Token" = "Send Token";
+"Send Tokens" = "Send Tokens";
+"Send Topic" = "Send Topic";
+"Show Token" = "Show Token";
+"Subscribe (News)" = "Subscribe (News)";
+"Unsubscribe (News)" = "Unsubscribe (News)";
+"default" = "default";
+
+
+
+
+"Something will happen here&#8230" = "Something will happen here&#8230";
+"Subscribed to news topic" = "Subscribed to news topic";
+"Unsubscribed from news topic" = "Unsubscribed from news topic";
+"Get Started with Registration" = "Get Started with Registration";
+"We will send OTP on your registered Mobile No. please check your messages and add otp!" = "We will send OTP on your registered Mobile No. please check your messages and add otp!";
+"Phone" = "Phone";
+"OTP" = "OTP";
+"Already a member?" = "Already a member?";
+"Register" = "Register";
+"Login" = "Login";
+"Kumbh Mela Haridwar 2021" = "Kumbh Mela Haridwar 2021";
+"The Gateway To Haridwar Maha Kumbh 2021" = "The Gateway To Haridwar Maha Kumbh 2021";
+"Attach a Photo" = "Attach a Photo";
+"Attaching a Photo helps Admin understand better" = "Attaching a Photo helps Admin understand better";
+"Submit" = "Submit";
+"SUBMITTED FEEDBACK" = "SUBMITTED FEEDBACK";
+"Mobile No" = "Mobile No";
+"Please Select Language" = "Please Select Language";
+"Resend Otp" = "Resend Otp";
+"Sign In" = "Sign In";
+"Do not have an account?" = "Do not have an account?";
+"Sign Up" = "Sign Up";
+"Atm" = "Atm";
+"Hospital" = "Hospital";
+"Hotel" = "Hotel";
+"Petrol Pump" = "Petrol Pump";
+"Bus Stop" = "Bus Stop";
+"Attendance" = "Attendance";
+"Introduction" = "Introduction";
+"Holy City Attractions" = "Holy City Attractions";
+"How to Reach" = "How to Reach";
+"Accommodation" = "Accommodation";
+"Parking" = "Parking";
+"Ghats" = "Ghats";
+"Local Facilities" = "Local Facilities";
+"Department" = "Department";
+"Locations" = "Locations";
+"Book Utilities" = "Book Utilities";
+"Journey Planner" = "Journey Planner";
+"Live Aarti" = "Live Aarti";
+"Route" = "Route";
+"Raise Feedback" = "Raise Feedback";
+"Feedback" = "Feedback";
+"Friends&amp;Family Tracker" = "Friends&amp;Family Tracker";
+"Near Me" = "Near Me";
+"SOS List" = "SOS List";
+"Are you sure you want to sign out?" = "Are you sure you want to sign out?";
+"Yes" = "Yes";
+"Cancel" = "Cancel";
+"ADD FEEDBACK" = "ADD FEEDBACK";
+"ADD JOURNEY" = "ADD JOURNEY";
+"Add Journey Planning Data Details" = "Add Journey Planning Data Details";
+"Vehicle No" = "Vehicle No";
+"Description : " = "Description : ";
+"Feedback No :" = "Feedback No :";
+"Feedback :" = "Feedback :";
+"Status :" = "Status :";
+"Feedback Date :" = "Feedback Date :";
+"Category :" = "Category :";
+"Address :" = "Address :";
+"Direction" = "Direction";
+"Image" = "Image";
+"SOS Connect to below in Emergency!" = "SOS Connect to below in Emergency!";
+"processing…" = "processing…";
+"Submitted Image" = "Submitted Image";
+"Location on map" = "Location on map";
+"Add New Person" = "Add New Person";
+"Select Destination" = "Select Destination";
+"Directions" = "Directions";
+"E Pass" = "E Pass";
+"Select Mode Of Commute" = "Select Mode Of Commute";
+"Visit Date" = "Visit Date";
+"Select Date" = "Select Date";
+"latKey" = "latKey";
+"longtKey" = "longtKey";
+"longtKey" = "longtKey";
+"longtKey" = "longtKey";
+"imeiKey" = "imeiKey";
+"Distance :" = "Distance :";
+"Please Select Login Type" = "Please Select Login Type";
+"Mark Attendance" = "Mark Attendance";
+"Contact No :" = "Contact No :";
+"Name :" = "Name :";
+"Designation :" = "Designation :";
+"Ward :" = "Ward :";
+"Zone No :" = "Zone No :";
+"Punch In Time" = "Punch In Time";
+"Punch Out Time" = "Punch Out Time";
+"Punch In Location" = "Punch In Location";
+"Punch Out Location" = "Punch Out Location";
+"lat_in_Key" = "lat_in_Key";
+"long_in_Key" = "long_in_Key";
+"TRACKER LIST" = "TRACKER LIST";
+"Group Type" = "Group Type";
+"Track Location" = "Track Location";
+"contact_key" = "contact_key";
+"Journey List" = "Journey List";
+"Add New Journey" = "Add New Journey";
+"Select Parking" = "Select Parking";
+"Parking Name :" = "Parking Name :";
+"No of person" = "No of person";
+"Find My Car" = "Find My Car";
+"Car Search" = "Car Search";
+"Car Park" = "Car Park";
+"Search" = "Search";
+"Sos Services" = "Sos Services";
+"Search by name" = "Search by name";
+"Search Sos Services" = "Search Sos Services";
+"Public Transport" = "Public Transport";
+"Akhadas" = "Akhadas";
+"Covid SOP" = "Covid SOP";
+"Exit Plan" = "Exit Plan";
+"Task" = "Task";
+"Leave" = "Leave";
+"Add Task" = "Add Task";
+"Staff Login" = "Staff Login";

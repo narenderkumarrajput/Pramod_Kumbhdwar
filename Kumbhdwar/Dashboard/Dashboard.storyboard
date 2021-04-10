@@ -3738,9 +3738,6 @@
         <designable name="YLv-Ua-7RH">
             <size key="intrinsicContentSize" width="3585" height="18"/>
         </designable>
-        <designable name="nJq-HH-eGA">
-            <size key="intrinsicContentSize" width="99" height="8"/>
-        </designable>
     </designables>
     <resources>
         <image name="ajeevi_logo" width="76.333335876464844" height="32.333332061767578"/>

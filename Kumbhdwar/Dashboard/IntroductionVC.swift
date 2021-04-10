@@ -27,11 +27,22 @@ class IntroductionVC: UIViewController {
 //            webView.load(URLRequest(url: url))
 //            webView.allowsBackForwardNavigationGestures = true
 //        }
-        if index == 0 {
-            loadText = "introductionEnglish"
-        } else {
-            loadText = "holycityenglish"
+        if let lang = UserDefaults.objectForKey("Lang") as? String {
+            if lang == "es" {
+                if index == 0 {
+                    loadText = "introductionEnglish"
+                } else {
+                    loadText = "holycityenglish"
+                }
+            } else {
+                if index == 0 {
+                    loadText = "introductionhindi"
+                } else {
+                    loadText = "writeuptemple"
+                }
+            }
         }
+        
         if let filePath = Bundle.main.url(forResource: loadText, withExtension: "docx") {
             Utility.showLoaderWithTextMsg(text: "Loading...")
             let request = NSURLRequest(url: filePath)
