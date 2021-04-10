@@ -12,6 +12,7 @@ import CHIPageControl
 import CoreLocation
 import MapKit
 import DropDown
+import Localize_Swift
 
 
 enum KumbhdwarList: CaseIterable {
@@ -87,14 +88,15 @@ class DashboardVC: UIViewController {
     let dropDown = DropDown()
     var locationManager = CLLocationManager()
     let textsOnScrollImage = ["Kumbh Mela Haridwar 2021","Obtain a compulsory medical certificate from a competent authority prior to travelling", "Follow registration process before travelling.","Do not visit the Kumbh Mela if suffering from symptoms of COVID-19","Wear a mask at all times", "People above the age of 65 years, pregnant women, children below the age of 10 yearsand people with co-morbidities are advised not attend the Kumbh Mela", "Follow Covid Appropriate Behaviour", "Kumbh Mela Haridwar 2021" ]
-    
+    let availableLanguages = Localize.availableLanguages()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCollectionView()
         setupUI()
         setupDropDown()
-
+        setupLocalization()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -130,6 +132,15 @@ class DashboardVC: UIViewController {
 
     }
     
+    private func setupLocalization() {
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+    }
+    func setTextOnView() {
+        
+    }
     
     @objc func didChangePage(sender: MaterialPageControl) {
         var offset = imagesCollectionView.contentOffset

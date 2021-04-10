@@ -152,8 +152,8 @@
 "Designation :" = "Designation :";
 "Ward :" = "Ward :";
 "Zone No :" = "Zone No :";
-"Punch In Time" = "Punch In Time";
-"Punch Out Time" = "Punch Out Time";
+"Punch In Time :" = "Punch In Time :";
+"Punch Out Time :" = "Punch Out Time :";
 "Punch In Location" = "Punch In Location";
 "Punch Out Location" = "Punch Out Location";
 "lat_in_Key" = "lat_in_Key";
@@ -179,10 +179,10 @@
 "Covid SOP" = "Covid SOP";
 "Exit Plan" = "Exit Plan";
 "Task" = "Task";
-"Leave" = "Leave";
+"Leave" = "LEAVE";
 "Add Task" = "Add Task";
 "Staff Login" = "Staff Login";
-
+"TASK" = "TASK";
 
 
 
@@ -223,13 +223,9 @@
 "Registration for track person" = "Registration for track person";
 
 "ATM" = "ATM";
-"Hospital" = "Hospital";
 "Hotel" = "Hotel";
 "Petrol Pump" = "Petrol Pump";
 "Local Eateries" = "Local Eateries";
-
-"Add New Person" = "Add New Person";
-
 "Car Park" = "Car Park";
 "Car Search" = "Car Search";
 
@@ -237,3 +233,74 @@
 "WALKING" = "WALKING";
 
 "Use Emergency SOS" = "Use Emergency SOS";
+
+
+
+
+
+
+
+"KUMBHDWAR" = "KUMBHDWAR";
+"SOS" = "SOS";
+"According to Hindu mythology, Kumbh Mela is an important and religious festival which is celebrated four times over the course of 12 years. The location of the festival keeps rotating between four pilgrimage sites situated on the banks of the holy rivers. These places are: Haridwar on the Ganges in the Uttarakhand, Ujjain on the Shipra river in Madhya Pradesh, Nashik on the Godavari river in Maharashtra and Prayagraj at the confluence of three rivers Ganga, Yamuna and Saraswati in the Uttar Pradesh.
+" = "According to Hindu mythology, Kumbh Mela is an important and religious festival which is celebrated four times over the course of 12 years. The location of the festival keeps rotating between four pilgrimage sites situated on the banks of the holy rivers. These places are: Haridwar on the Ganges in the Uttarakhand, Ujjain on the Shipra river in Madhya Pradesh, Nashik on the Godavari river in Maharashtra and Prayagraj at the confluence of three rivers Ganga, Yamuna and Saraswati in the Uttar Pradesh.";
+"Travel" = "Travel";
+"Registration" = "Registration";
+"Track Friends &Family" = "Track Friends &Family";
+"Plan your Journey" = "Plan your Journey";
+"Official No." = "Official No.";
+"Obtain a compulsory medical certificate from a competent authority; prior to travelling" = "Obtain a compulsory medical certificate from a competent authority prior to travelling";
+"Follow registration process before travelling." = "Follow registration process before travelling.";
+"Do not visit the Kumbh Mela if suffering from symptoms of COVID-19" = "Do not visit the Kumbh Mela if suffering from symptoms of COVID-19";
+"Wear a mask at all times" = "Wear a mask at all times";
+"People above the age of 65 years, pregnant women, children below the age of 10 yearsand people with co-morbidities are advised not attend the Kumbh Mela" = "People above the age of 65 years, pregnant women, children below the age of 10 yearsand people with co-morbidities are advised not attend the Kumbh Mela";
+"Follow Covid Appropriate Behaviour" = "Follow Covid Appropriate Behaviour";
+"Change Language" = "Change Language";
+
+"Family" = "Family";
+"Group Type : " = "Group Type : ";
+"Delete" = "Delete";
+"On Map" = "On Map";
+"Ghat Name :" = "Ghat Name :";
+"Travel Mode :" = "Travel Mode :";
+"Person :" = "Person :";
+"Visit Date :" = "Visit Date :";
+"     Show Journey Route" = "     Show Journey Route";
+"Room :" = "Room :";
+"Bed Capacity :" = "Bed Capacity :";
+"Type :" = "Type :";
+"Search Facility Type" = "Search Facility Type";
+"Police Station" = "Police Station";
+"Vending Zone" = "Vending Zone";
+"Toilet" = "Toilet";
+"Lost and found centers" = "Lost and found centers";
+"Search Transport Type" = "Search Transport Type";
+"ISBT" = "ISBT";
+"Railway Station" = "Railway Station";
+
+
+"Direction" = "Direction";
+"RAISE FEEDBACK" = "RAISE FEEDBACK";
+"Add Complaint Data Details" = "Add Complaint Data Details";
+"Select Category" = "Select Category";
+"Description" = "Description";
+"TOILET CLEAN" = "TOILET CLEAN";
+"CHANGING ROOM" = "CHANGING ROOM";
+"SANITAION POINT" = "SANITAION POINT";
+"ATTENDANCE" = "ATTENDANCE";
+"Ward No :" = "Ward No :";
+"From Date" = "From Date";
+"MARK ATTENDANCE" = "MARK ATTENDANCE";
+"To Date" = "To Date";
+"Login Id :" = "Login Id :";
+"Circle Name :" = "Circle Name :";
+"Assigned On :" = "Assigned On :";
+"From :" = "From :";
+"To :" = "To :";
+"Is Approved :" = "Is Approved :";
+"Approved On :" = "Approved On :";
+"Approved Remark :" = "Approved Remark :";
+"Remark :" = "Remark :";
+"Apply Leave" = "Apply Leave";
+"APPLY LEAVE" = "APPLY LEAVE";
+"Add apply leave details" = "Add apply leave details";
