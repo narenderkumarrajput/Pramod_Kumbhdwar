@@ -731,8 +731,8 @@
 				BD5DB4CB25FBE96E00A46CD8 /* Sources */,
 				BD5DB4CC25FBE96E00A46CD8 /* Frameworks */,
 				BD5DB4CD25FBE96E00A46CD8 /* Resources */,
-				C0AD617229F1ABBC8C24DB16 /* [CP] Embed Pods Frameworks */,
-				AC3D18397E8B1E5796A676B9 /* [CP] Copy Pods Resources */,
+				AD4220076FE89E46B4375075 /* [CP] Embed Pods Frameworks */,
+				4420980169B85FB17FF714C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -770,8 +770,8 @@
 				BD5DB4EC25FBE97400A46CD8 /* Sources */,
 				BD5DB4ED25FBE97400A46CD8 /* Frameworks */,
 				BD5DB4EE25FBE97400A46CD8 /* Resources */,
-				4286A6FB8BB4688380F645E5 /* [CP] Embed Pods Frameworks */,
-				9E9CC4BC742FF51230AC6512 /* [CP] Copy Pods Resources */,
+				7B9B5649DC1D2D2454546746 /* [CP] Embed Pods Frameworks */,
+				BA6D8F13BA72E081082ABA6D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -870,41 +870,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4286A6FB8BB4688380F645E5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9E9CC4BC742FF51230AC6512 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AC3D18397E8B1E5796A676B9 /* [CP] Copy Pods Resources */ = {
+		4420980169B85FB17FF714C9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -919,6 +885,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B9B5649DC1D2D2454546746 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD4220076FE89E46B4375075 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B2E182E39DDC8932D91E4CC4 /* [CP] Check Pods Manifest.lock */ = {
@@ -965,21 +965,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C0AD617229F1ABBC8C24DB16 /* [CP] Embed Pods Frameworks */ = {
+		BA6D8F13BA72E081082ABA6D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar-KumbhdwarUITests/Pods-Kumbhdwar-KumbhdwarUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F8BC7BBF064B0F82E267DE62 /* [CP] Check Pods Manifest.lock */ = {

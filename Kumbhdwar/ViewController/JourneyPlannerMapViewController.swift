@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import GoogleMaps
+import Localize_Swift
 
 class JourneyPlannerMapViewController: UIViewController {
     
@@ -59,6 +60,11 @@ class JourneyPlannerMapViewController: UIViewController {
         
         self.showUserLocationOnMap()
         self.getPlannerPhaseWise()
+        
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -68,6 +74,11 @@ class JourneyPlannerMapViewController: UIViewController {
     
     @objc func backAction() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setTextOnView() {
+        self.personalBtn.setTitle("PERSONAL VEHICLE".localized(), for: .normal)
+        self.walkBtn.setTitle("WALKING".localized(), for: .normal)
     }
     
     private func showUserLocationOnMap() {

@@ -9,15 +9,16 @@
 import UIKit
 import CoreLocation
 import GoogleMaps
+import Localize_Swift
 
 class NearMeViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var hospitalBtn: CheckBox!
-    @IBOutlet weak var policeBtn: CheckBox!
-    @IBOutlet weak var vendingZoneBtn: CheckBox!
-    @IBOutlet weak var toiletBtn: CheckBox!
-    @IBOutlet weak var railwayStationBtn: CheckBox!
+    @IBOutlet weak var hospitalBtn: CheckBox! //ATM
+    @IBOutlet weak var policeBtn: CheckBox! //Hospital
+    @IBOutlet weak var vendingZoneBtn: CheckBox! //Hotel
+    @IBOutlet weak var toiletBtn: CheckBox! //Petrol Pump
+    @IBOutlet weak var railwayStationBtn: CheckBox! //Local Eateries
     private var locationManager = CLLocationManager()
     private var param:[String: AnyObject] = [:]
     private var place:[Place] = []
@@ -48,11 +49,32 @@ class NearMeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.showUserLocationOnMap()
+        
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    func setTextOnView() {
+        self.hospitalBtn.setTitle("ATM".localized(), for: .normal)
+        self.policeBtn.setTitle("Hospital".localized(), for: .normal)
+        self.vendingZoneBtn.setTitle("Hotel".localized(), for: .normal)
+        self.toiletBtn.setTitle("Petrol Pump".localized(), for: .normal)
+        self.railwayStationBtn.setTitle("Local Eateries".localized(), for: .normal)
+        
+        /*
+         hospitalBtn: CheckBox! //ATM
+         policeBtn: CheckBox! //Hospital
+         vendingZoneBtn: CheckBox! //Hotel
+         toiletBtn: CheckBox! //Petrol Pump
+         railwayStationBtn: CheckBox! //Local Eateries
+         */
     }
     
     private func googleUrl(_ latLngWithComa: String, type: String) ->String {

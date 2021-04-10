@@ -250,8 +250,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Select Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pc9-sS-cEp">
-                                <rect key="frame" x="20" y="389.5" width="155" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pc9-sS-cEp">
+                                <rect key="frame" x="20" y="389.5" width="153" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -358,12 +358,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="pDl-rH-kmE"/>
                     <connections>
+                        <outlet property="donHaveAccountLbl" destination="WWU-S6-fm1" id="T0l-tj-Ng0"/>
                         <outlet property="englishBtn" destination="Cjt-XW-G9A" id="q35-bh-tLo"/>
+                        <outlet property="headerTitle" destination="rhg-xH-aEM" id="iVw-6h-X6t"/>
                         <outlet property="hindiBtn" destination="dJg-V0-29a" id="bdO-nc-POd"/>
+                        <outlet property="loginLbl" destination="AzK-5L-4iC" id="1DB-g0-Xmm"/>
                         <outlet property="passwordBgView" destination="xrS-E2-ihp" id="BSP-Lo-jsD"/>
                         <outlet property="passwordTxtFild" destination="UFj-8e-Phe" id="Zd4-S9-d1r"/>
                         <outlet property="phoneBgView" destination="QbP-92-Pnd" id="7nP-D9-2UZ"/>
                         <outlet property="phoneTxtFild" destination="8eR-2W-9TU" id="NQK-fU-nUZ"/>
+                        <outlet property="selectLangLbl" destination="pc9-sS-cEp" id="SOv-jo-MxO"/>
+                        <outlet property="selectLoginTypeLbl" destination="kBd-st-Rw7" id="R38-2l-8LT"/>
+                        <outlet property="sendBtn" destination="uIq-Xe-v7R" id="FKc-Ep-JpE"/>
+                        <outlet property="signupBtn" destination="yAU-Nb-sp4" id="tfZ-sk-8e1"/>
+                        <outlet property="sihninBtn" destination="Q8g-cl-8kq" id="HzV-bE-Uo7"/>
                         <outlet property="staffBtn" destination="hrE-ga-klv" id="AZt-Tm-3BP"/>
                         <outlet property="visitorBtn" destination="iEt-nn-LWD" id="xvy-EC-jIu"/>
                     </connections>
@@ -846,12 +854,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="VKV-cm-aga"/>
                     <connections>
+                        <outlet property="alreadyLbl" destination="7Wf-PL-To4" id="qie-gv-O6X"/>
                         <outlet property="changeIconButton" destination="5Pc-1L-iQf" id="Jse-9O-BXt"/>
+                        <outlet property="desLbl" destination="5dW-22-aJ3" id="AHt-Bu-NAy"/>
+                        <outlet property="getStartRegiter" destination="wXT-eu-EQa" id="7ED-HM-2Fw"/>
+                        <outlet property="iAgreeLbl" destination="meY-OG-PIQ" id="2Ta-7o-j49"/>
+                        <outlet property="loginBtn" destination="XrQ-Fa-5Zg" id="h1s-e1-kBZ"/>
                         <outlet property="nameTxtFild" destination="ezT-h3-J29" id="sjR-zU-KPY"/>
+                        <outlet property="otpBtn" destination="z8Z-4B-nA4" id="UYL-dw-kBF"/>
                         <outlet property="otpTxtFild" destination="svX-S0-ocv" id="wcZ-ub-hd9"/>
                         <outlet property="passwordTxtFild" destination="yfp-TM-HuY" id="0bl-Ug-EuU"/>
                         <outlet property="phoneTxtFild" destination="xss-ht-oKG" id="rTH-Gv-iYG"/>
                         <outlet property="registerButton" destination="Y9y-Kl-6Ta" id="uZR-rG-kRX"/>
+                        <outlet property="regiterBtn" destination="Y9y-Kl-6Ta" id="u0g-DB-RbX"/>
+                        <outlet property="viewTerms" destination="2Zb-XP-deU" id="U0o-8B-Tha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBQ-GF-vnC" sceneMemberID="firstResponder"/>
@@ -2327,7 +2343,7 @@
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will send OTP on your registered mail id please check your mail and add otp!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzo-x2-cZX">
+                                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will send OTP on your registered Mobile No. please check your message and add OTP!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzo-x2-cZX">
                                                                 <rect key="frame" x="20" y="66.5" width="287" height="61"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="287" id="4X3-Fl-ymR"/>
@@ -2359,7 +2375,7 @@
                                                                             <constraint firstAttribute="height" constant="1" id="wLo-vB-Et9"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4wD-XE-J3z">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4wD-XE-J3z">
                                                                         <rect key="frame" x="8" y="8" width="358" height="31"/>
                                                                         <color key="textColor" red="0.83682322499999995" green="0.30445599559999997" blue="0.14501863719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2662,10 +2678,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="CFp-x2-KR0"/>
                     <connections>
+                        <outlet property="desc" destination="bzo-x2-cZX" id="bA3-8S-X4u"/>
                         <outlet property="familyBtn" destination="0yR-cP-eTw" id="rHd-gB-u3T"/>
                         <outlet property="nameTxtFild" destination="XDa-rv-AbK" id="Igy-02-tyN"/>
+                        <outlet property="otpBtn" destination="uji-n6-Gng" id="G51-qP-Sha"/>
                         <outlet property="otpTxtFild" destination="1U1-3p-cCy" id="ISu-Db-SC2"/>
                         <outlet property="phoneTxtFild" destination="4wD-XE-J3z" id="fgc-zt-pif"/>
+                        <outlet property="regsBtn" destination="Dck-Gp-gmv" id="3KX-gG-3lC"/>
+                        <outlet property="trackTitle" destination="ZLC-dh-YrP" id="ceC-Ha-9b0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzb-ev-exX" sceneMemberID="firstResponder"/>
@@ -2922,6 +2942,8 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="MpW-Kh-ylI" id="QPX-8N-Z0U"/>
+                        <outlet property="parkBtn" destination="SUq-vA-ygH" id="tw1-hc-zUo"/>
+                        <outlet property="searchBtn" destination="4Md-ll-NFD" id="diG-6E-z5Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HRd-EO-u0Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2971,11 +2993,11 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJk-Xo-BvI">
-                                <rect key="frame" x="132" y="822" width="150" height="40"/>
+                                <rect key="frame" x="82" y="822" width="250" height="40"/>
                                 <color key="backgroundColor" red="0.8524614573" green="0.30056777600000001" blue="0.1410931051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9zx-Xq-i2Q"/>
-                                    <constraint firstAttribute="width" constant="150" id="xRc-zZ-zad"/>
+                                    <constraint firstAttribute="width" constant="250" id="xRc-zZ-zad"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -3004,6 +3026,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="qHa-kg-jad" id="iDE-7I-UEM"/>
+                        <outlet property="sosBtn" destination="AJk-Xo-BvI" id="JeO-cG-IPG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyD-ry-bOb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3274,8 +3297,29 @@
         <designable name="Cjt-XW-G9A">
             <size key="intrinsicContentSize" width="60" height="18"/>
         </designable>
+        <designable name="YyG-nX-TDZ">
+            <size key="intrinsicContentSize" width="47" height="18"/>
+        </designable>
         <designable name="dJg-V0-29a">
             <size key="intrinsicContentSize" width="38" height="18"/>
+        </designable>
+        <designable name="f9p-0r-GAi">
+            <size key="intrinsicContentSize" width="67" height="18"/>
+        </designable>
+        <designable name="hrE-ga-klv">
+            <size key="intrinsicContentSize" width="43" height="18"/>
+        </designable>
+        <designable name="iEN-gj-GW4">
+            <size key="intrinsicContentSize" width="41" height="18"/>
+        </designable>
+        <designable name="iEt-nn-LWD">
+            <size key="intrinsicContentSize" width="54" height="18"/>
+        </designable>
+        <designable name="thR-xh-MxN">
+            <size key="intrinsicContentSize" width="94" height="18"/>
+        </designable>
+        <designable name="y4p-9E-fmC">
+            <size key="intrinsicContentSize" width="106" height="18"/>
         </designable>
     </designables>
     <resources>

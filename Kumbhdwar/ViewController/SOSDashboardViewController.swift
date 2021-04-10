@@ -9,10 +9,12 @@
 import UIKit
 import CoreLocation
 import GoogleMaps
+import Localize_Swift
 
 class SOSDashboardViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var sosBtn: UIButton!
     var locationManager = CLLocationManager()
     private var myLocation = CLLocationCoordinate2D()
 
@@ -36,6 +38,10 @@ class SOSDashboardViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.showUserLocationOnMap()
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -45,6 +51,10 @@ class SOSDashboardViewController: UIViewController {
     
     @objc func backAction() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setTextOnView() {
+        self.sosBtn.setTitle("Use Emergency SOS".localized(), for: .normal)
     }
     
     private func showUserLocationOnMap() {
