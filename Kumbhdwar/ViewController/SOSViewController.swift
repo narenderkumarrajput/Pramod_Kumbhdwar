@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class SOSViewController: UIViewController {
 
+    @IBOutlet weak var sosLbl: UILabel!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var sosBtn: UIButton!
     @IBOutlet weak var tbleView: UITableView!
@@ -38,6 +40,14 @@ class SOSViewController: UIViewController {
         
         self.getSOSList()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+    }
         
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -48,6 +58,11 @@ class SOSViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    func setTextOnView() {
+        self.sosLbl.text = "SOS Connect to below in Emergrncy!".localized()
+        self.navigationItem.setTitle("KUMBHDWAR".localized(), subtitle: "Welcome To Haridwar Maha Kumbh Mela".localized())
+    }
+ 
     @IBAction func sosAction(_ sender: Any) {
         self.callNumber(phoneNumber: "101")
     }
@@ -75,7 +90,10 @@ extension SOSViewController: UITableViewDataSource, UITableViewDelegate {
             cell.cellBtn.setTitle(details.tollNumber, for: .normal)
         }
         return cell
-        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
     }
     
     
@@ -134,28 +152,35 @@ extension SOSViewController {
         
         
         Utility.showLoaderWithTextMsg(text: "Loading...")
-        let urlString = Constants.APIServices.getSOSlist
-        
-        var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://kumbhdwar-api.haridwarkumbhmela2021.com/api/Citizen/GetAllTollFreeNo")!,timeoutInterval: Double.infinity)
         request.addValue("Basic cGF0bmE6cGF0bmEjMjAyMA==", forHTTPHeaderField: "Authorization")
+
         request.httpMethod = "GET"
-        
+
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             Utility.hideLoader()
-            guard let data = data else {
-                print(String(describing: error))
-                return
-            }
-            print(String(data: data, encoding: .utf8)!)
+          guard let data = data else {
+            print(String(describing: error))
+            return
+          }
+          print(String(data: data, encoding: .utf8)!)
             let sosNumber = try? newJSONDecoder().decode(SosNumber.self, from: data)
             self.sosList = sosNumber!
-            self.tbleView.reloadData()
-
+            DispatchQueue.main.async {
+                self.tbleView.reloadData()
+            }
         }
-        
+
         task.resume()
 
         /*
+         
+         print(String(data: data, encoding: .utf8)!)
+         let sosNumber = try? newJSONDecoder().decode(SosNumber.self, from: data)
+         self.sosList = sosNumber!
+         self.tbleView.reloadData()
+         
+         
          [{"TollFreeNoId":1,"TollNumber":"1902","IsActive":true,"Description":"Kumbh Helpline Number"},{"TollFreeNoId":2,"TollNumber":"+91-1334-222725","IsActive":true,"Description":"Kumbh Helpline Number"},{"TollFreeNoId":3,"TollNumber":"+91-1334-222726","IsActive":true,"Description":"Kumbh Helpline Number"},{"TollFreeNoId":4,"TollNumber":"+91-1334-222727","IsActive":true,"Description":"Kumbh Helpline Number"},{"TollFreeNoId":5,"TollNumber":"100","IsActive":true,"Description":"Police"},{"TollFreeNoId":6,"TollNumber":"112","IsActive":true,"Description":"Emergency Helpline"},{"TollFreeNoId":7,"TollNumber":"101","IsActive":true,"Description":"Fire Stations"},{"TollFreeNoId":8,"TollNumber":"108","IsActive":true,"Description":"Ambulance"},{"TollFreeNoId":9,"TollNumber":"1075","IsActive":true,"Description":"Covid Helpline"},{"TollFreeNoId":10,"TollNumber":"1090","IsActive":true,"Description":"Women Helpline"},{"TollFreeNoId":11,"TollNumber":"1098","IsActive":true,"Description":"Child Helpline"},{"TollFreeNoId":12,"TollNumber":"1070","IsActive":true,"Description":"Disaster Helpline"}]
          */
         
@@ -180,6 +205,11 @@ class SOSViewControllerCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        bgView.layer.masksToBounds = true
+        bgView.layer.borderColor  = #colorLiteral(red: 0.9215686275, green: 0.231372549, blue: 0, alpha: 1)
+        bgView.layer.borderWidth = 1.5
+        bgView.layer.cornerRadius = 5.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -21,7 +21,7 @@ class SOSDashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "SOS Services"
+        self.navigationItem.title = "SOS Services".localized()
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.barTintColor = AppStyleGuide.NewUI.Colors.appBg
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]

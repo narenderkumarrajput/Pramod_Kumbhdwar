@@ -29,7 +29,7 @@ class NearMeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "NEAR ME"
+        self.navigationItem.title = "NEAR ME".localized()
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.barTintColor = AppStyleGuide.NewUI.Colors.appBg
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]

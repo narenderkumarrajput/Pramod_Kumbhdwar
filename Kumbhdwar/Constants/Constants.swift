@@ -77,7 +77,7 @@ struct Constants {
         static let getAllPlannerList = Constants.APIServices.apiURL("JourneyPlanner/GetMyJourneyPlan?VisitorId=")
         static let getAllPlannerPhaseWise = Constants.APIServices.apiURL("JourneyPlanner/GetAllJourneyPlanPhaseWise")
         static let deletePlanner = Constants.APIServices.apiURL("JourneyPlanner/DeleteJourneyPlanById?JourneyPlanId=")
-        static let deleteTracker = Constants.APIServices.apiURL("JourneyPlanner/DeleteJTrackPersonById?UserTrackPId=")
+        static let deleteTracker = Constants.APIServices.apiURL("JourneyPlanner/DeleteTrackPersonById?UserTrackPId=")
         static let getAllAkhada = Constants.APIServices.apiURL("Amenities/GetAllAkhadaInfo")
         static let getAllAccommodation = Constants.APIServices.apiURL("Amenities/GetAllAccomodationInfo")
         static let getMyAssignedTask = Constants.APIServices.apiURL("UserTask/GetMyAssignedTask")

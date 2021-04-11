@@ -51,6 +51,8 @@
 "Subscribe To Weather" = "Subscribe To Weather";
 "Log Token" = "Log Token";
 "Subscribed to weather topic" = "Subscribed to weather topic";
+"NEAR ME" = "NEAR ME";
+"SOS Services" = "SOS Services";
 
 "Failed to subscribe to weather topic" = "Failed to subscribe to weather topic";
 "Message" = "Message";
@@ -217,7 +219,7 @@
 "We will send OTP on your registered Mobile No. please check your message and add OTP!" = "We will send OTP on your registered Mobile No. please check your message and add OTP!";
 "I Agree to Terms" = "I Agree to Terms";
 "   View Terms!" = "   View Terms!";
-"Register" = "Register";
+"REGISTER" = "REGISTER";
 
 "Registration for track person" = "Registration for track person";
 
@@ -235,6 +237,9 @@
 
 "Date" = "Date";
 "Place" = "Place";
+"SOS Connect to below in Emergrncy!" = "SOS Connect to below in Emergrncy!";
+"Welcome To Haridwar Maha Kumbh Mela" = "Welcome To Haridwar Maha Kumbh Mela";
+"Terms And Conditions" = "Terms And Conditions";
 
 
 "KUMBHDWAR" = "KUMBHDWAR";
