@@ -13,6 +13,7 @@ class JourneyPlannerVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addJourneyButton: UIButton!
+    @IBOutlet weak var journyListLangText: UILabel!
     var detailsArray = [Any]()
 
     override func viewDidLoad() {

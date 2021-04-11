@@ -17,6 +17,10 @@ class OfficialCell: UITableViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var callButton: UIButton!
     
+    @IBOutlet weak var nameLangText: UILabel!
+    @IBOutlet weak var designationLangText: UILabel!
+    @IBOutlet weak var addressLangText: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()

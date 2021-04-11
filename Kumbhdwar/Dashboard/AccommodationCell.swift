@@ -20,6 +20,13 @@ class AccommodationCell: UITableViewCell {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var locationButton: UIButton!
+    @IBOutlet weak var nameLangText: UILabel!
+    @IBOutlet weak var contactNoLangText: UILabel!
+    @IBOutlet weak var roomLangText: UILabel!
+    @IBOutlet weak var bedCapacityLangText: UILabel!
+    @IBOutlet weak var distanceLangText: UILabel!
+    @IBOutlet weak var typeLangText: UILabel!
+    @IBOutlet weak var addressLangText: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

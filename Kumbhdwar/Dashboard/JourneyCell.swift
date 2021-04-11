@@ -24,6 +24,15 @@ class JourneyCell: UITableViewCell {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var locationButtonOterView: UIView!
     
+    @IBOutlet weak var nameLangText: UILabel!
+    @IBOutlet weak var contactNoLangText: UILabel!
+    @IBOutlet weak var parkingNameLangText: UILabel!
+    @IBOutlet weak var ghatNameLangText: UILabel!
+    @IBOutlet weak var addressLangText: UILabel!
+    @IBOutlet weak var travelModeLangText: UILabel!
+    @IBOutlet weak var personLangText: UILabel!
+    @IBOutlet weak var visitDateLangText: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

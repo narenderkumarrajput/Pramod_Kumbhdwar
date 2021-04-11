@@ -476,10 +476,12 @@
                         <outlet property="collectionView" destination="2eE-pa-Ed6" id="DvE-qO-opQ"/>
                         <outlet property="imagesBgView" destination="Nam-8d-M9K" id="UbW-Ev-It0"/>
                         <outlet property="imagesCollectionView" destination="9ga-Wg-JOk" id="qRd-FB-qsD"/>
+                        <outlet property="kumbhdwarTitleLangText" destination="TBt-LE-kYb" id="XfA-RK-MZ6"/>
                         <outlet property="logoImageView" destination="hY2-kc-flm" id="zHV-Lb-S7y"/>
                         <outlet property="logoutMenu" destination="xju-tV-9Lp" id="dwJ-1k-ar8"/>
                         <outlet property="marqueeLAbel" destination="YLv-Ua-7RH" id="h7G-iS-5FV"/>
                         <outlet property="travelRegistrationButton" destination="FqD-K9-VX1" id="SEa-5b-42D"/>
+                        <outlet property="welcomeLangText" destination="u6L-Er-wsd" id="kWQ-XG-kcd"/>
                         <outletCollection property="viewCollections" destination="Nf8-08-C4r" collectionClass="NSMutableArray" id="G8S-1B-IwA"/>
                         <outletCollection property="viewCollections" destination="GLd-my-0ko" collectionClass="NSMutableArray" id="V1g-7H-7O5"/>
                         <outletCollection property="viewCollections" destination="YF1-hs-5eN" collectionClass="NSMutableArray" id="b8f-P6-pc6"/>
@@ -803,8 +805,12 @@
                     </view>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
+                        <outlet property="addComplaintDataLangText" destination="40T-U0-uRd" id="xGv-hj-uUy"/>
+                        <outlet property="addFeedbackLangText" destination="tVb-wN-Uhk" id="tTg-kX-WGq"/>
                         <outlet property="addPhotoView" destination="VC9-hw-Njq" id="p9Z-tq-Le5"/>
                         <outlet property="addedImage" destination="kkX-2Q-nOl" id="sNM-lc-BOO"/>
+                        <outlet property="attachPhotoLangText" destination="3Oe-Ff-q38" id="nSt-u5-PEp"/>
+                        <outlet property="attachingAPhotoLangText" destination="Wnx-xY-KQE" id="Gh6-w9-EhY"/>
                         <outlet property="defaultPic" destination="9Aw-io-vth" id="zHr-En-mwc"/>
                         <outlet property="descriptionextView" destination="DCI-IW-4jB" id="dBv-IQ-jij"/>
                         <outlet property="selectCategoryButton" destination="WxL-Vt-KqA" id="2TF-tP-mP3"/>
@@ -1328,18 +1334,26 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="addressLabel" destination="zLF-gr-XK3" id="SXz-uZ-f6U"/>
+                                            <outlet property="addressLangText" destination="B4x-ar-jAK" id="4Me-1s-I6t"/>
                                             <outlet property="contactNoLAbel" destination="oqZ-gb-Hp6" id="JZD-Ln-gEJ"/>
+                                            <outlet property="contactNoLangText" destination="5IT-Y7-v7t" id="NyI-hi-yCr"/>
                                             <outlet property="deleteButton" destination="NIa-E5-Ozl" id="zxN-Yz-Id8"/>
                                             <outlet property="ghatNameLabel" destination="tqQ-Id-W1I" id="S0m-zr-Vna"/>
+                                            <outlet property="ghatNameLangText" destination="lNt-gE-SQT" id="2zd-zh-dbH"/>
                                             <outlet property="locationButton" destination="afF-hQ-Xr8" id="2RT-62-Nnm"/>
                                             <outlet property="locationButtonOterView" destination="7mY-a4-C3q" id="uMS-Ih-BCj"/>
                                             <outlet property="mainBGView" destination="f8M-FU-8Ub" id="mCM-ht-vJV"/>
                                             <outlet property="nameLabel" destination="ayd-8d-Zfd" id="7zz-xU-tdH"/>
+                                            <outlet property="nameLangText" destination="qcB-uO-yse" id="PNz-s7-pn0"/>
                                             <outlet property="parkingNameLabel" destination="ER2-eH-oKY" id="8tE-qr-mqw"/>
+                                            <outlet property="parkingNameLangText" destination="Lr6-C9-ROd" id="EyC-4P-dlT"/>
                                             <outlet property="personLabel" destination="1w8-F7-OnR" id="L5n-x7-UrY"/>
+                                            <outlet property="personLangText" destination="gX5-Dz-ubD" id="wA4-fc-e01"/>
                                             <outlet property="subBGView" destination="rj4-c3-6Tk" id="Cic-Yu-J8b"/>
                                             <outlet property="travelModeLabel" destination="cgv-oJ-S3K" id="oj5-00-N0u"/>
+                                            <outlet property="travelModeLangText" destination="hGE-Y1-PaG" id="l08-ob-XyT"/>
                                             <outlet property="visitDateLAbel" destination="ImS-y3-qUK" id="ptd-2f-EJR"/>
+                                            <outlet property="visitDateLangText" destination="XEj-SY-jUA" id="JU0-fI-UfW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1383,6 +1397,7 @@
                     </view>
                     <connections>
                         <outlet property="addJourneyButton" destination="AZL-Cc-OPG" id="k4K-ad-sWB"/>
+                        <outlet property="journyListLangText" destination="7cc-zz-MD3" id="vhS-mh-RGZ"/>
                         <outlet property="tableView" destination="nNb-2t-d6e" id="zTJ-Vj-q0T"/>
                     </connections>
                 </viewController>
@@ -1658,10 +1673,13 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="contactNoLabel" destination="PRQ-jt-Win" id="gr8-Yf-UfB"/>
+                                            <outlet property="contactNoLangText" destination="Nw8-QW-Lbn" id="xIO-6h-fdI"/>
                                             <outlet property="deleteButton" destination="1Ht-ug-m9l" id="hhG-J2-cVH"/>
                                             <outlet property="groupTypeLabel" destination="R6m-NQ-jo2" id="wR2-K6-a7n"/>
+                                            <outlet property="groupTypeLangText" destination="nOt-TL-G84" id="knP-54-ipc"/>
                                             <outlet property="mainBGView" destination="OHy-kL-S4N" id="ypi-RV-AZ1"/>
                                             <outlet property="nameLabel" destination="r9c-KM-IfD" id="3Ww-B7-POR"/>
+                                            <outlet property="nameLangText" destination="jX3-ah-wEj" id="oD5-Rp-TGx"/>
                                             <outlet property="subBgView" destination="GAC-dA-Go6" id="9ej-FL-8TS"/>
                                             <outlet property="trackerButton" destination="K0t-CD-Iyr" id="bsC-25-uQY"/>
                                         </connections>
@@ -1747,6 +1765,7 @@
                         <outlet property="searchButton" destination="Kj5-xn-isQ" id="KoG-4q-1Dw"/>
                         <outlet property="searchOuterView" destination="Vaq-pt-3eh" id="sP9-hz-gUy"/>
                         <outlet property="tableView" destination="LSH-q7-KTm" id="wqF-pm-b7h"/>
+                        <outlet property="trackerListLangText" destination="zkZ-oa-xDK" id="f65-H8-SO2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ys5-Qi-IIJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1982,7 +2001,9 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="bgView" destination="bt6-8H-ohE" id="gga-XZ-dfd"/>
+                                            <outlet property="descriptionLangText" destination="4Ka-tJ-ZdA" id="HON-ck-0rN"/>
                                             <outlet property="descriptionTextLabel" destination="HVG-gR-GJ7" id="QDQ-74-2cu"/>
+                                            <outlet property="distanceLangText" destination="ZiH-uu-9Fg" id="Wvz-cf-KWr"/>
                                             <outlet property="distanceTextLabel" destination="sRv-SL-Gnx" id="xLV-Tj-S0H"/>
                                             <outlet property="locationButton" destination="FrD-JR-zPf" id="QYk-0R-JAE"/>
                                             <outlet property="mainBGView" destination="LhO-Gt-XkN" id="aEt-9s-gqB"/>
@@ -2507,10 +2528,16 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="addressLAbel" destination="Qrf-Pf-N8z" id="9SW-OE-6an"/>
+                                            <outlet property="addressLangText" destination="RRR-DC-5a9" id="HKZ-td-1tv"/>
                                             <outlet property="categoryLAbel" destination="RZe-uo-j0u" id="s1b-OY-Yee"/>
+                                            <outlet property="categoryLangText" destination="Ivo-kl-Tpu" id="rhS-hr-m7z"/>
                                             <outlet property="descriptionLabel" destination="HVA-WU-qhe" id="edl-fI-ryR"/>
+                                            <outlet property="descriptionLangText" destination="FnY-ew-mfd" id="k44-1P-Gjl"/>
                                             <outlet property="feedbackDate" destination="Poz-Mm-ggI" id="5Jg-4o-oQ8"/>
+                                            <outlet property="feedbackDateLangText" destination="f28-1a-GwC" id="pxI-xu-KgQ"/>
                                             <outlet property="feedbackLabel" destination="CdC-5N-02D" id="6I7-It-ici"/>
+                                            <outlet property="feedbackLangText" destination="KpM-hc-46r" id="y8I-CT-WlI"/>
+                                            <outlet property="feedbackNoLangText" destination="zV3-PH-ufi" id="8BX-ga-XIi"/>
                                             <outlet property="feedbackNumberLAbel" destination="hHH-1v-xUX" id="c8m-NB-HSR"/>
                                             <outlet property="imageButton" destination="bKH-bJ-dBr" id="eqo-Os-dVJ"/>
                                             <outlet property="imageButtonBGView" destination="tUh-IG-AHL" id="3I4-Le-qxh"/>
@@ -2518,6 +2545,7 @@
                                             <outlet property="locationButtonBGView" destination="lad-FT-JKy" id="AHx-gX-hrp"/>
                                             <outlet property="mainBGView" destination="1B9-9c-kCq" id="Se3-uE-1hX"/>
                                             <outlet property="statusLabel" destination="ZWc-92-2XH" id="3o5-jn-cdM"/>
+                                            <outlet property="statusLangText" destination="SQg-VT-LXX" id="czm-L8-NUG"/>
                                             <outlet property="subBGView" destination="mNF-oK-FsE" id="pdf-Ci-9xo"/>
                                         </connections>
                                     </tableViewCell>
@@ -2562,6 +2590,7 @@
                     </view>
                     <connections>
                         <outlet property="raiseFeedBackButton" destination="SeK-qP-VjG" id="Z5r-Sa-NAh"/>
+                        <outlet property="submittedFeedbackLangText" destination="8Ez-H3-Tim" id="Ei5-fM-2Ia"/>
                         <outlet property="tableView" destination="vKc-vl-gJe" id="T9D-W5-du7"/>
                     </connections>
                 </viewController>
@@ -2838,10 +2867,13 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="addressLabel" destination="K6o-ek-hbd" id="j7G-wP-fEG"/>
+                                            <outlet property="addressLangText" destination="d3T-ir-RGX" id="5uk-o9-jgE"/>
                                             <outlet property="distanceLabel" destination="OyO-8F-4rB" id="nKg-Lx-yHT"/>
+                                            <outlet property="distanceLangText" destination="HKe-30-ddg" id="0tv-h8-Ngu"/>
                                             <outlet property="locationButton" destination="THe-yo-YGp" id="xYR-eg-Y6o"/>
                                             <outlet property="mainBgView" destination="1xH-nF-JmZ" id="sNz-a5-Iq6"/>
                                             <outlet property="nameLabel" destination="UXP-73-CcA" id="Vji-Y4-8YA"/>
+                                            <outlet property="nameLangText" destination="rIR-tP-LbM" id="fXH-2B-Eri"/>
                                             <outlet property="subBgView" destination="a9B-jL-Phg" id="59j-xc-2zQ"/>
                                         </connections>
                                     </tableViewCell>
@@ -2871,6 +2903,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="akhadaTitleLangText" destination="urz-NT-nRV" id="4Vx-oR-vg0"/>
                         <outlet property="searchTextButton" destination="fwR-5e-pS1" id="Wdq-XQ-fyP"/>
                         <outlet property="searchTextField" destination="1GD-CP-nYA" id="zTh-gH-6gd"/>
                         <outlet property="searchTextFieldOuterView" destination="Ocj-Vy-zBC" id="iFv-8r-K1A"/>
@@ -3337,15 +3370,22 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="addressLabel" destination="0HF-Jf-KkO" id="qXg-Vh-Lqb"/>
+                                            <outlet property="addressLangText" destination="niL-Lj-S68" id="wNo-tp-2lp"/>
                                             <outlet property="bedCapacityLabel" destination="Gx8-4h-wvp" id="RTf-UC-rE8"/>
+                                            <outlet property="bedCapacityLangText" destination="Ezj-5l-pOp" id="Kf3-gG-r8i"/>
+                                            <outlet property="contactNoLangText" destination="zqF-Hf-AGT" id="g9O-p7-QEm"/>
                                             <outlet property="contactNumberLabel" destination="fJ8-Jh-JRi" id="I2c-84-vpy"/>
                                             <outlet property="distanceLabel" destination="DWI-bd-qkh" id="x7N-dy-RQj"/>
+                                            <outlet property="distanceLangText" destination="5Kb-eT-mnc" id="6l4-SO-Cqh"/>
                                             <outlet property="locationButton" destination="acM-Nj-wct" id="GJV-Xv-ITM"/>
                                             <outlet property="mainBGView" destination="U7L-PW-280" id="wLi-s7-CHn"/>
                                             <outlet property="nameLabel" destination="8Qj-E6-hE3" id="wOv-K1-bcX"/>
+                                            <outlet property="nameLangText" destination="d0n-Nj-huJ" id="1J2-lx-MQ3"/>
                                             <outlet property="roomLabel" destination="rer-qf-5Ax" id="BEl-kh-uU8"/>
+                                            <outlet property="roomLangText" destination="u5r-CR-1zq" id="nd8-4x-Ygd"/>
                                             <outlet property="subBGView" destination="Jtl-z6-wvU" id="xOj-at-rra"/>
                                             <outlet property="typeLabel" destination="IFc-sL-aiG" id="XX6-H7-upD"/>
+                                            <outlet property="typeLangText" destination="crP-Jr-j6I" id="aEV-Av-Lre"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -3374,6 +3414,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accommodationTitleLangText" destination="c9c-PI-6qA" id="dnq-bI-ulI"/>
                         <outlet property="searchTextButton" destination="hv7-45-5ix" id="sHz-nv-oR5"/>
                         <outlet property="searchTextField" destination="rFl-hO-2vc" id="kit-30-IHU"/>
                         <outlet property="searchTextFieldOuterView" destination="iur-kl-Ml0" id="RS3-GO-MyK"/>
@@ -3691,9 +3732,12 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="addressLabel" destination="U9q-EX-2K2" id="gpM-TD-4NV"/>
+                                            <outlet property="addressLangText" destination="Pto-dj-Rlw" id="Ggu-cZ-Rjk"/>
                                             <outlet property="callButton" destination="3Mg-Ws-epR" id="eq2-Uc-FSq"/>
                                             <outlet property="designationLabel" destination="BK4-FY-KNT" id="w6Z-CW-ZkX"/>
+                                            <outlet property="designationLangText" destination="EW3-H6-APB" id="jiW-Ao-l4B"/>
                                             <outlet property="mainBgView" destination="KPo-NZ-L6V" id="7od-Vo-EvE"/>
+                                            <outlet property="nameLangText" destination="oNP-bM-fi9" id="r8Y-tl-2GZ"/>
                                             <outlet property="officialNameLabel" destination="zZi-Rg-Qny" id="VAb-hS-eFx"/>
                                             <outlet property="subBgView" destination="uTQ-wB-aAG" id="fAg-07-prv"/>
                                         </connections>
@@ -3722,6 +3766,7 @@
                     </view>
                     <connections>
                         <outlet property="logoIcon" destination="BIR-kw-3yK" id="idH-2N-s4Q"/>
+                        <outlet property="officialNoLangText" destination="5uU-QP-vvr" id="UiQ-k3-ZuD"/>
                         <outlet property="tableView" destination="8kw-b3-vZK" id="KbE-Gw-BWe"/>
                     </connections>
                 </viewController>

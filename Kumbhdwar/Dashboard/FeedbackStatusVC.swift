@@ -13,7 +13,8 @@ class FeedbackStatusVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var raiseFeedBackButton: UIButton!
-
+    @IBOutlet weak var submittedFeedbackLangText: UILabel!
+    
     var detailsArray = [Any]()
     override func viewDidLoad() {
         super.viewDidLoad()

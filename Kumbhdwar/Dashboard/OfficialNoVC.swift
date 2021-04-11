@@ -12,6 +12,7 @@ class OfficialNoVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logoIcon: UIImageView!
+    @IBOutlet weak var officialNoLangText: UILabel!
     
     var detailsArray = [Any]()
 

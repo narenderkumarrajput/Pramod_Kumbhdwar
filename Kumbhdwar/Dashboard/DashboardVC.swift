@@ -77,6 +77,8 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var travelRegistrationButton: UIButton!
     
     @IBOutlet var travelViewCollections: [UIView]!
+    @IBOutlet weak var kumbhdwarTitleLangText: UILabel!
+    @IBOutlet weak var welcomeLangText: UILabel!
     
     private let colors: [UIColor] = [.green, .blue, .black]
     var timer = Timer()
@@ -93,10 +95,10 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLocalization()
         setupCollectionView()
         setupUI()
         setupDropDown()
-        setupLocalization()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -139,7 +141,7 @@ class DashboardVC: UIViewController {
         }
     }
     func setTextOnView() {
-        
+
     }
     
     @objc func didChangePage(sender: MaterialPageControl) {
@@ -165,7 +167,7 @@ class DashboardVC: UIViewController {
         marqueeLAbel.trailingBuffer = 20.0
     }
     private func setupUI() {
-        self.title = "KUMBHDWAR"
+        self.title = "KUMBHDWAR".localized()
         DispatchQueue.main.async {
               self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
@@ -319,7 +321,7 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.StoryboardIdentifiers.dashboardCell, for: indexPath) as? DashboardCollectionCell else { return UICollectionViewCell() }
             let item = KumbhdwarList.allCases[indexPath.item]
-            cell.textLabel.text = item.text
+            cell.textLabel.text = item.text.localized()
             cell.imageView.image = item.image
             return cell
         }

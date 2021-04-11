@@ -22,6 +22,10 @@ class RaiseFeedbackVC: UIViewController {
     @IBOutlet weak var addedImage: UIImageView!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var addPhotoView: UIView!
+    @IBOutlet weak var addComplaintDataLangText: UILabel!
+    @IBOutlet weak var addFeedbackLangText: UILabel!
+    @IBOutlet weak var attachPhotoLangText: UILabel!
+    @IBOutlet weak var attachingAPhotoLangText: UILabel!
     
     let dropDown = DropDown()
     var locationManager = CLLocationManager()

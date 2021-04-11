@@ -17,6 +17,10 @@ class AkhadaCell: UITableViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var locationButton: UIButton!
     
+    @IBOutlet weak var nameLangText: UILabel!
+    @IBOutlet weak var distanceLangText: UILabel!
+    @IBOutlet weak var addressLangText: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

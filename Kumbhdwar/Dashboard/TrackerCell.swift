@@ -18,6 +18,9 @@ class TrackerCell: UITableViewCell {
     @IBOutlet weak var trackerButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
+    @IBOutlet weak var nameLangText: UILabel!
+    @IBOutlet weak var contactNoLangText: UILabel!
+    @IBOutlet weak var groupTypeLangText: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()

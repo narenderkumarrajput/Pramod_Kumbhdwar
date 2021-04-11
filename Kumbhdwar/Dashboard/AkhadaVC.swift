@@ -17,7 +17,8 @@ class AkhadaVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchTextFieldOuterView: UIView!
     @IBOutlet weak var searchTextButton: UIButton!
-   
+    @IBOutlet weak var akhadaTitleLangText: UILabel!
+    
     var detailsArray = [Any]()
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?

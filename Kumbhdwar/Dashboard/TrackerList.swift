@@ -17,6 +17,7 @@ class TrackerList: UIViewController {
     @IBOutlet weak var onMapButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchOuterView: UIView!
+    @IBOutlet weak var trackerListLangText: UILabel!
     
     var detailsArray = [Any]()
     let dropDown = DropDown()

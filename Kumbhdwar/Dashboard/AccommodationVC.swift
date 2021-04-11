@@ -15,6 +15,7 @@ class AccommodationVC: UIViewController,CLLocationManagerDelegate {
     
     var detailsArray = [Any]()
 
+    @IBOutlet weak var accommodationTitleLangText: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextFieldOuterView: UIView!
     @IBOutlet weak var searchTextButton: UIButton!

@@ -24,6 +24,13 @@ class FeedbackStatusCell: UITableViewCell {
     @IBOutlet weak var mainBGView: UIView!
     @IBOutlet weak var subBGView: UIView!
     
+    @IBOutlet weak var feedbackNoLangText: UILabel!
+    @IBOutlet weak var feedbackLangText: UILabel!
+    @IBOutlet weak var statusLangText: UILabel!
+    @IBOutlet weak var feedbackDateLangText: UIStackView!
+    @IBOutlet weak var descriptionLangText: UILabel!
+    @IBOutlet weak var categoryLangText: UILabel!
+    @IBOutlet weak var addressLangText: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
