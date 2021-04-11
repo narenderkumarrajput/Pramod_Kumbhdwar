@@ -770,7 +770,7 @@
 				BD5DB4EC25FBE97400A46CD8 /* Sources */,
 				BD5DB4ED25FBE97400A46CD8 /* Frameworks */,
 				BD5DB4EE25FBE97400A46CD8 /* Resources */,
-				7B9B5649DC1D2D2454546746 /* [CP] Embed Pods Frameworks */,
+				7B9B5649DC1D2D2454546746 /* [CP] Copy Pods Resources */,
 				BA6D8F13BA72E081082ABA6D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -887,7 +887,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kumbhdwar/Pods-Kumbhdwar-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7B9B5649DC1D2D2454546746 /* [CP] Embed Pods Frameworks */ = {
+		7B9B5649DC1D2D2454546746 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1312,7 +1312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.0;
+				CURRENT_PROJECT_VERSION = 1.2.0;
 				DEVELOPMENT_TEAM = 9YG7G7YB2J;
 				INFOPLIST_FILE = Kumbhdwar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1320,7 +1320,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajeevi.Kumbhdwar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1336,7 +1336,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.0;
+				CURRENT_PROJECT_VERSION = 1.2.0;
 				DEVELOPMENT_TEAM = 9YG7G7YB2J;
 				INFOPLIST_FILE = Kumbhdwar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1344,7 +1344,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajeevi.Kumbhdwar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -326,31 +326,43 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3y-57-5tV">
                                 <rect key="frame" x="0.0" y="88" width="414" height="60"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cke-1T-xT8">
-                                        <rect key="frame" x="63" y="8" width="291" height="48"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cke-1T-xT8">
+                                        <rect key="frame" x="55" y="8" width="304" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KUMBHDWAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBt-LE-kYb">
-                                                <rect key="frame" x="79" y="0.0" width="133" height="24"/>
+                                                <rect key="frame" x="85.5" y="0.0" width="133" height="22"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Gateway to Haridwar Maha Kumbh 2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="u6L-Er-wsd">
-                                                <rect key="frame" x="11.5" y="32" width="268.5" height="16"/>
+                                                <rect key="frame" x="18" y="30" width="268.5" height="14"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hY2-kc-flm">
-                                        <rect key="frame" x="8" y="7.5" width="45" height="45"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZD-OC-0aD">
+                                        <rect key="frame" x="5" y="7.5" width="45" height="45"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myLogo" translatesAutoresizingMaskIntoConstraints="NO" id="hY2-kc-flm">
+                                                <rect key="frame" x="2.5" y="2.5" width="40" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="fDa-Yo-Lb4"/>
+                                                    <constraint firstAttribute="width" constant="40" id="vs5-5j-zLa"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="fDa-Yo-Lb4"/>
-                                            <constraint firstAttribute="width" constant="45" id="vs5-5j-zLa"/>
+                                            <constraint firstItem="hY2-kc-flm" firstAttribute="centerX" secondItem="PZD-OC-0aD" secondAttribute="centerX" id="Nyf-Qg-9b2"/>
+                                            <constraint firstAttribute="height" constant="45" id="PoF-9i-Iqv"/>
+                                            <constraint firstAttribute="width" constant="45" id="V8k-4o-LSN"/>
+                                            <constraint firstItem="hY2-kc-flm" firstAttribute="centerY" secondItem="PZD-OC-0aD" secondAttribute="centerY" id="wrD-YC-Ao7"/>
                                         </constraints>
-                                    </imageView>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xju-tV-9Lp">
                                         <rect key="frame" x="364" y="10" width="50" height="40"/>
                                         <constraints>
@@ -367,12 +379,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6Ra-VC-C1M"/>
                                     <constraint firstItem="xju-tV-9Lp" firstAttribute="centerY" secondItem="T3y-57-5tV" secondAttribute="centerY" id="DzP-mt-70Q"/>
-                                    <constraint firstItem="cke-1T-xT8" firstAttribute="leading" secondItem="hY2-kc-flm" secondAttribute="trailing" constant="10" id="PDO-4d-DcM"/>
+                                    <constraint firstItem="PZD-OC-0aD" firstAttribute="centerY" secondItem="T3y-57-5tV" secondAttribute="centerY" id="OKR-Wx-ufY"/>
                                     <constraint firstAttribute="trailing" secondItem="xju-tV-9Lp" secondAttribute="trailing" id="Unr-QX-TzZ"/>
+                                    <constraint firstItem="cke-1T-xT8" firstAttribute="centerX" secondItem="T3y-57-5tV" secondAttribute="centerX" id="WtY-os-7sy"/>
+                                    <constraint firstItem="cke-1T-xT8" firstAttribute="centerY" secondItem="T3y-57-5tV" secondAttribute="centerY" id="bE4-HF-uxw"/>
                                     <constraint firstItem="cke-1T-xT8" firstAttribute="top" secondItem="T3y-57-5tV" secondAttribute="top" constant="8" id="h4T-P5-Ieg"/>
-                                    <constraint firstItem="hY2-kc-flm" firstAttribute="leading" secondItem="T3y-57-5tV" secondAttribute="leading" constant="8" id="taK-jI-iLs"/>
-                                    <constraint firstItem="hY2-kc-flm" firstAttribute="centerY" secondItem="T3y-57-5tV" secondAttribute="centerY" id="ukV-o2-6mr"/>
-                                    <constraint firstItem="xju-tV-9Lp" firstAttribute="leading" secondItem="cke-1T-xT8" secondAttribute="trailing" constant="10" id="x42-He-rrZ"/>
+                                    <constraint firstItem="PZD-OC-0aD" firstAttribute="leading" secondItem="T3y-57-5tV" secondAttribute="leading" constant="5" id="la4-Zj-uvO"/>
+                                    <constraint firstItem="xju-tV-9Lp" firstAttribute="leading" secondItem="cke-1T-xT8" secondAttribute="trailing" constant="5" id="x42-He-rrZ"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FqD-K9-VX1">
@@ -477,6 +490,7 @@
                         <outlet property="imagesBgView" destination="Nam-8d-M9K" id="UbW-Ev-It0"/>
                         <outlet property="imagesCollectionView" destination="9ga-Wg-JOk" id="qRd-FB-qsD"/>
                         <outlet property="kumbhdwarTitleLangText" destination="TBt-LE-kYb" id="XfA-RK-MZ6"/>
+                        <outlet property="logoBGView" destination="PZD-OC-0aD" id="1ZJ-3k-Ntf"/>
                         <outlet property="logoImageView" destination="hY2-kc-flm" id="zHV-Lb-S7y"/>
                         <outlet property="logoutMenu" destination="xju-tV-9Lp" id="dwJ-1k-ar8"/>
                         <outlet property="marqueeLAbel" destination="YLv-Ua-7RH" id="h7G-iS-5FV"/>
@@ -3784,6 +3798,9 @@
         <designable name="YLv-Ua-7RH">
             <size key="intrinsicContentSize" width="3585" height="18"/>
         </designable>
+        <designable name="nJq-HH-eGA">
+            <size key="intrinsicContentSize" width="99" height="8"/>
+        </designable>
     </designables>
     <resources>
         <image name="ajeevi_logo" width="76.333335876464844" height="32.333332061767578"/>
@@ -3799,6 +3816,7 @@
         <image name="instagram" width="170.66667175292969" height="170.66667175292969"/>
         <image name="logo" width="40" height="40"/>
         <image name="maps_icon" width="256" height="256"/>
+        <image name="myLogo" width="170.66667175292969" height="170.66667175292969"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <image name="twitter" width="170.66667175292969" height="170.66667175292969"/>
         <namedColor name="PrimaryColor">

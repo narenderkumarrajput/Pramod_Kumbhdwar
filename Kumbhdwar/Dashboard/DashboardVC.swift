@@ -76,6 +76,7 @@ class DashboardVC: UIViewController {
     @IBOutlet var viewCollections: [UIView]!
     @IBOutlet weak var travelRegistrationButton: UIButton!
     
+    @IBOutlet weak var logoBGView: UIView!
     @IBOutlet var travelViewCollections: [UIView]!
     @IBOutlet weak var kumbhdwarTitleLangText: UILabel!
     @IBOutlet weak var welcomeLangText: UILabel!
@@ -89,7 +90,7 @@ class DashboardVC: UIViewController {
     let kumbhdwarImages = [#imageLiteral(resourceName: "one"), #imageLiteral(resourceName: "two"), #imageLiteral(resourceName: "three"), #imageLiteral(resourceName: "four"), #imageLiteral(resourceName: "five"), #imageLiteral(resourceName: "six"), #imageLiteral(resourceName: "seven"), #imageLiteral(resourceName: "eighth")]
     var x = 1
     let loadUrls = [Constants.introductionUrl, Constants.attractionsUrl, Constants.howToReachUrl, Constants.accommodationUrl]
-    let amenityIds = ["2,4","6,8" ,"5,10,14,15", "6,11"]
+    let amenityIds = ["2,4","6,8" ,"5,10,14,15,47", "6,11"]
     let dropDown = DropDown()
     var locationManager = CLLocationManager()
     let textsOnScrollImage = ["Kumbh Mela Haridwar 2021","Obtain a compulsory medical certificate from a competent authority prior to travelling", "Follow registration process before travelling.","Do not visit the Kumbh Mela if suffering from symptoms of COVID-19","Wear a mask at all times", "People above the age of 65 years, pregnant women, children below the age of 10 yearsand people with co-morbidities are advised not attend the Kumbh Mela", "Follow Covid Appropriate Behaviour", "Kumbh Mela Haridwar 2021" ]
@@ -180,7 +181,8 @@ class DashboardVC: UIViewController {
               self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
         locationManager.requestWhenInUseAuthorization()
-        logoImageView.round(enable: true, withRadius: logoImageView.frame.height/2)
+//        logoImageView.round(enable: true, withRadius: logoImageView.frame.height/2)
+        logoBGView.round(enable: true, withRadius: logoBGView.frame.height/2)
             setupMarqueLabel()
         aleppoPAgeControl.delegate = self
         for view in viewCollections {
@@ -197,7 +199,9 @@ class DashboardVC: UIViewController {
     }
     
     @IBAction func travelReistrationButtonTapped(_ sender: UIButton) {
-    
+        if let url = URL(string: "https://dsclservices.org.in/kumbh/") {
+            UIApplication.shared.open(url)
+        }
     }
     
     @IBAction func sosButtonTapped(_ sender: Any) {

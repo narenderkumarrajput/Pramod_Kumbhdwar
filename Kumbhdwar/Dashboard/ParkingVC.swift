@@ -32,7 +32,7 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
     var amenityTypeId = ""
     var dataSource:[String] = []
     var index = 0
-    let amenityIds = ["2,4","6,8" ,"5,10,14,15,11", "6,11"]
+    let amenityIds = ["2,4","6,8" ,"5,10,14,15,47", "6,11"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,7 +155,7 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
                 case 2: getParkingDetails(location: currentLocation, amenityId: "10");break
                 case 3: getParkingDetails(location: currentLocation, amenityId: "14");break
                 case 4: getParkingDetails(location: currentLocation, amenityId: "15");break
-//                case 5: getParkingDetails(location: currentLocation, amenityId: "11");break
+                case 5: getParkingDetails(location: currentLocation, amenityId: "47");break
                 default: break
                 }
             } else {

@@ -56,12 +56,14 @@ class StaffVC: UIViewController {
     private let colors: [UIColor] = [.green, .blue, .black]
     var timer = Timer()
     var counter = 0
-    let kumbhdwarImages = [#imageLiteral(resourceName: "one"), #imageLiteral(resourceName: "two"), #imageLiteral(resourceName: "three"), #imageLiteral(resourceName: "four"), #imageLiteral(resourceName: "five"), #imageLiteral(resourceName: "six"), #imageLiteral(resourceName: "seven")]
+    let kumbhdwarImages = [#imageLiteral(resourceName: "one"), #imageLiteral(resourceName: "two"), #imageLiteral(resourceName: "three"), #imageLiteral(resourceName: "four"), #imageLiteral(resourceName: "five"), #imageLiteral(resourceName: "six"), #imageLiteral(resourceName: "seven"), #imageLiteral(resourceName: "eighth")]
     var x = 1
     let loadUrls = [Constants.introductionUrl, Constants.attractionsUrl, Constants.howToReachUrl, Constants.accommodationUrl]
     let amenityIds = ["2,4","6,8" ,"5,10,14,15,11", "6,11"]
     let dropDown = DropDown()
     var locationManager = CLLocationManager()
+    let textsOnScrollImage = ["Kumbh Mela Haridwar 2021","Obtain a compulsory medical certificate from a competent authority prior to travelling", "Follow registration process before travelling.","Do not visit the Kumbh Mela if suffering from symptoms of COVID-19","Wear a mask at all times", "People above the age of 65 years, pregnant women, children below the age of 10 yearsand people with co-morbidities are advised not attend the Kumbh Mela", "Follow Covid Appropriate Behaviour", "Kumbh Mela Haridwar 2021" ]
+    let availableLanguages = Localize.availableLanguages()
 
     
     override func viewDidLoad() {
@@ -178,8 +180,7 @@ class StaffVC: UIViewController {
     }
     
     @IBAction func sosButtonTapped(_ sender: Any) {
-        print("sosButton tapped")
-        
+        showSOSService()
     }
     
     
@@ -277,6 +278,27 @@ extension StaffVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             imageView.clipsToBounds = true
             cell.contentView.addSubview(imageView)
             imageView.round()
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: imageView.frame.width, height: imageView.frame.height))
+            view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+            imageView.addSubview(view)
+            
+            var label = UILabel()
+            switch indexPath.item {
+            case 0,4,6,7:
+                label = UILabel(frame: CGRect(x: cell.contentView.frame.origin.x+10, y: imageView.frame.height - 60, width: cell.contentView.frame.width - 20, height:20))
+            case 1,2,3:
+                label = UILabel(frame: CGRect(x: cell.contentView.frame.origin.x+10, y: imageView.frame.height - 90, width: cell.contentView.frame.width - 20, height:45))
+            case 5:
+                label = UILabel(frame: CGRect(x: cell.contentView.frame.origin.x+10, y: imageView.frame.height - 120, width: cell.contentView.frame.width - 20, height:90))
+            default: break
+            }
+            label.numberOfLines = 0
+            label.textColor = .white
+            label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+            label.text = textsOnScrollImage[indexPath.item].localized()
+//            label.backgroundColor = .cyan
+//            label.font = UIFont.systemFont(ofSize: 17)
+            cell.contentView.addSubview(label)
             cell.backgroundColor = .clear
             return cell
             
@@ -374,5 +396,14 @@ extension StaffVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         }
         
     }
-        
+    private func showSOSService() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        var nearMeVC = SOSDashboardViewController()
+        if #available(iOS 13.0, *) {
+            nearMeVC = (sb.instantiateViewController(identifier: "SOSDashboardViewController") as? SOSDashboardViewController)!
+        } else {
+            nearMeVC = sb.instantiateViewController(withIdentifier: "SOSDashboardViewController") as! SOSDashboardViewController
+        }
+        self.navigationController?.pushViewController(nearMeVC, animated: true)
+    }
 }
