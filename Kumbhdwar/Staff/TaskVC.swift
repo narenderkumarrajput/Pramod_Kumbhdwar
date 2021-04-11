@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class TaskVC: UIViewController {
 
@@ -20,12 +21,28 @@ class TaskVC: UIViewController {
     @IBOutlet weak var fromDateOuterView: UIView!
     @IBOutlet weak var toDateOuterView: UIView!
     
+    @IBOutlet weak var taskLangText: UILabel!
+    @IBOutlet weak var fromDateLangText: UILabel!
+    @IBOutlet weak var toDateLangText: UILabel!
+
     var detailsArray = [Any]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupLocalization()
         setupUI()
+    }
+    private func setupLocalization() {
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+    }
+    
+    func setTextOnView() {
+        taskLangText.text = "TASK".localized()
+        fromDateLangText.text = "From Date".localized()
+        toDateLangText.text = "To Date".localized()
     }
     
     private func setupUI() {

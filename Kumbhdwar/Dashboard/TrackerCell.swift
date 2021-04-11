@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class TrackerCell: UITableViewCell {
 
@@ -24,6 +25,7 @@ class TrackerCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
+        setupText()
         
     }
 
@@ -37,7 +39,17 @@ class TrackerCell: UITableViewCell {
         mainBGView.borderWithColor(enable: true, withRadius: 5.0, width: 1.0, color: UIColor.white.withAlphaComponent(0.1))
         subBgView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
         trackerButton.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
-
+        nameLangText.text = Constants.Placeholders.name
+        contactNoLangText.text = Constants.Placeholders.contact
+        groupTypeLangText.text = Constants.Placeholders.groupType
+        trackerButton.setTitle(Constants.Placeholders.trackLocation, for: .normal)
+    }
+    
+    func setupText() {
+        nameLangText.text = Constants.Placeholders.name.localized()
+        contactNoLangText.text = Constants.Placeholders.contact.localized()
+        groupTypeLangText.text = Constants.Placeholders.groupType.localized()
+        trackerButton.setTitle(Constants.Placeholders.trackLocation, for: .normal)
     }
     func setupCell(details: [String: Any]) {
         if let text = details["Name"] as? String {

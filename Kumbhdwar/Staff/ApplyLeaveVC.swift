@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Localize_Swift
+
 
 protocol ApplyDelegate: class {
     func sendMessage(msg: String?)
@@ -24,6 +26,10 @@ class ApplyLeaveVC: UIViewController {
     @IBOutlet weak var toDatePicker: UIDatePicker!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var applyLeaveLangText: UILabel!
+    @IBOutlet weak var addApplyLeaveDetails: UILabel!
+    @IBOutlet weak var fromDateLangText: UILabel!
+    @IBOutlet weak var toDateLangText: UILabel!
     
     var isFromDateValueChanged = false
     var isToDateValueChanged = false
@@ -32,10 +38,24 @@ class ApplyLeaveVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupLocalization()
         setupUI()
     }
+    private func setupLocalization() {
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+    }
     
+    func setTextOnView() {
+        applyLeaveLangText.text = "APPLY LEAVE".localized()
+        fromDateLangText.text = "From Date".localized()
+        toDateLangText.text = "To Date".localized()
+        addApplyLeaveDetails.text = "Add apply leave details".localized()
+        submitButton.setTitle("Submit".localized(), for: .normal)
+        descriptionTextView.text = "Description".localized()
+    }
     private func setupUI() {
         self.fromDateOuterView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
         self.toDateOuterView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)

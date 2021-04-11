@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Localize_Swift
 
 class JourneyPlannerVC: UIViewController {
 
@@ -18,11 +19,21 @@ class JourneyPlannerVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupLocalization()
         setupUI()
         getAllPlannerList()
     }
-
+    private func setupLocalization() {
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+    }
+    func setTextOnView() {
+        journyListLangText.text = "JOURNEY LIST".localized()
+        addJourneyButton.setTitle("Add New Journey".localized(), for: .normal)
+        
+    }
     func setupUI() {
         detailsArray.removeAll()
         detailsArray = []

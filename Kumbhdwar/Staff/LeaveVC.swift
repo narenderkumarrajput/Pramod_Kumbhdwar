@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class LeaveVC: UIViewController {
 
@@ -19,14 +20,31 @@ class LeaveVC: UIViewController {
     @IBOutlet weak var toDateOuterView: UIView!
     @IBOutlet weak var applyLeaveButton: UIButton!
     
+    @IBOutlet weak var leaveLangText: UILabel!
+    @IBOutlet weak var fromDateLangText: UILabel!
+    @IBOutlet weak var toDateLangText: UILabel!
+    
     var detailsArray = [Any]()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupLocalization()
         setupUI()
         setupDateUI()
+    }
+    private func setupLocalization() {
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+    }
+    
+    func setTextOnView() {
+        leaveLangText.text = "LEAVE".localized()
+        fromDateLangText.text = "From Date".localized()
+        toDateLangText.text = "To Date".localized()
+        applyLeaveButton.setTitle("Apply Leave".localized(), for: .normal)
     }
     private func setupUI() {
         detailsArray.removeAll()

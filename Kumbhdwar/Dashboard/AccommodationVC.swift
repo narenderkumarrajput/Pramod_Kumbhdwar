@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-
+import Localize_Swift
 
 class AccommodationVC: UIViewController,CLLocationManagerDelegate {
     
@@ -25,9 +25,24 @@ class AccommodationVC: UIViewController,CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLocalization()
         setupUI()
+        
     }
-
+    
+    private func setupLocalization() {
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+    }
+    
+    func setTextOnView() {
+        accommodationTitleLangText.text = "ACCOMMODATION".localized()
+        searchTextField.placeholder = Constants.Placeholders.searchByName.localized()
+        searchTextButton.setTitle(Constants.Placeholders.search.localized(), for: .normal)
+    }
+    
     private func setupUI() {
         detailsArray.removeAll()
         detailsArray = []

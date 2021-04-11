@@ -79,6 +79,9 @@ class DashboardVC: UIViewController {
     @IBOutlet var travelViewCollections: [UIView]!
     @IBOutlet weak var kumbhdwarTitleLangText: UILabel!
     @IBOutlet weak var welcomeLangText: UILabel!
+    @IBOutlet weak var sosButton: UIButton!
+    @IBOutlet weak var travelLangText: UILabel!
+    @IBOutlet weak var registrationLangText: UILabel!
     
     private let colors: [UIColor] = [.green, .blue, .black]
     var timer = Timer()
@@ -126,7 +129,7 @@ class DashboardVC: UIViewController {
     func setupDropDown() {
         dropDown.anchorView = self.logoutMenu // UIView or UIBarButtonItem
         // The list of items to display. Can be changed dynamically
-        dropDown.dataSource = ["Logout", "Change Language"]
+        dropDown.dataSource = ["Logout".localized(), "Change Language".localized()]
         dropDown.width = 150
         dropDown.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         DropDown.appearance().textColor = #colorLiteral(red: 0.9215686275, green: 0.231372549, blue: 0, alpha: 1)
@@ -141,7 +144,12 @@ class DashboardVC: UIViewController {
         }
     }
     func setTextOnView() {
-
+        marqueeLAbel.text = Constants.Placeholders.marqueeText.localized()
+        kumbhdwarTitleLangText.text = Constants.Placeholders.kumbhdwar.localized()
+        welcomeLangText.text = Constants.Placeholders.welcomeText.localized()
+        sosButton.setTitle("SOS".localized(), for: .normal)
+        travelLangText.text = "Travel".localized()
+        registrationLangText.text = "Registration".localized()
     }
     
     @objc func didChangePage(sender: MaterialPageControl) {
@@ -165,9 +173,9 @@ class DashboardVC: UIViewController {
         marqueeLAbel.fadeLength = 10.0
         marqueeLAbel.leadingBuffer = 20.0
         marqueeLAbel.trailingBuffer = 20.0
+        marqueeLAbel.text = Constants.Placeholders.marqueeText.localized()
     }
     private func setupUI() {
-        self.title = "KUMBHDWAR".localized()
         DispatchQueue.main.async {
               self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
@@ -242,7 +250,7 @@ class DashboardVC: UIViewController {
         dropDown.selectionAction = { (index: Int, item: String) in
             switch index {
             case 0:
-                let alert = UIAlertController(title: "Logout", message: "Are you sure you want to sign out?", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Logout".localized(), message: "Are you sure you want to sign out?".localized(), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
                       switch action.style{
                       case .default:
@@ -263,11 +271,24 @@ class DashboardVC: UIViewController {
                       @unknown default:
                         fatalError()
                       }}))
-                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancel".localized(), style: UIAlertAction.Style.cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 
             case 1:
-                print("Change Language Tapped")
+                if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+                    if lang == "es" {
+                        UserDefaults.standard.setValue("hi", forKey: "Lang")
+                    } else {
+                        UserDefaults.standard.setValue("es", forKey: "Lang")
+                    }
+                    if let myLang = UserDefaults.standard.object(forKey: "Lang") as? String {
+                        Localize.setCurrentLanguage(myLang)
+                        self.setTextOnView()
+                        self.imagesCollectionView.reloadData()
+                        self.collectionView.reloadData()
+                    }
+                }
+                
             default: break
             }
             
@@ -307,7 +328,7 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             label.numberOfLines = 0
             label.textColor = .white
             label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-            label.text = textsOnScrollImage[indexPath.item]
+            label.text = textsOnScrollImage[indexPath.item].localized()
 //            label.backgroundColor = .cyan
 //            label.font = UIFont.systemFont(ofSize: 17)
             cell.contentView.addSubview(label)

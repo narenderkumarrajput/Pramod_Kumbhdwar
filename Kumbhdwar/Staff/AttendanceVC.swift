@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class AttendanceVC: UIViewController {
 
@@ -15,16 +16,31 @@ class AttendanceVC: UIViewController {
     @IBOutlet weak var dateOuterView: UIView!
     @IBOutlet weak var dateBtnBgView: UIView!
     @IBOutlet weak var myDatePicker: UIDatePicker!
- 
+    @IBOutlet weak var attendanceLabel: UILabel!
+    @IBOutlet weak var fromDateLangLabel: UILabel!
+    @IBOutlet weak var markAttendanceButton: UIButton!
+    
     var detailsArray = [Any]()
     var valueChanged = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLocalization()
         setupUI()
         getAllAttendanceInfo(searchText: "")
     }
+    private func setupLocalization() {
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+    }
     
+    func setTextOnView() {
+        attendanceLabel.text = "ATTENDANCE".localized()
+        fromDateLangLabel.text = "From Date".localized()
+        markAttendanceButton.setTitle("MARK ATTENDANCE".localized(), for: .normal)
+    }
     private func setupUI() {
         detailsArray.removeAll()
         detailsArray = []
@@ -80,7 +96,7 @@ class AttendanceVC: UIViewController {
         let parameters = [ "SearchText":"",
                            "PageNo":0,
                            "PageSize":10,
-                           "LoginId": UserManager.shared.activeUser.CNO ?? "7989237387",
+                           "LoginId": UserManager.shared.activeUser.Code ?? "",
                            "TDate": dateTextField.text ?? ""] as [String: AnyObject]
         let urlString = Constants.APIServices.getAttendance
         NetworkManager.requestPOSTURL(urlString, params: parameters, headers: headers) { (responseJson) in

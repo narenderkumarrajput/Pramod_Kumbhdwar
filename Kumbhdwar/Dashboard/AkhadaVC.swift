@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import MapKit
+import Localize_Swift
 
 class AkhadaVC: UIViewController, CLLocationManagerDelegate {
 
@@ -25,9 +26,15 @@ class AkhadaVC: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLocalization()
         setupUI()
     }
-    
+    private func setupLocalization() {
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+    }
     private func setupUI() {
         detailsArray.removeAll()
         detailsArray = []
@@ -45,6 +52,11 @@ class AkhadaVC: UIViewController, CLLocationManagerDelegate {
             self.currentLocation = currentLocation
             getAllAkhadaInfo(lat: "\(currentLocation.coordinate.latitude)", long: "\(currentLocation.coordinate.longitude)", searchText: "")
         }
+    }
+    private func setTextOnView() {
+        akhadaTitleLangText.text = "Akhadas".localized()
+        searchTextField.placeholder = "Search by name".localized()
+        searchTextButton.setTitle("Search".localized(), for: .normal)
     }
     @IBAction func searchTextButtonTapped(_ sender: UIButton) {
         self.view.endEditing(true)

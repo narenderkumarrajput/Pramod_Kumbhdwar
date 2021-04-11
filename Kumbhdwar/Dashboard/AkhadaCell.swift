@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class AkhadaCell: UITableViewCell {
 
@@ -25,10 +26,15 @@ class AkhadaCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         setupUI()
-        
-
+//        setupLocalization()
+        setupText()
     }
-
+    private func setupText() {
+        nameLangText.text = Constants.Placeholders.name.localized()
+        addressLangText.text = Constants.Placeholders.address.localized()
+        distanceLangText.text = Constants.Placeholders.distance.localized()
+        locationButton.setTitle(Constants.Placeholders.direction.localized(), for: .normal)
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

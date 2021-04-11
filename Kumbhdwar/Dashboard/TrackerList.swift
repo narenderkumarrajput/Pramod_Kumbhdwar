@@ -9,6 +9,7 @@
 import UIKit
 import DropDown
 import CoreLocation
+import Localize_Swift
 
 class TrackerList: UIViewController {
 
@@ -25,11 +26,25 @@ class TrackerList: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupLocalization()
         setupUI()
         setupDropDown()
         isFamily = true
         getAllTrackerList(type: "FAMILY")
+    }
+    
+    private func setupLocalization() {
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+    }
+    
+    func setTextOnView() {
+        trackerListLangText.text = Constants.Titles.trackerList.localized()
+        onMapButton.setTitle(Constants.Placeholders.onMap.localized(), for: .normal)
+        addNewPersonButton.setTitle(Constants.Placeholders.addNewPerson.localized(), for: .normal)
+        searchButton.setTitle("Family".localized(), for: .normal)
     }
     
     private func setupUI() {
@@ -87,7 +102,7 @@ class TrackerList: UIViewController {
         dropDown.show()
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
           print("Selected item: \(item) at index: \(index)")
-            self.searchButton.setTitle(item, for: .normal)
+            self.searchButton.setTitle(item.localized(), for: .normal)
             switch index {
             case 0:
                 getAllTrackerList(type:"FAMILY");
@@ -166,7 +181,7 @@ class TrackerList: UIViewController {
     func setupDropDown() {
         dropDown.anchorView = self.searchOuterView // UIView or UIBarButtonItem
         // The list of items to display. Can be changed dynamically
-        dropDown.dataSource = ["Family","Friend"]
+        dropDown.dataSource = ["Family".localized(),"Friend".localized()]
         dropDown.width = searchOuterView.frame.width - 50
         dropDown.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         DropDown.appearance().textColor = UIColor(named: "PrimaryColor") ?? .red

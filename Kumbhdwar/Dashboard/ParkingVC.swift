@@ -11,6 +11,7 @@ import UIKit
 import DropDown
 import MapKit
 import CoreLocation
+import Localize_Swift
 
 class ParkingVC: UIViewController, CLLocationManagerDelegate {
 
@@ -35,7 +36,7 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupLocalization()
         Utilities.setStatusBar()
         setupUI()
         setupDropDown()
@@ -45,12 +46,24 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }
+    
+    private func setupLocalization() {
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+    }
+    func setTextOnView() {
+        searchTextField.placeholder = Constants.Placeholders.searchByName.localized()
+//        searchButton.setTitle(Constants.Placeholders.search, for: .normal)
+        searchTextButton.setTitle(Constants.Placeholders.search, for: .normal)
+    }
 
     func setupUI(){
         searchView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: #colorLiteral(red: 0.9215686275, green: 0.231372549, blue: 0, alpha: 1))
         tableView.estimatedRowHeight = 150.0
         tableView.rowHeight = UITableView.automaticDimension
-        titleLabel.text = title?.uppercased()
+        titleLabel.text = title?.localized()
 //        searchTextField.delegate = self
         switch title {
         case KumbhdwarList.allCases[3].text:
@@ -62,10 +75,10 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
             self.searchViewHeightConstraint.constant = 0
             dataSource = ["Search Parking Type", "Kumbh ISBT Route", "Kumbh Parking"]
         case KumbhdwarList.allCases[8].text:
-            dataSource = ["Search Facility Type", "Hospital", "Police Station", "Vending Zone","Toilet", "Lost and found centers"]
+            dataSource = [Constants.DropDowns.searchFacilityType.localized(), Constants.DropDowns.hospital.localized(), Constants.DropDowns.policeStation.localized(), Constants.DropDowns.vandingZone.localized(), Constants.DropDowns.toilet.localized(), Constants.DropDowns.lostAndFoundCenters.localized()]
             self.searchLabel.text = dataSource[0]
         case KumbhdwarList.allCases[9].text:
-            dataSource = ["Search Transport Type", "ISBT", "Railway Station"]
+            dataSource = [Constants.DropDowns.searchTransportType.localized(), Constants.DropDowns.isbt.localized(), Constants.DropDowns.railwayStation.localized()]
             self.searchLabel.text = dataSource[0]
 
         default: break
@@ -132,7 +145,7 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
         // Action triggered on selection
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
           print("Selected item: \(item) at index: \(index)")
-            self.searchLabel.text = item
+            self.searchLabel.text = item.localized()
             guard let currentLocation = self.currentLocation else { self.dropDown.hide(); return }
             if title == KumbhdwarList.allCases[8].text {
                 switch index {

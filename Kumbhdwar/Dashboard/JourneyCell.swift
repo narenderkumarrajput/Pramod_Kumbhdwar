@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class JourneyCell: UITableViewCell {
 
@@ -37,6 +38,7 @@ class JourneyCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         setupUI()
+        setupText()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -49,6 +51,29 @@ class JourneyCell: UITableViewCell {
         mainBGView.borderWithColor(enable: true, withRadius: 5.0, width: 1.0, color: UIColor.white.withAlphaComponent(0.1))
         subBGView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
         locationButtonOterView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
+        self.nameLangText.text = Constants.Placeholders.name
+        self.contactNoLangText.text = Constants.Placeholders.contact
+        self.parkingNameLangText.text = Constants.Placeholders.parkingName
+        self.ghatNameLangText.text = Constants.Placeholders.ghatName
+        self.addressLangText.text = Constants.Placeholders.address
+        self.travelModeLangText.text = Constants.Placeholders.travelMode
+        self.personLangText.text = Constants.Placeholders.person
+        self.visitDateLangText.text = Constants.Placeholders.visitDate
+        self.locationButton.setTitle("     Show Journey Route", for: .normal)
+        self.deleteButton.setTitle("Delete", for: .normal)
+    }
+    
+    func setupText() {
+        self.nameLangText.text = Constants.Placeholders.name.localized()
+        self.contactNoLangText.text = Constants.Placeholders.contact.localized()
+        self.parkingNameLangText.text = Constants.Placeholders.parkingName.localized()
+        self.ghatNameLangText.text = Constants.Placeholders.ghatName.localized()
+        self.addressLangText.text = Constants.Placeholders.address.localized()
+        self.travelModeLangText.text = Constants.Placeholders.travelMode.localized()
+        self.personLangText.text = Constants.Placeholders.person.localized()
+        self.visitDateLangText.text = Constants.Placeholders.visitDate.localized()
+        self.locationButton.setTitle("     Show Journey Route".localized(), for: .normal)
+        self.deleteButton.setTitle("Delete".localized(), for: .normal)
     }
     
     func setupCell(details: [String:Any]) {

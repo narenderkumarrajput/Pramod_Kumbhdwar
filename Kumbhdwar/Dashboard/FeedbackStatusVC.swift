@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Localize_Swift
 
 class FeedbackStatusVC: UIViewController {
 
@@ -18,7 +19,7 @@ class FeedbackStatusVC: UIViewController {
     var detailsArray = [Any]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupLocalization()
         setupUI()
         
     }
@@ -30,6 +31,17 @@ class FeedbackStatusVC: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
+    }
+    private func setupLocalization() {
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+    }
+    
+    func setTextOnView() {
+        submittedFeedbackLangText.text = "SUBMITTED FEEDBACK".localized()
+        raiseFeedBackButton.setTitle("RAISE FEEDBACK".localized(), for: .normal)
     }
     
     func setupUI() {

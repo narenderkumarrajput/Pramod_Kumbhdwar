@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class OfficialNoVC: UIViewController {
 
@@ -18,12 +19,21 @@ class OfficialNoVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupLocalization()
         logoIcon.borderWithColor(enable: true, withRadius: 22.5, width: 1.0, color: .gray
         )
         getAllOfficialNo()
     }
+    private func setupLocalization() {
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+    }
     
+    func setTextOnView() {
+        officialNoLangText.text = "Official No.".localized()
+    }
     func getAllOfficialNo() {
         self.detailsArray.removeAll()
         self.detailsArray = []

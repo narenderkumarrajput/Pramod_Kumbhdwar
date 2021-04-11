@@ -480,6 +480,9 @@
                         <outlet property="logoImageView" destination="hY2-kc-flm" id="zHV-Lb-S7y"/>
                         <outlet property="logoutMenu" destination="xju-tV-9Lp" id="dwJ-1k-ar8"/>
                         <outlet property="marqueeLAbel" destination="YLv-Ua-7RH" id="h7G-iS-5FV"/>
+                        <outlet property="registrationLangText" destination="Eyt-SC-Qqn" id="Kg4-rU-xXY"/>
+                        <outlet property="sosButton" destination="NqT-g5-4uE" id="z39-BT-Okf"/>
+                        <outlet property="travelLangText" destination="QCH-dB-cQp" id="Kc0-l5-kaN"/>
                         <outlet property="travelRegistrationButton" destination="FqD-K9-VX1" id="SEa-5b-42D"/>
                         <outlet property="welcomeLangText" destination="u6L-Er-wsd" id="kWQ-XG-kcd"/>
                         <outletCollection property="viewCollections" destination="Nf8-08-C4r" collectionClass="NSMutableArray" id="G8S-1B-IwA"/>
@@ -1237,6 +1240,7 @@
                                                                                 </imageView>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afF-hQ-Xr8">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="228" height="45"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                                     <state key="normal" title="     Show Journey Route">
                                                                                         <color key="titleColor" name="PrimaryColor"/>
                                                                                     </state>
@@ -1876,7 +1880,7 @@
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="GhW-lT-7Sj">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="358" height="19"/>
                                                                                     <subviews>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ka-tJ-ZdA">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ka-tJ-ZdA">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="19"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="width" constant="100" id="zzd-lP-pTK"/>
@@ -2534,7 +2538,7 @@
                                             <outlet property="descriptionLabel" destination="HVA-WU-qhe" id="edl-fI-ryR"/>
                                             <outlet property="descriptionLangText" destination="FnY-ew-mfd" id="k44-1P-Gjl"/>
                                             <outlet property="feedbackDate" destination="Poz-Mm-ggI" id="5Jg-4o-oQ8"/>
-                                            <outlet property="feedbackDateLangText" destination="f28-1a-GwC" id="pxI-xu-KgQ"/>
+                                            <outlet property="feedbackDateLangsText" destination="BQ4-dM-3vx" id="qVD-7L-ki0"/>
                                             <outlet property="feedbackLabel" destination="CdC-5N-02D" id="6I7-It-ici"/>
                                             <outlet property="feedbackLangText" destination="KpM-hc-46r" id="y8I-CT-WlI"/>
                                             <outlet property="feedbackNoLangText" destination="zV3-PH-ufi" id="8BX-ga-XIi"/>

@@ -13,6 +13,8 @@ import CHIPageControl
 import CoreLocation
 import MapKit
 import DropDown
+import Localize_Swift
+
 
 
 enum StaffList: CaseIterable {
@@ -47,6 +49,9 @@ class StaffVC: UIViewController {
 
     @IBOutlet weak var aleppoPAgeControl: CHIPageControlAleppo!
     @IBOutlet var viewCollections: [UIView]!
+    @IBOutlet weak var titleLable: UILabel!
+    @IBOutlet weak var welcomeLangLabel: UILabel!
+    @IBOutlet weak var sosButton: UIButton!
     
     private let colors: [UIColor] = [.green, .blue, .black]
     var timer = Timer()
@@ -61,7 +66,7 @@ class StaffVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupLocalization()
         setupCollectionView()
         setupUI()
         setupDropDown()
@@ -90,10 +95,25 @@ class StaffVC: UIViewController {
         collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
 
     }
+    
+    private func setupLocalization() {
+        if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+            Localize.setCurrentLanguage(lang)
+            self.setTextOnView()
+        }
+    }
+    
+    func setTextOnView() {
+        titleLable.text = "KUMBHDWAR".localized()
+        welcomeLangLabel.text = "Staff Login".localized()
+        marqueeLAbel.text = Constants.Placeholders.marqueeText.localized()
+        sosButton.setTitle("SOS".localized(), for: .normal)
+    }
+
     func setupDropDown() {
         dropDown.anchorView = self.logoutMenu // UIView or UIBarButtonItem
         // The list of items to display. Can be changed dynamically
-        dropDown.dataSource = ["Logout"]
+        dropDown.dataSource = ["Logout".localized(), "Change Language".localized()]
         dropDown.width = 120
         dropDown.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         DropDown.appearance().textColor = #colorLiteral(red: 0.9215686275, green: 0.231372549, blue: 0, alpha: 1)
@@ -158,7 +178,7 @@ class StaffVC: UIViewController {
     }
     
     @IBAction func sosButtonTapped(_ sender: Any) {
-        
+        print("sosButton tapped")
         
     }
     
@@ -191,29 +211,48 @@ class StaffVC: UIViewController {
         // Action triggered on selection
         dropDown.selectionAction = { (index: Int, item: String) in
             
-            let alert = UIAlertController(title: "Logout", message: "Are you sure you want to sign out?", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-                  switch action.style{
-                  case .default:
-                        print("default")
-                    UserManager.shared.userLogout()
-                    DispatchQueue.main.async {
-                        let loginNavVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainNav")
-                        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                        appDel.window?.rootViewController = loginNavVC
+            switch index {
+            case 0:
+                let alert = UIAlertController(title: "Logout".localized(), message: "Are you sure you want to sign out?".localized(), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                      switch action.style{
+                      case .default:
+                            print("default")
+                        UserManager.shared.userLogout()
+                        DispatchQueue.main.async {
+                            let loginNavVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainNav")
+                            let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                            appDel.window?.rootViewController = loginNavVC
+                        }
+                      case .cancel:
+                            print("cancel")
+
+                      case .destructive:
+                            print("destructive")
+
+
+                      @unknown default:
+                        fatalError()
+                      }}))
+                alert.addAction(UIAlertAction(title: "Cancel".localized(), style: UIAlertAction.Style.cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+            case 1:
+                if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
+                    if lang == "es" {
+                        UserDefaults.standard.setValue("hi", forKey: "Lang")
+                    } else {
+                        UserDefaults.standard.setValue("es", forKey: "Lang")
                     }
-                  case .cancel:
-                        print("cancel")
-
-                  case .destructive:
-                        print("destructive")
-
-
-                  @unknown default:
-                    fatalError()
-                  }}))
-            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+                    if let myLang = UserDefaults.standard.object(forKey: "Lang") as? String {
+                        Localize.setCurrentLanguage(myLang)
+                        self.setTextOnView()
+                        self.imagesCollectionView.reloadData()
+                        self.collectionView.reloadData()
+                    }
+                }
+            default: break
+            }
            
         }
     }
@@ -244,7 +283,7 @@ extension StaffVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.StoryboardIdentifiers.staffCollectionCell, for: indexPath) as? StaffCollectionCell else { return UICollectionViewCell() }
             let item = StaffList.allCases[indexPath.item]
-            cell.textLabel.text = item.text
+            cell.textLabel.text = item.text.localized()
             cell.imageView.image = item.image
             return cell
         }

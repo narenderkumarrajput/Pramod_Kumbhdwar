@@ -53,6 +53,21 @@
 
 "Use Emergency SOS" = "आपातकालीन एसओएस का उपयोग करें";
 
+
+"Add Journey Planning Data Details" = "यात्रा योजना डेटा विवरण जोड़ें";
+"No of person" = "व्यक्ति की संख्या";
+"Vehicle No" = "वाहन नंबर";
+"E Pass" = "ई पास";
+"Date" = "तिथि";
+"Select Mode Of Commute" = "कम्यूट का मोड चुनें";
+"Select Destination" = "गंतव्य चुनें";
+"Place" = "प्लेस";
+"Submit" = "सबमिट";
+"Select Date" = "चयन तिथि";
+
+
+
+
 "The Gateway to Haridwar Maha Kumbh 2021" = "";
 "Introduction" = "";
 "Akhadas" = "";

@@ -395,6 +395,9 @@
                         <outlet property="logoImageView" destination="EPB-m9-Xez" id="tUb-Ja-Fbk"/>
                         <outlet property="logoutMenu" destination="arX-id-9P5" id="lTW-eV-atC"/>
                         <outlet property="marqueeLAbel" destination="gDD-79-53H" id="5Gg-du-FdW"/>
+                        <outlet property="sosButton" destination="sYC-ez-gEN" id="m2i-6X-UIt"/>
+                        <outlet property="titleLable" destination="LCQ-IX-OAb" id="zco-FR-shd"/>
+                        <outlet property="welcomeLangLabel" destination="fri-OH-kYa" id="n8N-XU-Qtr"/>
                         <outletCollection property="viewCollections" destination="cA3-SC-Rkn" collectionClass="NSMutableArray" id="JU7-U3-6uG"/>
                         <outletCollection property="viewCollections" destination="wf0-jW-AsI" collectionClass="NSMutableArray" id="eKh-0F-T5A"/>
                         <outletCollection property="viewCollections" destination="nqB-xb-21c" collectionClass="NSMutableArray" id="jn6-Cp-uXG"/>
@@ -921,18 +924,27 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="contactNoLabel" destination="vDa-4g-S8a" id="9IJ-up-cDS"/>
+                                            <outlet property="contactNoText" destination="OOf-EU-Zqf" id="khu-nL-G1z"/>
                                             <outlet property="designationLabel" destination="BDi-hJ-I8v" id="fmO-2U-vY1"/>
+                                            <outlet property="designationText" destination="xPn-gL-t6x" id="VAJ-Ah-mW7"/>
                                             <outlet property="mainBgView" destination="gHd-jH-Yzr" id="n0y-N4-6hZ"/>
                                             <outlet property="nameLabel" destination="gTO-ue-Uke" id="RVh-8A-7p2"/>
+                                            <outlet property="nameLangText" destination="RJt-be-uRY" id="kV0-tZ-EvG"/>
                                             <outlet property="punchInLocationButton" destination="UZp-qq-QiP" id="Kex-R4-2XO"/>
+                                            <outlet property="punchInLocationLangText" destination="pFK-MC-CWI" id="NRn-sM-g5J"/>
                                             <outlet property="punchInTimeLabel" destination="0z1-Nf-xgM" id="wIu-ET-oMb"/>
+                                            <outlet property="punchInTimeText" destination="lfX-Fd-g0h" id="MZE-vZ-wzM"/>
                                             <outlet property="punchInView" destination="Avx-mR-Wht" id="8gy-uG-gVw"/>
+                                            <outlet property="punchOutLangText" destination="XZk-FX-BCR" id="0I6-9r-fmW"/>
                                             <outlet property="punchOutLocationButton" destination="LSP-ra-cUL" id="E63-nh-13D"/>
                                             <outlet property="punchOutTimeLabel" destination="huG-LK-j4u" id="bNu-9n-VL8"/>
+                                            <outlet property="punchOutTimeText" destination="FiB-TA-8ur" id="Pyo-nU-3Qv"/>
                                             <outlet property="punchOutView" destination="nRK-ei-Otw" id="Z1A-wz-zSU"/>
                                             <outlet property="subBgView" destination="fE9-Mg-1jS" id="ahJ-pS-uFl"/>
+                                            <outlet property="wardLangText" destination="foj-xb-1cg" id="p40-fT-W8L"/>
                                             <outlet property="wardNoLabel" destination="FOn-hd-LhV" id="oLS-eV-5hK"/>
                                             <outlet property="zoneNoLabel" destination="XTS-cI-Wns" id="G7C-gX-s5L"/>
+                                            <outlet property="zoneNoLangText" destination="H8h-fm-kPf" id="gwK-hL-teA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -978,9 +990,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="attendanceLabel" destination="ilC-qP-Emq" id="whb-De-vfI"/>
                         <outlet property="dateBtnBgView" destination="foT-fj-KsJ" id="I2A-9m-xCA"/>
                         <outlet property="dateOuterView" destination="CLQ-FV-lAm" id="vxU-Ve-BpD"/>
                         <outlet property="dateTextField" destination="Fah-t6-zwy" id="ndN-8X-Cnw"/>
+                        <outlet property="fromDateLangLabel" destination="Nbu-6b-hJi" id="74W-gb-jBD"/>
+                        <outlet property="markAttendanceButton" destination="a3H-HB-VAY" id="LkM-Fj-3yv"/>
                         <outlet property="myDatePicker" destination="rdX-6k-YGX" id="9oR-4Q-aLx"/>
                         <outlet property="tableView" destination="Lrl-Wn-JD5" id="peg-S8-Wil"/>
                     </connections>
@@ -1381,15 +1396,23 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="assignedOnLabel" destination="T5a-Wz-Xnf" id="Uaq-rT-Gu6"/>
+                                            <outlet property="assignedOnLangText" destination="qJs-gF-fbi" id="iUM-f6-35Z"/>
                                             <outlet property="circleNameLAbel" destination="pFB-3w-nRV" id="aM4-Tp-lRN"/>
+                                            <outlet property="circleNameLangText" destination="W7K-Yg-7ec" id="fdH-p3-99D"/>
                                             <outlet property="descriptionLabel" destination="TO6-qP-JxR" id="D2A-hM-2Kk"/>
+                                            <outlet property="descriptionLangText" destination="1aZ-sH-89O" id="gu7-1b-044"/>
                                             <outlet property="feedbackLabel" destination="AZF-lv-WiZ" id="0fc-be-H3N"/>
+                                            <outlet property="feedbackLangText" destination="itG-eB-amr" id="Rou-EW-983"/>
                                             <outlet property="fromLabel" destination="jVA-4M-R7l" id="iah-rd-SZd"/>
+                                            <outlet property="fromLangText" destination="hRW-TZ-BMQ" id="81K-wW-Y1Y"/>
                                             <outlet property="loginIdLabel" destination="asb-HM-AY8" id="KNH-HP-kv2"/>
+                                            <outlet property="loginIdLangText" destination="4Vx-eA-Bze" id="G33-oY-iGf"/>
                                             <outlet property="mainBGView" destination="OSt-jU-r91" id="vNQ-db-eTB"/>
                                             <outlet property="subBgView" destination="RcJ-IU-hit" id="s53-n0-BNc"/>
                                             <outlet property="toLabel" destination="H9F-br-h29" id="WQz-eJ-ouq"/>
+                                            <outlet property="toLangText" destination="ec7-O7-kL9" id="Ea6-Tk-f6s"/>
                                             <outlet property="wardLabel" destination="40m-PL-jOu" id="hSa-g2-69h"/>
+                                            <outlet property="wardLangText" destination="V5d-dx-tjj" id="v8O-lC-iy0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1559,11 +1582,14 @@
                     <connections>
                         <outlet property="dateLabel" destination="g6h-RL-JQ8" id="IbU-g4-yUp"/>
                         <outlet property="fromDateBtnBGView" destination="PKM-aI-FNJ" id="FFp-Mm-c3n"/>
+                        <outlet property="fromDateLangText" destination="g6h-RL-JQ8" id="3xH-G6-XdO"/>
                         <outlet property="fromDateOuterView" destination="9dE-P9-3Ck" id="CLi-pw-sH9"/>
                         <outlet property="fromDateTextField" destination="zwM-Eb-vxN" id="qkX-PL-ClT"/>
                         <outlet property="myDatePicker" destination="QqK-la-Ppz" id="dAl-Ea-qKt"/>
                         <outlet property="tableView" destination="lDa-wx-SKO" id="CdI-P2-jmM"/>
+                        <outlet property="taskLangText" destination="TdS-XE-KGF" id="cao-Ur-fpA"/>
                         <outlet property="toDateBtnBgView" destination="sig-sd-Aut" id="lL2-89-G8W"/>
+                        <outlet property="toDateLangText" destination="1aO-wt-sSq" id="1Lv-Fd-xQ6"/>
                         <outlet property="toDateOuterView" destination="6wG-go-bRr" id="b3S-6S-GwW"/>
                         <outlet property="toDateTextField" destination="I6j-fA-hll" id="43e-SX-SPz"/>
                     </connections>
@@ -2099,15 +2125,23 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="approvedOn" destination="T0L-Om-Zma" id="Sp4-qf-DvX"/>
+                                            <outlet property="approvedOnLangText" destination="YH5-9R-Z1p" id="Xfk-Tu-W9h"/>
                                             <outlet property="approvedRemarkLabel" destination="NPK-aB-KSw" id="ktR-PH-we7"/>
+                                            <outlet property="approvedRemarkLangText" destination="lTB-kZ-05g" id="VDh-ay-ssc"/>
                                             <outlet property="assignedOnLabel" destination="Emp-fo-Fkt" id="s3i-0G-QmA"/>
+                                            <outlet property="assignedOnLangText" destination="UEf-mk-I1l" id="DA0-C9-wbI"/>
                                             <outlet property="fromLabel" destination="ufW-pp-seV" id="5aY-BE-Qto"/>
+                                            <outlet property="fromLangText" destination="hmO-Dt-iYC" id="6gT-hH-e3U"/>
                                             <outlet property="isApprovedLabel" destination="gGE-Ml-CsZ" id="9df-D0-eo8"/>
+                                            <outlet property="isApprovedOnLAngText" destination="3uh-io-f0E" id="ObL-Vf-Aq5"/>
                                             <outlet property="loginIdLabel" destination="T9v-Ku-Keh" id="Syc-2o-byr"/>
+                                            <outlet property="loginIdLangText" destination="TTn-k1-O2Z" id="7m4-Oo-Ygv"/>
                                             <outlet property="mainBGView" destination="6lf-cV-ueg" id="wAe-dp-NxO"/>
+                                            <outlet property="remarkLAngText" destination="jAH-II-fax" id="23Q-AP-1aF"/>
                                             <outlet property="remarkLabel" destination="ZyB-db-BHz" id="fiN-2n-XWo"/>
                                             <outlet property="subBgView" destination="i9y-Eb-U8Q" id="thq-4w-7Xd"/>
                                             <outlet property="toLabel" destination="MMc-Ly-Ia8" id="cmN-lN-mcy"/>
+                                            <outlet property="toLangText" destination="U7v-oK-Bgh" id="0C3-yo-ShS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2158,10 +2192,13 @@
                     <connections>
                         <outlet property="applyLeaveButton" destination="AY7-eC-IGm" id="Zrw-pL-6xW"/>
                         <outlet property="fromDateBtnBGView" destination="9Ms-3P-vYn" id="m1o-Dc-tcY"/>
+                        <outlet property="fromDateLangText" destination="5ps-K5-XoA" id="SWF-fQ-xJp"/>
                         <outlet property="fromDateOuterView" destination="bVj-15-ypu" id="LjC-hr-Zta"/>
                         <outlet property="fromDateTextField" destination="kgR-7o-5xy" id="lXG-rQ-N9e"/>
+                        <outlet property="leaveLangText" destination="EyB-rS-5Kl" id="5GZ-39-qgR"/>
                         <outlet property="tableView" destination="Skw-qU-rOO" id="1vC-kE-Att"/>
                         <outlet property="toDateBtnBgView" destination="fDO-R6-wW7" id="YSk-8D-1YE"/>
+                        <outlet property="toDateLangText" destination="5Sn-dQ-yyS" id="8ir-Fs-84z"/>
                         <outlet property="toDateOuterView" destination="JCq-0Z-6ZN" id="u76-iy-NWi"/>
                         <outlet property="toDateTextField" destination="N7x-2V-Ejc" id="n1j-Ui-Fsg"/>
                     </connections>
@@ -2379,13 +2416,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addApplyLeaveDetails" destination="38k-36-eG6" id="6Wi-ar-aUW"/>
+                        <outlet property="applyLeaveLangText" destination="C1b-76-bTI" id="U2X-1k-Xzu"/>
                         <outlet property="descriptionTextView" destination="aTI-4Q-KIi" id="IhI-YF-Lnc"/>
                         <outlet property="fromDateButtonBgView" destination="DVu-0R-Yci" id="oXN-Gq-LNP"/>
+                        <outlet property="fromDateLangText" destination="9S4-b4-Amy" id="zG4-0Z-0ya"/>
                         <outlet property="fromDateOuterView" destination="lXf-FA-TDw" id="0zj-vA-yvA"/>
                         <outlet property="fromDatePicker" destination="68L-MU-xNP" id="mMp-n7-qUa"/>
                         <outlet property="fromDateTextField" destination="0i8-D4-SIM" id="oCO-Pq-c8b"/>
                         <outlet property="submitButton" destination="TPs-Rm-RfT" id="Gbc-2A-3ZT"/>
                         <outlet property="toDateButtonBgView" destination="93U-ST-jtE" id="G2F-rX-3RT"/>
+                        <outlet property="toDateLangText" destination="P7E-3y-REJ" id="DR2-44-AvJ"/>
                         <outlet property="toDateOuterView" destination="Jfe-bB-U7O" id="ZmX-I7-rNN"/>
                         <outlet property="toDatePicker" destination="OKB-Kk-WAO" id="XGv-I8-CcT"/>
                         <outlet property="toDateTextField" destination="CHE-mY-Fgn" id="Vbm-cF-stR"/>

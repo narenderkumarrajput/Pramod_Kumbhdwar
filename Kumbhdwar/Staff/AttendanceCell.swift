@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Localize_Swift
+
 
 class AttendanceCell: UITableViewCell {
 
@@ -24,6 +26,15 @@ class AttendanceCell: UITableViewCell {
     @IBOutlet weak var punchInView: UIView!
     @IBOutlet weak var punchOutView: UIView!
     
+    @IBOutlet weak var nameLangText: UILabel!
+    @IBOutlet weak var contactNoText: UILabel!
+    @IBOutlet weak var designationText: UILabel!
+    @IBOutlet weak var zoneNoLangText: UILabel!
+    @IBOutlet weak var punchInTimeText: UILabel!
+    @IBOutlet weak var punchOutTimeText: UILabel!
+    @IBOutlet weak var wardLangText: UILabel!
+    @IBOutlet weak var punchInLocationLangText: UILabel!
+    @IBOutlet weak var punchOutLangText: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,6 +53,18 @@ class AttendanceCell: UITableViewCell {
         punchInView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
         punchOutView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: UIColor(named: "PrimaryColor") ?? .red)
 
+        nameLangText.text = Constants.Placeholders.name.localized()
+        contactNoText.text = Constants.Placeholders.contact.localized()
+        designationText.text = Constants.Placeholders.designation.localized()
+        wardLangText.text = Constants.Placeholders.ward.localized()
+        zoneNoLangText.text = Constants.Placeholders.zoneNo.localized()
+        punchInTimeText.text = Constants.Placeholders.punchInTime.localized()
+        punchOutTimeText.text = Constants.Placeholders.punchOutTime.localized()
+        
+        
+        punchInLocationLangText.text = Constants.Placeholders.punchInLocation.localized()
+        punchOutLangText.text = Constants.Placeholders.punchOutLocation.localized()
+        
     }
     
     

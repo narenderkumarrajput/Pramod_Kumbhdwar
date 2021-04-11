@@ -41,7 +41,6 @@
 "Email" = "Email";
 "Password" = "Password";
 "Are you sure you want to logout?" = "Are you sure you want to logout?";
-"Logout" = "Logout";
 
 "Select Occupation" = "Select Occupation";
 "Job" = "Job";
@@ -119,7 +118,7 @@
 "ADD JOURNEY" = "ADD JOURNEY";
 "Add Journey Planning Data Details" = "Add Journey Planning Data Details";
 "Vehicle No" = "Vehicle No";
-"Description : " = "Description : ";
+"Description :" = "Description : ";
 "Feedback No :" = "Feedback No :";
 "Feedback :" = "Feedback :";
 "Status :" = "Status :";
@@ -179,7 +178,7 @@
 "Covid SOP" = "Covid SOP";
 "Exit Plan" = "Exit Plan";
 "Task" = "Task";
-"Leave" = "LEAVE";
+"Leave" = "Leave";
 "Add Task" = "Add Task";
 "Staff Login" = "Staff Login";
 "TASK" = "TASK";
@@ -234,16 +233,13 @@
 
 "Use Emergency SOS" = "Use Emergency SOS";
 
-
-
-
-
+"Date" = "Date";
+"Place" = "Place";
 
 
 "KUMBHDWAR" = "KUMBHDWAR";
 "SOS" = "SOS";
-"According to Hindu mythology, Kumbh Mela is an important and religious festival which is celebrated four times over the course of 12 years. The location of the festival keeps rotating between four pilgrimage sites situated on the banks of the holy rivers. These places are: Haridwar on the Ganges in the Uttarakhand, Ujjain on the Shipra river in Madhya Pradesh, Nashik on the Godavari river in Maharashtra and Prayagraj at the confluence of three rivers Ganga, Yamuna and Saraswati in the Uttar Pradesh.
-" = "According to Hindu mythology, Kumbh Mela is an important and religious festival which is celebrated four times over the course of 12 years. The location of the festival keeps rotating between four pilgrimage sites situated on the banks of the holy rivers. These places are: Haridwar on the Ganges in the Uttarakhand, Ujjain on the Shipra river in Madhya Pradesh, Nashik on the Godavari river in Maharashtra and Prayagraj at the confluence of three rivers Ganga, Yamuna and Saraswati in the Uttar Pradesh.";
+"According to Hindu mythology, Kumbh Mela is an important and religious festival which is celebrated four times over the course of 12 years. The location of the festival keeps rotating between four pilgrimage sites situated on the banks of the holy rivers. These places are: Haridwar on the Ganges in the Uttarakhand, Ujjain on the Shipra river in Madhya Pradesh, Nashik on the Godavari river in Maharashtra and Prayagraj at the confluence of three rivers Ganga, Yamuna and Saraswati in the Uttar Pradesh." = "According to Hindu mythology, Kumbh Mela is an important and religious festival which is celebrated four times over the course of 12 years. The location of the festival keeps rotating between four pilgrimage sites situated on the banks of the holy rivers. These places are: Haridwar on the Ganges in the Uttarakhand, Ujjain on the Shipra river in Madhya Pradesh, Nashik on the Godavari river in Maharashtra and Prayagraj at the confluence of three rivers Ganga, Yamuna and Saraswati in the Uttar Pradesh.";
 "Travel" = "Travel";
 "Registration" = "Registration";
 "Track Friends &Family" = "Track Friends &Family";
@@ -258,6 +254,7 @@
 "Change Language" = "Change Language";
 
 "Family" = "Family";
+"Friend" = "Friend";
 "Group Type : " = "Group Type : ";
 "Delete" = "Delete";
 "On Map" = "On Map";
@@ -304,3 +301,7 @@
 "Apply Leave" = "Apply Leave";
 "APPLY LEAVE" = "APPLY LEAVE";
 "Add apply leave details" = "Add apply leave details";
+"JOURNEY LIST" = "JOURNEY LIST";
+"     Show Journey Route" = "     Show Journey Route";
+"ACCOMMODATION" = "ACCOMMODATION";
+"LEAVE" = "LEAVE";

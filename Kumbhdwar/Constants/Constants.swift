@@ -182,7 +182,62 @@ struct Constants {
         static let officialCell = "OfficialCell"
 
     }
-    
+    struct Titles {
+        static let raiseFeedback = "RAISE FEEDBACK"
+        static let trackerList = "TRACKER LIST"
+    }
+    struct Placeholders {
+        static let marqueeText = "According to Hindu mythology, Kumbh Mela is an important and religious festival which is celebrated four times over the course of 12 years. The location of the festival keeps rotating between four pilgrimage sites situated on the banks of the holy rivers. These places are: Haridwar on the Ganges in the Uttarakhand, Ujjain on the Shipra river in Madhya Pradesh, Nashik on the Godavari river in Maharashtra and Prayagraj at the confluence of three rivers Ganga, Yamuna and Saraswati in the Uttar Pradesh."
+        static let kumbhdwar = "KUMBHDWAR"
+        static let welcomeText = "The Gateway to Haridwar Maha Kumbh 2021"
+        static let name = "Name :"
+        static let address = "Address :"
+        static let distance = "Distance :"
+        static let contact = "Contact No :"
+        static let designation = "Designation :"
+        static let ward = "Ward :"
+        static let zoneNo = "Zone No :"
+        static let punchInTime  = "Punch In Time :"
+        static let punchOutTime = "Punch Out Time :"
+        static let punchInLocation = "Punch In Location"
+        static let punchOutLocation = "Punch Out Location"
+        static let parkingName = "Parking Name :"
+        static let groupType = "Group Type : "
+        static let delete = "Delete"
+        static let onMap = "On Map"
+        static let ghatName = "Ghat Name :"
+        static let travelMode = "Travel Mode :"
+        static let person = "Person :"
+        static let visitDate = "Visit Date :"
+        static let showJourneyRoute = "     Show Journey Route"
+        static let room = "Room :"
+        static let bedCapacity = "Bed Capacity :"
+        static let type = "Type :"
+        static let direction = "Direction"
+        static let description = "Description :"
+        static let feedbackNo = "Feedback No :"
+        static let feedback = "Feedback :"
+        static let status = "Status :"
+        static let feedbackDate = "Feedback Date :"
+        static let category = "Category :"
+        static let searchByName = "Search by name"
+        static let search = "Search"
+        static let trackLocation = "Track Location"
+        static let addNewPerson = "Add New Person"
+        
+    }
+    struct DropDowns {
+        static let searchFacilityType = "Search Facility Type"
+        static let policeStation = "Police Station"
+        static let vandingZone = "Vending Zone"
+        static let toilet = "Toilet"
+        static let lostAndFoundCenters = "Lost and found centers"
+        static let searchTransportType = "Search Transport Type"
+        static let isbt = "ISBT"
+        static let railwayStation = "Railway Station"
+        static let hospital = "Hospital"
+        
+    }
 }
 
 

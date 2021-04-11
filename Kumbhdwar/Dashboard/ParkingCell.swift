@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class ParkingCell: UITableViewCell {
 
@@ -24,12 +25,19 @@ class ParkingCell: UITableViewCell {
         mainBGView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
         bgView.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: #colorLiteral(red: 0.9215686275, green: 0.231372549, blue: 0, alpha: 1))
         locationButton.borderWithColor(enable: true, withRadius: 10.0, width: 1.0, color: #colorLiteral(red: 0.9215686275, green: 0.231372549, blue: 0, alpha: 1))
+        setupText()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    private func setupText() {
+        descriptionLangText.text = Constants.Placeholders.description.localized()
+        distanceLangText.text = Constants.Placeholders.distance.localized()
+        locationButton.setTitle(Constants.Placeholders.direction.localized(), for: .normal)
     }
     
     func setupCell(details: [String:Any]) {
