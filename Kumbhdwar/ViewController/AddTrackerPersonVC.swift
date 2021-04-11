@@ -28,7 +28,7 @@ class AddTrackerPersonVC: UIViewController {
         super.viewDidLoad()
 
         
-        self.navigationItem.title = "REGISTER"
+        self.navigationItem.title = "REGISTER".localized()
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.barTintColor = AppStyleGuide.NewUI.Colors.appBg
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]

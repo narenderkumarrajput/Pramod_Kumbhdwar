@@ -15,7 +15,7 @@ class TermsAndConditionsVC: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Terms And Conditions"
+        self.navigationItem.title = "Terms And Conditions".localized()
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.barTintColor = AppStyleGuide.NewUI.Colors.appBg
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]

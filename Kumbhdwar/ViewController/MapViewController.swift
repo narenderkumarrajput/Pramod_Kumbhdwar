@@ -63,7 +63,7 @@ class MapViewController: UIViewController {
     }
     
     func drawExitPlan() {
-        self.navigationItem.title = "Exit Plan"
+        self.navigationItem.title = "Exit Plan".localized()
         
         let exitplan = ExitPlanCoordinate()
         let path = GMSMutablePath()

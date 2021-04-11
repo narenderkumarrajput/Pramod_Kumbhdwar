@@ -24,7 +24,7 @@ class CarParkMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "Find My Car"
+        self.navigationItem.title = "Find My Car".localized()
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.barTintColor = AppStyleGuide.NewUI.Colors.appBg
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]

@@ -55,7 +55,7 @@ class AddJourneyRegViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = AppStyleGuide.NewUI.Colors.appBg
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        self.navigationItem.title = "REGISTER"
+        self.navigationItem.title = "REGISTER".localized()
 
        let button = UIButton(type: UIButton.ButtonType.custom)
        button.setImage(UIImage(named: "ic_arrow_back_white_24dp"), for: .normal)

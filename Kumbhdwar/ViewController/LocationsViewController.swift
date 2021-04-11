@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import GoogleMaps
 import GoogleMapsUtils
+import Localize_Swift
 
 //https://developers.google.com/maps/documentation/ios-sdk/utility/kml-geojson
 class LocationsViewController: UIViewController {
@@ -26,7 +27,7 @@ class LocationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Locations"
+        self.navigationItem.title = "Locations".localized()
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.barTintColor = AppStyleGuide.NewUI.Colors.appBg
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
