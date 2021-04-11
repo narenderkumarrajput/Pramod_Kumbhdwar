@@ -389,7 +389,7 @@
                     <navigationItem key="navigationItem" id="eqK-lj-4Ps"/>
                     <connections>
                         <outlet property="aleppoPAgeControl" destination="Pxe-yN-7Rg" id="ezV-Xe-tmH"/>
-                        <outlet property="collectionView" destination="8n6-y9-1RJ" id="gXy-C4-35u"/>
+                        <outlet property="collectionView" destination="Kri-Re-ekI" id="3xJ-36-uom"/>
                         <outlet property="imagesBgView" destination="7Mc-90-OUW" id="ngn-uI-s5e"/>
                         <outlet property="imagesCollectionView" destination="8n6-y9-1RJ" id="U6w-mp-FBN"/>
                         <outlet property="logoImageView" destination="EPB-m9-Xez" id="tUb-Ja-Fbk"/>
@@ -2438,9 +2438,6 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="Pxe-yN-7Rg">
-            <size key="intrinsicContentSize" width="86" height="8"/>
-        </designable>
         <designable name="gDD-79-53H">
             <size key="intrinsicContentSize" width="3811.5" height="20.5"/>
         </designable>

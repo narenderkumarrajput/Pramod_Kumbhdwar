@@ -114,7 +114,7 @@ class StaffVC: UIViewController {
         dropDown.anchorView = self.logoutMenu // UIView or UIBarButtonItem
         // The list of items to display. Can be changed dynamically
         dropDown.dataSource = ["Logout".localized(), "Change Language".localized()]
-        dropDown.width = 120
+        dropDown.width = 180
         dropDown.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         DropDown.appearance().textColor = #colorLiteral(red: 0.9215686275, green: 0.231372549, blue: 0, alpha: 1)
         DropDown.appearance().backgroundColor = UIColor.white
@@ -214,7 +214,7 @@ class StaffVC: UIViewController {
             switch index {
             case 0:
                 let alert = UIAlertController(title: "Logout".localized(), message: "Are you sure you want to sign out?".localized(), preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                alert.addAction(UIAlertAction(title: "Yes".localized(), style: .default, handler: { action in
                       switch action.style{
                       case .default:
                             print("default")
@@ -247,8 +247,12 @@ class StaffVC: UIViewController {
                     if let myLang = UserDefaults.standard.object(forKey: "Lang") as? String {
                         Localize.setCurrentLanguage(myLang)
                         self.setTextOnView()
+                        self.setupDropDown()
                         self.imagesCollectionView.reloadData()
-                        self.collectionView.reloadData()
+//                        self.collectionView
+                        DispatchQueue.main.async {
+                            self.collectionView.reloadData()
+                        }
                     }
                 }
             default: break

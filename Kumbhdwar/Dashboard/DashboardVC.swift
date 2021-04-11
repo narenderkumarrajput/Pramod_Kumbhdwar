@@ -251,7 +251,7 @@ class DashboardVC: UIViewController {
             switch index {
             case 0:
                 let alert = UIAlertController(title: "Logout".localized(), message: "Are you sure you want to sign out?".localized(), preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                alert.addAction(UIAlertAction(title: "Yes".localized(), style: .default, handler: { action in
                       switch action.style{
                       case .default:
                             print("default")
@@ -284,6 +284,7 @@ class DashboardVC: UIViewController {
                     if let myLang = UserDefaults.standard.object(forKey: "Lang") as? String {
                         Localize.setCurrentLanguage(myLang)
                         self.setTextOnView()
+                        self.setupDropDown()
                         self.imagesCollectionView.reloadData()
                         self.collectionView.reloadData()
                     }

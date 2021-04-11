@@ -18,6 +18,7 @@ class ParkingCell: UITableViewCell {
     @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var descriptionLangText: UILabel!
     @IBOutlet weak var distanceLangText: UILabel!
+    @IBOutlet weak var descriptionWidthConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()

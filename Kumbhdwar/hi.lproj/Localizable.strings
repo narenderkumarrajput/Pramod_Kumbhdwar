@@ -96,15 +96,13 @@
 "Search" = "खोज";
 "KUMBHDWAR" = "कुम्भद्वार";
 "SOS" = "एसओएस";
-"According to Hindu mythology, Kumbh Mela is an important and religious festival which is celebrated four times over the course of 12 years. The location of the festival keeps rotating between four pilgrimage sites situated on the banks of the holy rivers. These places are: Haridwar on the Ganges in the Uttarakhand, Ujjain on the Shipra river in Madhya Pradesh, Nashik on the Godavari river in Maharashtra and Prayagraj at the confluence of three rivers Ganga, Yamuna and Saraswati in the Uttar Pradesh.
-" = "हिंदू पौराणिक कथाओं के अनुसार, कुंभ मेला एक महत्वपूर्ण और धार्मिक त्योहार है जो 12 वर्षों के दौरान चार बार मनाया जाता है। त्योहार का स्थान पवित्र नदियों के किनारे स्थित चार तीर्थ स्थलों के बीच घूमता रहता है। ये स्थान हैं: उत्तराखंड में गंगा पर हरिद्वार, मध्य प्रदेश में शिप्रा नदी पर उज्जैन, महाराष्ट्र में गोदावरी नदी पर नासिक और उत्तर प्रदेश में गंगा, यमुना और सरस्वती तीन नदियों के संगम पर प्रयागराज।";
+"According to Hindu mythology, Kumbh Mela is an important and religious festival which is celebrated four times over the course of 12 years. The location of the festival keeps rotating between four pilgrimage sites situated on the banks of the holy rivers. These places are: Haridwar on the Ganges in the Uttarakhand, Ujjain on the Shipra river in Madhya Pradesh, Nashik on the Godavari river in Maharashtra and Prayagraj at the confluence of three rivers Ganga, Yamuna and Saraswati in the Uttar Pradesh." = "हिंदू पौराणिक कथाओं के अनुसार, कुंभ मेला एक महत्वपूर्ण और धार्मिक त्योहार है जो 12 वर्षों के दौरान चार बार मनाया जाता है। त्योहार का स्थान पवित्र नदियों के किनारे स्थित चार तीर्थ स्थलों के बीच घूमता रहता है। ये स्थान हैं: उत्तराखंड में गंगा पर हरिद्वार, मध्य प्रदेश में शिप्रा नदी पर उज्जैन, महाराष्ट्र में गोदावरी नदी पर नासिक और उत्तर प्रदेश में गंगा, यमुना और सरस्वती तीन नदियों के संगम पर प्रयागराज।";
 "Travel" = "यात्रा";
 "Registration" = "पंजीकरण";
 "Track Friends &Family" = "ट्रैक मित्र और परिवार";
 "Plan your Journey" = "अपनी यात्रा की योजना बनाएं";
 "Official No." = "आधिकारिक संख्या";
-"Obtain a compulsory medical certificate from a competent authority; prior to travelling" = "
-यात्रा से पहले एक सक्षम प्राधिकारी से एक अनिवार्य चिकित्सा प्रमाण पत्र प्राप्त करें";
+"Obtain a compulsory medical certificate from a competent authority prior to travelling" = "यात्रा से पहले एक सक्षम प्राधिकारी से एक अनिवार्य चिकित्सा प्रमाण पत्र प्राप्त करें";
 "Follow registration process before travelling." = "यात्रा से पहले पंजीकरण प्रक्रिया का पालन करें।";
 "Do not visit the Kumbh Mela if suffering from symptoms of COVID-19" = "COVID-19 के लक्षणों से पीड़ित होने पर कुंभ मेले में न जाएं";
 "Wear a mask at all times" = "हर समय मास्क पहनें";
@@ -186,3 +184,14 @@
 "Apply Leave" = "छुट्टी लागू करें";
 "APPLY LEAVE" = "छुट्टी लागू करें";
 "Add apply leave details" = "छुट्टी का विवरण जोड़ें";
+"Logout" = "लॉगआउट";
+"Search by name" = "नाम से खोजें";
+"TRACKER LIST" = "ट्रेक्टर सूची";
+"Friend" = "मित्र";
+"Journey List" = "यात्रा सूची";
+"JOURNEY LIST" = "यात्रा सूची";
+"     Show Journey Route" = "  यात्रा मार्ग दिखाएं";
+"ACCOMMODATION" = "स्वीकृति";
+"Yes" = "हां";
+"Cancel" = "रद्द करें";
+"LEAVE" = "छोड़ दो";

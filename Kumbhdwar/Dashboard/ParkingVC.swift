@@ -51,6 +51,7 @@ class ParkingVC: UIViewController, CLLocationManagerDelegate {
         if let lang = UserDefaults.standard.object(forKey: "Lang") as? String {
             Localize.setCurrentLanguage(lang)
             self.setTextOnView()
+            
         }
     }
     func setTextOnView() {
@@ -193,6 +194,7 @@ extension ParkingVC: UITableViewDelegate, UITableViewDataSource {
             let details = detailsArray[indexPath.row]
             cell.setupCell(details: details)
             cell.locationButton.tag = indexPath.row
+            cell.descriptionWidthConstraint.constant = Localize.currentLanguage() == "hi" ? 60 : 100
         }
         return cell
     }
