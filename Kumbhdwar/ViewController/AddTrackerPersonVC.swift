@@ -162,6 +162,8 @@ extension AddTrackerPersonVC {
                     self.showAlertWithOk(title: "Info", message: "OTP Sent. Please fill it in OTP field.")
                 } else if msg == "2" {
                     self.showAlertWithOk(title: "Info", message: "This contact number is already in your track list.")
+                } else if msg == "0" {
+                    self.showAlertWithOk(title: "Info", message: "This contact number is not Registered with kumbhdwar app")
                 }
                 else {
                     self.showAlertWithOk(title: "Info", message: "There is some issue. Please try after some time")
