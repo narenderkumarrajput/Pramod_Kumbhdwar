@@ -201,7 +201,11 @@ extension AddTrackerPersonVC {
                 if msg == "1" {
                     self.showAlertWithOk(title: "Info", message: "Person added in group")
                 } else {
-                    self.showAlertWithOk(title: "Info", message: "There is some issue. Please try after some time")
+                    if let message = responseDictionary["Msg"] as? String {
+                        self.showAlertWithOk(title: "Info", message: message)
+                    } else {
+                        self.showAlertWithOk(title: "Info", message: "There is some issue. Please try after some time")
+                    }
                 }
             } else {
                 self.showAlertWithOk(title: "Info", message: "There is some issue. Please try after some time")
